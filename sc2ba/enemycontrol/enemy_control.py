@@ -5,9 +5,9 @@ import yaml
 import collections
 import torch as th
 
-from smacbattle.enemycontrol.controllers import REGISTRY as mac_REGISTRY
-from smacbattle.enemycontrol.components.episode_buffer import EpisodeBatch
-from smacbattle.enemycontrol.components.transforms import OneHot
+from sc2ba.enemycontrol.controllers import REGISTRY as mac_REGISTRY
+from sc2ba.enemycontrol.components.episode_buffer import EpisodeBatch
+from sc2ba.enemycontrol.components.transforms import OneHot
 from types import SimpleNamespace as SN
 from functools import partial
 

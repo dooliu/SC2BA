@@ -1,0 +1,2 @@
+recursive-include sc2ba/enemycontrol/config *.yaml
+recursive-include sc2ba/enemycontrol/models *.th

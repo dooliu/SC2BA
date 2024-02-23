@@ -4,20 +4,23 @@ from __future__ import print_function
 
 import time
 
-from smacbattle.env import StarCraft2Env, Agent, Bot, Camp, difficulties
+from sc2ba.env import StarCraft2Env, Agent, Bot, Camp, difficulties
+from sc2ba.enemycontrol.enemy_control import EnemyControl
+from sc2ba.enemycontrol.components.transforms import OneHot
 import numpy as np
 
-from smacbattle.env.starcraft2.maps import get_map_params
+from sc2ba.env.starcraft2.maps import get_map_params
 
 
 def main():
-    map_name = "3m"
+    map_name = "8m"
     players = []
     map_params = get_map_params(map_name)
     # Agent的class
     players.append(Agent(map_params["a_race"], Camp.RED.name))
+    # players.append(Bot(map_params["a_race"], Camp.RED.name + "(Computer)", difficulties["7"]))
     # 如果玩家2是机器人，则设置为电脑玩家
-    agent2 = "Agent"
+    agent2 = "Bot"
     # 如果玩家2是机器人，则设置为电脑玩家
     if agent2 == "Bot":
         players.append(Bot(map_params["b_race"], Camp.BLUE.name + "(Computer)", difficulties["7"]))
@@ -25,16 +28,20 @@ def main():
         players.append(Agent(map_params["b_race"], Camp.BLUE.name))
     print(f"players value:{players}")
     env = StarCraft2Env(map_name=map_name, players=players)
+    # env = StarCraft2Env(map_name=map_name, players=players, random_enemy=True)
     env_info = env.get_env_info()
     print(f"Envs states is：{env_info}")
-    # n_actions = env_info["n_actions"]
+
+    # enemy_control = EnemyControl(env_info)
     n_agents = env_info["n_agents"]
     n_enemies = env_info["n_enemies"]
-
+    random_enemy = np.random.random_integers(0, 7, 10)
+    print(f"uniform sample result:{random_enemy}")
     n_episodes = 10
 
     for e in range(n_episodes):
         env.reset()
+        # enemy_control.reset(random_enemy[e])
         print(f"环境初始化成功！")
         terminated = False
         episode_reward = 0
@@ -45,8 +52,10 @@ def main():
             # print(f"Red Camp get state:{red_state}")
             # print(f"Red Camp get obs:{red_obs}")
             # 获取全局状态，用于集中训练（红蓝双方应该有各自的全局状态）
-            blue_state = env.get_state(camp=Camp.BLUE)
-            blue_obs = env.get_obs(camp=Camp.BLUE)
+            # blue_state = env.get_state(camp=Camp.BLUE)
+            # blue_obs = env.get_obs(camp=Camp.BLUE)
+            # blue_available_action = env.get_avail_actions(Camp.BLUE)
+
             # print(f"Blue Camp get state:{blue_state}")
             # print(f"Blue Camp get obs:{blue_obs}")
             # env.render()  # Uncomment for rendering
@@ -57,20 +66,27 @@ def main():
                 avail_actions_ind = np.nonzero(avail_actions)[0]
                 action = np.random.choice(avail_actions_ind)
                 actions.append(action)
-            for enemy_id in range(n_enemies):
-                avail_actions = env.get_avail_agent_actions(enemy_id, camp=Camp.BLUE)
-                avail_actions_ind = np.nonzero(avail_actions)[0]
-                action = np.random.choice(avail_actions_ind)
-                actions.append(action)
-            print(f"random_agent, 生成的actions：{actions}")
+            # for enemy_id in range(n_enemies):
+            #     avail_actions = env.get_avail_agent_actions(enemy_id, camp=Camp.BLUE)
+            #     avail_actions_ind = np.nonzero(avail_actions)[0]
+            #     action = np.random.choice(avail_actions_ind)
+            #     actions.append(action)
+            t_ep = env.episode_steps
+            # blue_actions = enemy_control.select_actions(blue_state, blue_available_action, blue_obs, t_ep)
+            # actions.extend(blue_actions)
+            # print(f"random_agent, 生成的actions：{actions}")
             # print(f"env中的全局状态为：{env.get_state()}")
-            reward, terminated, _ = env.step(actions)
-            print(f"当前回合奖励值为：{reward}")
+            reward, terminated, episode_info = env.step(actions)
+            # print(f"当前回合奖励值为：{reward}")
+            # enemy_control.update_action_reward(blue_actions,
+            #                                      reward[1],
+            #                                      terminated != episode_info.get("episode_limit", False),
+            #                                      env.episode_steps)
             episode_reward += reward[1]
             time.sleep(0.1)
 
         print("Total reward in episode {} = {}".format(e, episode_reward))
-
+    env.save_replay("random")
     env.close()
 
 

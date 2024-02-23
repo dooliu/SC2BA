@@ -2,7 +2,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from smacbattle.env.starcraft2.maps import smac_maps
+from sc2ba.env.starcraft2.maps import smac_maps
 
 from pysc2 import maps as pysc2_maps
 

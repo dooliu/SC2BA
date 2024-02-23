@@ -8,10 +8,10 @@ import json
 import pdb
 import random
 
-from smacbattle.env.starcraft2.enums import Camp
-from smacbattle.env.multiagentenv import MultiAgentEnv
-from smacbattle.env.starcraft2.maps import get_map_params
-from smacbattle.enemycontrol.enemy_control import EnemyControl
+from sc2ba.env.starcraft2.enums import Camp
+from sc2ba.env.multiagentenv import MultiAgentEnv
+from sc2ba.env.starcraft2.maps import get_map_params
+from sc2ba.enemycontrol.enemy_control import EnemyControl
 
 import atexit
 from warnings import warn
@@ -79,7 +79,7 @@ class Bot(collections.namedtuple("Bot", ["race", "name", "difficulty"])):
             cls, race, name, difficulty)
 
 
-class StarCraft2Env(MultiAgentEnv):
+class StarCraft2BAEnv(MultiAgentEnv):
     """The StarCraft II environment for decentralised multi-agent
     micromanagement scenarios.
     """
@@ -239,10 +239,7 @@ class StarCraft2Env(MultiAgentEnv):
         self.map_name = map_name
         map_params = get_map_params(self.map_name)
         self.n_red_agents = map_params["n_agents"]
-        # used to set model size
         self.n_blue_agents = map_params["n_enemies"]
-        # used to set real enemy unit count, red_actions
-        self.n_blue_agents_gen = map_params.setdefault("n_enemies_real", self.n_blue_agents)
         # 每个episode Step的限制
         self.episode_limit = map_params["limit"]
         # StarCraft2 real load map name
@@ -252,9 +249,6 @@ class StarCraft2Env(MultiAgentEnv):
         self.blue_units_config = map_params["blue_units"]
         # whether create Blue Camp Unit by mirror type(central symmetry)
         self.mirror_create_blue_camp = map_params.setdefault("mirror_position", False)
-        # if red and blue units count is not equally, mirror creat flag is not use
-        if self.n_red_agents != self.n_blue_agents_gen:
-            self.mirror_create_blue_camp = False
         self._move_amount = move_amount
         self._step_mul = step_mul
         self.difficulty = difficulty
@@ -374,11 +368,9 @@ class StarCraft2Env(MultiAgentEnv):
         self.force_restarts = 0
         self.last_stats = None
         self.death_tracker_ally = np.zeros(self.n_red_agents)
-        self.death_tracker_enemy = np.zeros(self.n_blue_agents_gen)
+        self.death_tracker_enemy = np.zeros(self.n_blue_agents)
         self.previous_ally_units = None
         self.previous_enemy_units = None
-        # Red camp unit obs cache
-        self.red_last_obs = None
         # Red and Blue last time step executed action
         self.red_last_action = np.zeros((self.n_red_agents, self.n_red_actions))
         self.blue_last_action = np.zeros((self.n_blue_agents, self.n_blue_actions))
@@ -409,7 +401,7 @@ class StarCraft2Env(MultiAgentEnv):
     def _launch(self):
         """Launch the StarCraft II game."""
         self._run_config = run_configs.get(version=self.game_version)
-        _map = maps.get(self.map_name)
+        _map = maps.get('COMMON')
         print(f"Maps info is:{_map}")
         # get interface_format
         agent_interface_format = sc_pb.InterfaceOptions(raw=True, score=False)
@@ -556,7 +548,7 @@ class StarCraft2Env(MultiAgentEnv):
 
         # Information kept for counting the reward
         self.death_tracker_ally = np.zeros(self.n_red_agents)
-        self.death_tracker_enemy = np.zeros(self.n_blue_agents_gen)
+        self.death_tracker_enemy = np.zeros(self.n_blue_agents)
         self.previous_ally_units = None
         self.previous_enemy_units = None
         self.win_counted = False
@@ -576,7 +568,6 @@ class StarCraft2Env(MultiAgentEnv):
             self._controller.debug(debug_command)
             # get game info from pysc2 api
             self._obs = self._controller.observe()
-            # print(f"从Controller中获取的观察空间为：{self._obs}")
             # create unit and init env
             self.init_units()
         except (protocol.ProtocolError, protocol.ConnectionError):
@@ -785,10 +776,7 @@ class StarCraft2Env(MultiAgentEnv):
         return (red_reward, blue_reward), terminated, episode_info
 
     def get_agent_action(self, a_id, action, camp=Camp.RED):
-        """Construct the action for agent a_id.
-           select target enemy according last obs and action
-        """
-        # TODO the action is weather changed
+        """Construct the action for agent a_id."""
         avail_actions = self.get_avail_agent_actions(a_id, camp=camp)
         assert (
                 avail_actions[action] == 1
@@ -888,7 +876,6 @@ class StarCraft2Env(MultiAgentEnv):
         else:
             # attack/heal units that are in range
             target_id = action - self.n_actions_no_attack
-            # according to target id and agent obs determine target unit
             if self.map_type == "MMM" and unit.unit_type == self.medivac_id:
                 target_unit = ally_agents[target_id]
                 action_name = "heal"
@@ -917,7 +904,7 @@ class StarCraft2Env(MultiAgentEnv):
         return sc_action
 
     def get_agent_action_heuristic(self, a_id, action):
-        """根据unit的id来获取智能执行的动作"""
+        """according to unit_id"""
         unit = self.get_unit_by_id(a_id)
         tag = unit.tag
 
@@ -1362,18 +1349,6 @@ class StarCraft2Env(MultiAgentEnv):
                         type_id = self.get_unit_type_id(e_unit)
                         enemy_feats[e_id, ind] = type_id / self.unit_type_bits  # unit type
 
-            # 如果泛化的敌军数量大于训练的模型，则进行enemy_features的优减
-            if self.n_blue_agents < self.n_blue_agents_gen:
-                stay_remove_count = self.n_blue_agents_gen - self.n_blue_agents
-                for tmp_ind in reversed(range(self.n_blue_agents_gen)):
-                    if enemy_feats[tmp_ind][0] == 0:
-                        enemy_feats = np.delete(enemy_feats, tmp_ind, 0)
-                        stay_remove_count -= 1
-                    if stay_remove_count == 0:
-                        break
-                if stay_remove_count > 0:
-                    enemy_feats = enemy_feats[:-stay_remove_count]
-
             # Ally features exclude itself
             al_ids = [
                 al_id for al_id, tmp_agent in ally_agents.items() if tmp_agent.tag != unit.tag
@@ -1468,7 +1443,6 @@ class StarCraft2Env(MultiAgentEnv):
         if camp == Camp.RED:
             # red camp Observe
             agents_obs = [self.get_obs_agent(i, camp=camp) for i in range(self.n_red_agents)]
-            self.red_last_obs = agents_obs
         else:
             # blue camp Observe
             # init crosswise_swap_flag value
@@ -1533,7 +1507,7 @@ class StarCraft2Env(MultiAgentEnv):
         if camp == Camp.RED:
             ally_count = self.n_red_agents
             ally_agents = self.agents
-            enemy_count = self.n_blue_agents_gen
+            enemy_count = self.n_blue_agents
             enemy_agents = self.enemies
             shield_bits_ally = self.shield_bits_ally
             shield_bits_enemy = self.shield_bits_enemy
@@ -1632,7 +1606,7 @@ class StarCraft2Env(MultiAgentEnv):
         if self.obs_all_health:
             nf_en += 1 + self.shield_bits_enemy
 
-        return (self.n_red_agents - 1, nf_al), (self.n_blue_agents_gen, nf_en)
+        return (self.n_red_agents - 1, nf_al), (self.n_blue_agents, nf_en)
 
     def get_blue_obs_feats_size(self):
         """Returns Blue Camp's the dimensions of the matrix containing ally features.
@@ -1827,37 +1801,8 @@ class StarCraft2Env(MultiAgentEnv):
         if unit.unit_type in (self.baneling_id, Zerg.Baneling):
             return 9
 
-    def get_avail_agent_move_actions(self, agent_id):
-        """Returns the available actions for agent_id(Red & Blue).
-           actions generate according to agents obs
-        """
-        unit = self.get_unit_by_id(agent_id)
-        avail_action_count = self.n_actions_no_attack
-        if unit.health > 0:
-            # cannot choose no-op when alive
-            avail_actions = [0] * avail_action_count
-
-            # stop should be allowed
-            avail_actions[1] = 1
-
-            # see if we can move
-            if self.can_move(unit, Direction.NORTH):
-                avail_actions[2] = 1
-            if self.can_move(unit, Direction.SOUTH):
-                avail_actions[3] = 1
-            if self.can_move(unit, Direction.EAST):
-                avail_actions[4] = 1
-            if self.can_move(unit, Direction.WEST):
-                avail_actions[5] = 1
-        else:
-            # only no-op allowed
-            return [1] + [0] * (avail_action_count - 1)
-
     def get_avail_agent_actions(self, agent_id, camp=Camp.RED):
-        """Returns the available actions for agent_id(Red & Blue).
-           actions generate according to agents obs
-           if obs not exist
-        """
+        """Returns the available actions for agent_id(Red & Blue)."""
         if camp == Camp.RED:
             unit = self.get_unit_by_id(agent_id)
             avail_action_count = self.n_red_actions
@@ -1884,32 +1829,8 @@ class StarCraft2Env(MultiAgentEnv):
             # Can attack only alive units that are alive in the shooting range
             shoot_range = self.unit_shoot_range(agent_id)
             if camp == Camp.RED:
-                if self.n_blue_agents == self.n_blue_agents_gen:
-                    target_items = self.enemies.items()
-                else:
-                    wait_pop_item = list(range(self.n_blue_agents_gen))
-                    if self.red_last_obs is not None:
-                        agent_obs = self.red_last_obs[agent_id]
-                        # pick enemy info
-                        ally_feats_dim, enemy_feats_dim = self.get_red_obs_feats_size()
-                        enemy_features = agent_obs[avail_action_count:avail_action_count+self.n_blue_agents * enemy_feats_dim[1]]
-                        print(f"slice enemy_features:{len(enemy_features)}-{enemy_features}")
-                        enemy_features = np.array(enemy_features, np.float)
-                        agent_obs_enemy = enemy_features.reshape(self.n_blue_agents, enemy_feats_dim[1])
-                        agent_obs_ids = agent_obs_enemy[:0]
-                    else:
-                        pop_count = self.n_blue_agents_gen - self.n_blue_agents
-                        agent_obs_ids = list(range(self.n_blue_agents, self.n_blue_agents_gen))
-                        # pdb.set_trace()
-                    # separate agent not obs enemy
-                    target_items = [
-                        (t_id, t_unit)
-                        for (t_id, t_unit) in self.enemies.items()
-                        if t_id not in agent_obs_ids
-                    ]
-                    # target_items = self.enemies.items()
-                        # target_items = agent_obs_enemy
-                    ally_item = self.agents.items()
+                target_items = self.enemies.items()
+                ally_item = self.agents.items()
             else:
                 target_items = self.agents.items()
                 ally_item = self.enemies.items()
@@ -2127,7 +2048,7 @@ class StarCraft2Env(MultiAgentEnv):
             # print(f"init blue agents result:{self.enemies}")
 
             all_agents_created = len(self.agents) == self.n_red_agents
-            all_enemies_created = len(self.enemies) == self.n_blue_agents_gen
+            all_enemies_created = len(self.enemies) == self.n_blue_agents
 
             self._unit_types = [
                                    unit.unit_type for unit in ally_units_sorted

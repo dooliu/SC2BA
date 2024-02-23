@@ -1,5 +1,5 @@
-from smacbattle.enemycontrol.modules.agents import REGISTRY as agent_REGISTRY
-from smacbattle.enemycontrol.components.action_selectors import REGISTRY as action_REGISTRY
+from sc2ba.enemycontrol.modules.agents import REGISTRY as agent_REGISTRY
+from sc2ba.enemycontrol.components.action_selectors import REGISTRY as action_REGISTRY
 import torch as th
 
 
