@@ -7,7 +7,7 @@ from pysc2.maps import lib
 
 class SC2BAMap(lib.Map):
     directory = "SC2BA_Maps"
-    download = "https://github.com/dooliu/SC2BA/tree/main/smacbattle/env/starcraft2/maps"
+    download = "https://github.com/dooliu/SC2BA/tree/main/sc2ba/env/starcraft2/maps"
     players = 2
     step_mul = 8
     game_steps_per_episode = 0
