@@ -33,7 +33,7 @@ You can install SC2BA by using the following command:
 pip install git+https://github.com/dooliu/SC2BA.git
 ```
 
-Alternatively, you can clone the SMAC repository and then install `smac` with its dependencies:
+Alternatively, you can clone the SC2BA repository and then install `sc2ba` with its dependencies:
 
 ```shell
 git clone https://github.com/dooliu/SC2BA.git
@@ -111,7 +111,7 @@ So, we can create a new combat scenario through adding some text prompt in `sc2b
 
 ## Testing SC2BA
 
-Please run the following command to make sure that `smac` and its maps are properly installed. 
+Please run the following command to make sure that `sc2ba` and its maps are properly installed. 
 
 ```bash
 python -m sc2ba.examples.random_agents
@@ -121,7 +121,7 @@ python -m sc2ba.examples.random_agents
 
 ### Saving a replay
 
-If you’ve using our [PyMARL](https://github.com/oxwhirl/pymarl) framework for multi-agent RL, here’s what needs to be done:
+If you’ve using our [APyMARL](https://github.com/dooliu/APyMARL) framework for multi-agent RL, here’s what needs to be done:
 
 1. **Saving models**: We run experiments on *Linux* servers with `save_model = True` (also `save_model_interval` is relevant) setting so that we have training checkpoints (parameters of neural networks) saved (click [here](https://github.com/oxwhirl/pymarl#saving-and-loading-learnt-models) for more details).
 2. **Loading models**: Learnt models can be loaded using the `checkpoint_path` parameter. If you run PyMARL on *MacOS* (or *Windows*) while also setting `save_replay=True`, this will save a .SC2Replay file for `test_nepisode` episodes on the test mode (no exploration) in the Replay directory of StarCraft II. (click [here](https://github.com/oxwhirl/pymarl#watching-starcraft-ii-replays) for more details).
@@ -136,33 +136,15 @@ You can watch the saved replay directly within the StarCraft II client on MacOS/
 
 # Documentation 
 
-For the detailed description of the environment, read the [SMAC documentation](docs/smac.md). 
+For the detailed description of the environment, read the [SC2BA documentation](docs/sc2ba.md). 
 
-The initial results of our experiments using SMAC can be found in the [accompanying paper](https://arxiv.org/abs/1902.04043).
-
-# Citing  SMAC 
-
-If you use SMAC in your research, please cite the [SMAC paper](https://arxiv.org/abs/1902.04043).
-
-*M. Samvelyan, T. Rashid, C. Schroeder de Witt, G. Farquhar, N. Nardelli, T.G.J. Rudner, C.-M. Hung, P.H.S. Torr, J. Foerster, S. Whiteson. The StarCraft Multi-Agent Challenge, CoRR abs/1902.04043, 2019.*
-
-In BibTeX format:
-
-```tex
-@article{samvelyan19smac,
-  title = {{The} {StarCraft} {Multi}-{Agent} {Challenge}},
-  author = {Mikayel Samvelyan and Tabish Rashid and Christian Schroeder de Witt and Gregory Farquhar and Nantas Nardelli and Tim G. J. Rudner and Chia-Man Hung and Philiph H. S. Torr and Jakob Foerster and Shimon Whiteson},
-  journal = {CoRR},
-  volume = {abs/1902.04043},
-  year = {2019},
-}
-```
+The initial results of our experiments using SC2BA can be found in the accompanying paper.
 
 # Code Examples
 
 Below is a small code example which illustrates how SMAC can be used. Here, individual agents execute random policies after receiving the observations and global state from the environment.  
 
-If you want to try the state-of-the-art algorithms (such as [QMIX](https://arxiv.org/abs/1803.11485) and [COMA](https://arxiv.org/abs/1705.08926)) on SMAC, make use of [PyMARL](https://github.com/oxwhirl/pymarl) - our framework for MARL research.
+If you want to try the state-of-the-art algorithms (such as [QMIX](https://arxiv.org/abs/1803.11485) and [COMA](https://arxiv.org/abs/1705.08926)) on SMAC, make use of [APyMARL](https://github.com/dooliu/APyMARL) - our framework for MARL research.
 
 ```python
 from smacbattle.env import StarCraft2Env
