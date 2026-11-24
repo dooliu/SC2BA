@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1422">
+  <meta name="description" content="SC2BA 的 VDN 混合对抗正式实验。查看训练协议、收敛记录和冻结胜率。">
+  <title>SC2BA 实验面板 · VDN 混合对抗</title>
+  <link rel="icon" type="image/png" href="./assets/mark.png">
+  <link rel="stylesheet" href="./assets/panel.css">
+  <script defer src="./assets/panel.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#release">跳到实验记录</a>
+  <header class="masthead">
+    <div class="frame masthead-inner">
+      <a class="brand" href="./#timeline" aria-label="SC2BA 实验时间轴"><span class="mark" aria-hidden="true"></span>SC2BA <span class="brand-detail">实验记录</span></a>
+      <nav aria-label="面板导航">
+        <a href="#timeline">时间轴</a>
+        <a href="#training">训练设置</a>
+        <a href="#results">对抗结果</a>
+      </nav>
+      <a class="repo-link" href="https://github.com/BaiChunhui-9803/SC2BA/tree/experiment/vdn-formal-20261124">GitHub 仓库 <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="timeline" class="frame">
+    <header class="page-heading">
+      <h1>实验时间轴</h1>
+      <p>StarCraft II Battle Arena · 多算法混合对抗</p>
+    </header>
+    <div id="load-error" class="card error" role="alert" hidden></div>
+    <div class="workspace">
+      <aside class="timeline card" aria-label="实验版本列表">
+        <div class="timeline-inner">
+          <div class="timeline-header">
+            <h2>实验批次</h2>
+            <span>2026 年 11 月</span>
+          </div>
+          <details open>
+            <summary>
+              <span class="batch-name"><strong>VDN 正式训练</strong><time datetime="2026-11-24">2026.11.24</time></span>
+            </summary>
+            <a class="current-batch" href="?batch=vdn-formal-20261124&amp;version=mixed-opponents-v1#release" aria-current="page">
+              <span>混合对抗与冻结评测</span>
+              <span class="batch-version">mixed-opponents-v1</span>
+            </a>
+          </details>
+          <nav class="section-nav" aria-label="本实验内导航">
+            <a href="#release">实验摘要</a>
+            <a href="#boxplot">胜率箱线图</a>
+            <a href="#results">逐对手胜率</a>
+            <a href="#training">算法与对手库</a>
+            <a href="#validation">收敛记录</a>
+          </nav>
+        </div>
+      </aside>
+
+      <article class="release card" aria-label="VDN 混合对抗正式实验">
+        <section id="release" class="hero">
+          <div class="hero-top">
+            <div>
+              <p class="run-id">vdn-formal-20261124</p>
+              <h2>VDN 多算法混合对抗</h2>
+              <p class="subtle">3m 镜像出生场景 <span class="sep">/</span> <time id="release-time">2026 年 11 月 24 日</time></p>
+            </div>
+            <div class="hero-actions">
+              <span class="status"><span aria-hidden="true"></span>已完成</span>
+              <button type="button" id="copy-link" class="button">复制模块链接</button>
+            </div>
+          </div>
+          <div class="hero-scores" aria-label="总胜率对比">
+            <div>
+              <span class="metric-label">原始 VDN</span>
+              <strong id="original-score" class="score original-score">—</strong>
+              <span id="original-games" class="metric-caption"></span>
+            </div>
+            <span class="score-arrow" aria-hidden="true">→</span>
+            <div>
+              <span class="metric-label">训练后 VDN</span>
+              <strong id="trained-score" class="score trained-score">—</strong>
+              <span id="trained-games" class="metric-caption"></span>
+            </div>
+            <div class="gain">
+              <span class="metric-label">胜率提升</span>
+              <strong id="gain-score">—</strong>
+              <span class="metric-caption">个百分点</span>
+            </div>
+          </div>
+          <dl class="summary-tiles">
+            <div><dt>训练环境步</dt><dd id="training-steps">—</dd></div>
+            <div><dt>训练对局</dt><dd id="training-games">—</dd></div>
+            <div><dt>冻结评测对局</dt><dd id="test-games">—</dd></div>
+          </dl>
+        </section>
+
+        <section id="boxplot" class="content-section">
+          <div class="section-head">
+            <div>
+              <h2>胜率箱线图</h2>
+              <p>同一对手、同一组留出出生点的配对重抽样</p>
+            </div>
+            <div class="segment" aria-label="箱线图指标">
+              <button type="button" id="mode-rates" aria-pressed="true">胜率</button>
+              <button type="button" id="mode-delta" aria-pressed="false">胜率差</button>
+            </div>
+          </div>
+          <div class="chart card">
+            <div id="chart-legend" class="legend"></div>
+            <div class="chart-scroll" tabindex="0" role="region" aria-label="胜率箱线图，可横向滚动">
+              <canvas id="chart" height="310" role="img" aria-label="各对手的配对重抽样胜率分布">箱线统计可以在图下选择对手查看。</canvas>
+            </div>
+            <div class="chart-details">
+              <label for="chart-opponent">查看对手</label>
+              <select id="chart-opponent"></select>
+              <output id="plot-summary" for="chart-opponent" aria-live="polite"></output>
+            </div>
+          </div>
+          <p class="footnote" id="box-method"></p>
+        </section>
+
+        <section id="results" class="content-section">
+          <div class="section-head">
+            <div>
+              <h2>逐对手胜率</h2>
+              <p id="results-note"></p>
+            </div>
+            <a class="button" href="./data/matchups.csv" download>下载 CSV <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="table-scroll" role="region" aria-label="逐对手胜率表，可横向滚动" tabindex="0">
+            <table class="matchups">
+              <thead><tr><th scope="col">蓝方对手</th><th scope="col">原始 VDN</th><th scope="col">训练后 VDN</th><th scope="col">提升 · 百分点</th></tr></thead>
+              <tbody id="matchup-rows"></tbody>
+              <tfoot id="matchup-total"></tfoot>
+            </table>
+          </div>
+        </section>
+
+        <section id="training" class="content-section">
+          <div class="section-head">
+            <div>
+              <h2>算法与对手库</h2>
+              <p>红方更新 VDN，蓝方按局轮换固定策略。</p>
+            </div>
+          </div>
+          <div class="method-grid">
+            <div class="method-card">
+              <h3>训练算法 · VDN</h3>
+              <p>选用仓库自带的 3m VDN 权重初始化。沿用共享 GRU 策略网络，使用 Double DQN 目标与 VDN 求和混合器，根据红方经验回放更新。</p>
+              <dl class="method-facts" id="training-facts"></dl>
+            </div>
+            <div class="method-card">
+              <h3>多算法混合对抗库</h3>
+              <p id="opponent-note"></p>
+              <p class="pool-source"><a href="https://github.com/dooliu/SC2BA/tree/c585ce68d20a35c8bfd383a1fbbd426ae4a0ecb3/sc2ba/enemycontrol">SC2BA EnemyControl 与权重目录 ↗</a></p>
+              <div class="opponent-tags" id="opponents"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="validation" class="content-section">
+          <div class="section-head">
+            <div>
+              <h2>收敛记录</h2>
+              <p id="validation-note"></p>
+            </div>
+          </div>
+          <div class="table-scroll" role="region" aria-label="最近五轮验证结果，可横向滚动" tabindex="0">
+            <table class="validation-table">
+              <thead><tr><th scope="col">训练环境步</th><th scope="col">验证对局</th><th scope="col">验证胜率</th><th scope="col">平均回报</th></tr></thead>
+              <tbody id="validation-rows"></tbody>
+            </table>
+          </div>
+          <p class="footnote" id="plateau-note"></p>
+        </section>
+
+        <footer class="release-footer">
+          <h2>实验数据</h2>
+          <div class="download-links">
+            <a href="./data/report.json" download>汇总与箱线统计 JSON <span aria-hidden="true">↓</span></a>
+            <a href="./data/test-outcomes.csv" download>逐局冻结评测 CSV <span aria-hidden="true">↓</span></a>
+            <a href="https://github.com/BaiChunhui-9803/SC2BA/blob/experiment/vdn-formal-20261124/experiments/train_vdn_formal.py">训练脚本 <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/BaiChunhui-9803/SC2BA/blob/experiment/vdn-formal-20261124/experiments/artifacts/vdn-formal-20261124/agent.th">训练后权重 <span aria-hidden="true">↗</span></a>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

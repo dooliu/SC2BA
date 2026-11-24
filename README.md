@@ -6,6 +6,19 @@
 
 # SC2BA
 
+## VDN 混合对抗实验 · 2026-11-24
+
+[打开实验时间轴](https://baichunhui-9803.github.io/SC2BA/?batch=vdn-formal-20261124&version=mixed-opponents-v1#timeline)
+
+使用 3m 的 VDN 权重初始化，固定 8 个预训练对手和内置 Bot。在镜像出生场景上训练 2,002,221 环境步，达到预设收敛条件后冻结权重。两版 VDN 分别在 144 个留出出生点对战每位对手，最终总胜率由 38.5% 升至 92.4%。
+
+- [逐对手结果](docs/data/matchups.csv)
+- [逐局冻结评测](docs/data/test-outcomes.csv)
+- [正式训练脚本](experiments/train_vdn_formal.py)
+- [训练后策略权重](experiments/artifacts/vdn-formal-20261124/agent.th)
+
+可从仓库根目录运行 `python -m http.server 8767 --bind 127.0.0.1 --directory docs`，然后打开 [本机实验页](http://127.0.0.1:8767/)。站点使用相对资源路径，可从 GitHub Pages 项目子路径直接打开。报表导出参数见 `python experiments/export_vdn_report.py --help`。
+
 # StarCraft+: Benchmarking Multi-Agent Algorithms in Adversary Paradigm
 
 [SC2BA](https://github.com/dooliu/SC2BA) is an environment for research in the field of competitive multi-agent reinforcement learning (MARL) based on [Blizzard](http://blizzard.com)'s [StarCraft II](https://en.wikipedia.org/wiki/StarCraft_II:_Wings_of_Liberty) RTS game. SC2BA makes use of Blizzard's [StarCraft II Machine Learning API](https://github.com/Blizzard/s2client-proto) and [DeepMind](https://deepmind.com)'s [PySC2](https://github.com/deepmind/pysc2) to provide a convenient interface for autonomous agents to interact with StarCraft II engine, getting observations and performing actions. Unlike the [PySC2](https://github.com/deepmind/pysc2), SC2BA concentrates on *decentralised micromanagement* scenarios like SMAC, where each unit of the game is controlled by an individual RL agent. However, the enemies in SMAC are actually controlled by built-in AI with fixed strategies, resulting in a lack of difficulty and challenge in the environment. This deficiency leads to insufficient diversity and generality in algorithm evaluation. SC2BA refresh the benchmarking of MARL algorithms in an adversary paradigm,  both multi-agent teams to be controlled by designed MARL algorithms in a continuous adversarial paradigm.

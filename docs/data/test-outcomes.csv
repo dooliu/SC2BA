@@ -1,0 +1,2593 @@
+policy,opponent,x,y,outcome,steps,red_return
+original,qtran,10.625,18.875,loss,23,2.1917808219178054
+original,vdn,9.875,15.125,win,19,20.0
+original,qmix,9.625,18.875,loss,24,1.5342465753424657
+original,iql,10.375,19.5,loss,18,-0.5479452054794534
+original,fop,9.125,13.0,loss,21,-0.16438356164383716
+original,fop,10.25,14.875,loss,26,2.8493150684931488
+original,vdn,9.375,17.625,loss,27,2.8493150684931488
+original,qmix,9.375,13.625,loss,22,0.5479452054794507
+original,qplex,9.625,16.0,win,22,20.0
+original,fop,10.5,19.25,loss,29,2.520547945205478
+original,qtran,8.75,13.0,loss,24,0.8767123287671241
+original,qplex,9.875,16.5,win,22,20.0
+original,coma,11.375,16.0,draw,60,3.6164383561643825
+original,qmix,10.375,12.625,loss,22,-0.49315068493150793
+original,coma,11.25,14.75,win,21,20.0
+original,qplex,8.125,19.25,loss,24,0.8219178082191769
+original,coma,9.375,17.625,win,23,20.0
+original,coma,8.125,13.125,draw,60,3.6164383561643842
+original,coma,8.125,17.25,win,24,19.999999999999996
+original,dop,8.75,13.0,loss,25,0.8767123287671224
+original,iql,11.25,16.625,loss,32,0.8767123287671241
+original,fop,10.625,17.0,win,22,20.0
+original,qmix,9.5,19.25,loss,21,0.16438356164383539
+original,fop,9.375,12.75,loss,22,0.8767123287671232
+original,qplex,10.25,19.375,loss,25,-1.8630136986301369
+original,dop,10.25,19.375,loss,20,-0.16438356164383716
+original,vdn,11.375,16.5,win,19,20.0
+original,fop,11.125,17.875,loss,21,1.8630136986301364
+original,computer ai,8.875,18.875,win,21,20.0
+original,iql,9.625,18.875,loss,25,1.205479452054795
+original,qtran,10.25,13.375,loss,25,1.5342465753424657
+original,vdn,8.625,12.625,loss,27,2.8493150684931505
+original,qmix,10.625,13.5,loss,22,0.8767123287671215
+original,dop,8.75,14.875,win,20,20.0
+original,computer ai,10.75,18.875,loss,22,1.5342465753424648
+original,dop,8.75,12.5,loss,22,-0.49315068493150793
+original,fop,8.625,18.625,loss,20,-0.8219178082191787
+original,computer ai,8.75,18.875,win,25,20.0
+original,qplex,10.875,14.75,win,25,19.999999999999996
+original,qtran,8.125,18.625,loss,22,0.1643835616438336
+original,iql,9.125,18.75,loss,20,0.8767123287671241
+original,qmix,8.125,18.875,loss,19,-0.8767123287671241
+original,qplex,8.25,16.5,win,24,20.0
+original,computer ai,9.125,13.75,loss,32,1.8630136986301364
+original,computer ai,9.375,13.625,win,26,20.0
+original,computer ai,9.0,14.625,win,20,20.0
+original,dop,10.875,14.75,win,24,20.0
+original,qmix,11.0,13.375,loss,22,0.8767123287671224
+original,qtran,10.25,15.25,win,18,20.0
+original,vdn,8.75,14.625,win,21,20.0
+original,computer ai,10.375,19.5,loss,18,-0.21917808219178259
+original,coma,9.0,13.125,loss,25,1.534246575342464
+original,qtran,10.75,13.25,loss,17,-0.21917808219178259
+original,iql,9.0,13.125,loss,34,0.8767123287671215
+original,coma,9.375,16.875,loss,25,2.1917808219178054
+original,computer ai,8.125,19.25,loss,21,-0.8219178082191787
+original,qmix,9.0,17.25,win,22,20.0
+original,qmix,10.875,15.0,draw,60,4.273972602739725
+original,qplex,9.375,18.625,loss,24,1.1506849315068477
+original,coma,9.75,17.5,win,20,20.0
+original,iql,10.5,15.875,win,21,20.0
+original,computer ai,10.875,19.125,loss,18,-1.205479452054795
+original,dop,11.25,14.75,loss,21,1.5342465753424657
+original,computer ai,9.625,18.125,win,25,20.0
+original,vdn,11.125,17.875,loss,17,-0.21917808219178259
+original,qplex,10.5,14.875,loss,20,0.8767123287671232
+original,qplex,10.75,14.625,win,25,20.0
+original,computer ai,11.125,18.25,win,19,20.0
+original,qtran,9.0,13.125,win,23,20.0
+original,fop,10.75,19.0,loss,22,-2.191780821917808
+original,qmix,9.375,17.625,loss,26,2.849315068493147
+original,qtran,8.125,18.875,loss,23,0.1643835616438336
+original,dop,10.625,19.0,loss,18,-1.205479452054795
+original,qplex,10.375,14.5,loss,25,2.520547945205478
+original,iql,9.375,18.625,loss,21,0.1643835616438336
+original,computer ai,8.25,13.625,win,23,20.0
+original,qplex,9.75,16.375,win,21,19.999999999999996
+original,vdn,8.5,16.375,win,23,20.0
+original,qtran,10.75,19.0,loss,24,0.4931506849315044
+original,vdn,9.125,15.125,win,22,20.0
+original,qplex,10.5,19.25,loss,22,0.8219178082191769
+original,qmix,11.0,18.375,loss,27,2.8493150684931488
+original,dop,9.125,13.0,loss,22,0.5479452054794507
+original,dop,9.625,16.0,loss,25,2.520547945205478
+original,vdn,8.125,18.625,win,31,20.0
+original,qmix,9.25,18.625,loss,24,1.8630136986301364
+original,dop,8.0,16.25,win,26,19.999999999999996
+original,vdn,8.25,13.625,draw,60,3.2876712328767126
+original,vdn,9.0,14.625,loss,26,2.8493150684931505
+original,qmix,10.25,13.375,loss,21,-0.16438356164383716
+original,qtran,11.25,17.375,win,22,20.0
+original,qplex,8.75,18.375,loss,22,1.534246575342464
+original,qmix,8.625,12.625,loss,23,0.49315068493150616
+original,qmix,11.125,19.125,draw,60,0.6027397260273974
+original,computer ai,10.125,16.25,win,23,20.0
+original,qplex,11.375,18.5,loss,24,2.520547945205477
+original,qplex,11.375,17.125,win,18,20.0
+original,fop,8.125,18.875,loss,20,-1.205479452054795
+original,iql,9.75,16.375,win,20,20.0
+original,computer ai,11.125,19.125,loss,20,-0.8219178082191787
+original,qplex,9.375,16.875,win,26,20.0
+original,dop,9.5,14.875,loss,23,1.5342465753424657
+original,vdn,10.375,19.5,draw,60,1.5890410958904106
+original,fop,10.125,13.5,loss,18,0.1643835616438336
+original,dop,8.625,17.125,win,24,20.0
+original,computer ai,11.0,13.375,loss,28,0.8767123287671224
+original,dop,11.0,13.375,draw,60,3.6164383561643834
+original,computer ai,9.875,18.625,win,20,20.0
+original,qmix,10.0,19.125,loss,27,2.520547945205478
+original,fop,9.625,16.0,win,19,20.0
+original,qmix,9.625,14.125,win,24,20.0
+original,vdn,9.375,16.875,win,26,20.0
+original,iql,9.375,12.75,loss,37,0.1643835616438336
+original,vdn,9.0,17.25,win,21,20.0
+original,coma,8.25,15.375,loss,26,1.2054794520547931
+original,vdn,11.375,19.25,win,24,20.0
+original,iql,10.125,13.5,loss,20,-0.16438356164383716
+original,computer ai,8.25,16.5,win,23,20.0
+original,dop,10.25,13.375,loss,22,0.8767123287671241
+original,vdn,10.75,13.25,loss,27,2.8493150684931488
+original,qplex,10.25,13.75,draw,60,3.2876712328767126
+original,dop,9.5,19.25,loss,19,-1.205479452054795
+original,coma,8.125,15.625,loss,26,2.191780821917807
+original,coma,8.75,18.375,loss,25,2.8493150684931488
+original,dop,8.5,13.375,draw,60,3.287671232876711
+original,computer ai,9.75,18.25,win,21,20.0
+original,computer ai,10.75,16.0,win,18,20.0
+original,qplex,9.5,19.25,loss,26,2.8493150684931488
+original,fop,10.875,15.5,win,23,20.0
+original,computer ai,10.75,14.625,win,22,20.0
+original,qplex,10.25,14.875,win,26,20.0
+original,fop,9.25,18.625,loss,20,-0.16438356164383539
+original,qplex,9.625,14.125,loss,50,1.205479452054795
+original,dop,10.75,19.25,draw,60,-0.4383561643835616
+original,fop,9.375,18.625,loss,21,0.1643835616438336
+original,dop,9.375,12.75,loss,20,0.16438356164383539
+original,qtran,10.75,18.875,draw,60,0.2191780821917808
+original,qtran,8.125,13.625,win,27,20.0
+original,vdn,11.375,18.5,loss,18,-0.16438356164383627
+original,qmix,10.75,19.25,loss,23,-2.8493150684931505
+original,vdn,10.5,14.875,win,25,20.0
+original,coma,10.625,13.5,loss,25,2.8493150684931488
+original,qmix,9.875,19.125,loss,21,1.4794520547945185
+original,qtran,11.125,18.25,loss,21,1.205479452054795
+original,qplex,10.375,19.375,win,29,20.0
+original,vdn,8.625,17.125,win,19,20.0
+original,iql,9.0,17.25,win,21,20.0
+original,computer ai,8.125,13.625,loss,28,0.5479452054794516
+original,dop,10.75,14.875,draw,60,3.287671232876711
+original,fop,8.0,16.25,win,26,20.0
+original,iql,10.25,13.75,loss,21,-0.16438356164383716
+original,iql,11.375,17.125,win,24,19.999999999999996
+original,qtran,8.75,15.625,loss,25,2.849315068493147
+original,vdn,11.0,19.125,draw,60,-0.1095890410958904
+original,computer ai,11.25,17.375,win,20,20.0
+original,qmix,10.875,14.75,win,24,20.0
+original,vdn,8.75,15.625,win,20,20.0
+original,qplex,8.625,16.0,win,23,20.0
+original,computer ai,8.125,18.875,win,25,20.0
+original,coma,9.625,18.125,win,24,20.0
+original,vdn,8.125,15.625,win,23,20.0
+original,dop,11.0,14.375,loss,18,-0.16438356164383627
+original,qtran,10.375,14.5,win,23,20.0
+original,computer ai,8.125,13.125,loss,23,0.5479452054794507
+original,dop,9.875,19.125,loss,19,-1.205479452054795
+original,qplex,10.75,18.875,loss,18,0.49315068493150616
+original,qmix,10.75,18.875,loss,18,-1.5342465753424657
+original,computer ai,9.875,18.5,loss,22,1.205479452054795
+original,dop,9.875,15.125,loss,23,1.205479452054795
+original,iql,10.25,19.5,loss,18,-0.8767123287671241
+original,iql,8.125,18.625,loss,20,-0.8767123287671241
+original,vdn,8.25,18.125,loss,27,1.2054794520547958
+original,vdn,8.125,18.875,loss,24,-0.5479452054794534
+original,qtran,9.25,18.375,win,25,20.0
+original,fop,9.25,14.375,win,28,20.0
+original,computer ai,11.375,18.5,win,22,20.0
+original,computer ai,8.75,15.625,win,21,20.0
+original,fop,9.25,17.75,loss,28,2.520547945205478
+original,vdn,9.5,14.875,win,23,20.0
+original,fop,8.5,15.375,win,23,20.0
+original,dop,11.375,13.875,draw,60,3.2876712328767117
+original,coma,8.625,17.125,win,20,20.0
+original,qtran,10.5,13.625,win,26,20.0
+original,vdn,10.25,15.25,win,22,20.0
+original,coma,8.5,15.25,win,20,20.0
+original,fop,11.375,19.25,draw,60,1.2602739726027394
+original,qtran,8.5,15.25,win,26,20.0
+original,fop,8.75,15.625,win,26,20.0
+original,coma,10.625,18.125,win,22,20.0
+original,fop,9.875,16.5,loss,26,1.5342465753424657
+original,qtran,11.375,16.0,loss,23,1.8630136986301347
+original,qplex,8.125,17.25,loss,26,2.520547945205478
+original,iql,9.375,19.0,loss,25,1.8630136986301364
+original,iql,8.125,18.875,loss,27,1.205479452054795
+original,vdn,8.375,18.0,loss,28,2.520547945205476
+original,computer ai,11.0,18.375,win,21,20.0
+original,vdn,9.625,18.875,loss,21,-0.16438356164383716
+original,qtran,11.375,13.875,loss,24,1.205479452054795
+original,fop,11.375,18.5,loss,18,0.16438356164383539
+original,vdn,10.625,18.875,loss,40,-1.8630136986301369
+original,vdn,10.625,13.5,win,20,20.0
+original,qtran,10.25,19.5,loss,22,-0.16438356164383716
+original,qtran,8.75,18.875,loss,24,1.534246575342463
+original,qplex,8.75,18.875,loss,23,-0.16438356164383716
+original,vdn,8.5,16.125,win,23,20.0
+original,qtran,9.5,17.375,draw,60,3.6164383561643834
+original,computer ai,8.25,18.125,win,23,20.0
+original,computer ai,8.0,16.25,win,21,20.0
+original,computer ai,9.125,18.75,loss,26,1.534246575342464
+original,iql,8.25,13.0,loss,25,0.8767123287671215
+original,qplex,9.5,17.375,win,25,20.0
+original,fop,9.5,17.375,win,25,20.0
+original,fop,9.125,17.5,loss,26,2.520547945205478
+original,qplex,9.875,12.625,loss,23,-0.16438356164383716
+original,qtran,10.875,14.75,win,19,20.0
+original,qtran,11.125,17.875,loss,26,2.8493150684931488
+original,qmix,11.5,14.25,win,20,20.0
+original,qplex,10.5,12.875,loss,20,-0.16438356164383539
+original,qtran,8.625,14.25,loss,24,1.5342465753424657
+original,computer ai,8.625,17.125,win,20,20.0
+original,fop,9.0,13.125,loss,25,0.5479452054794525
+original,iql,9.125,13.75,loss,23,0.8767123287671232
+original,iql,9.125,15.125,loss,34,0.5479452054794525
+original,computer ai,10.625,18.125,win,24,19.999999999999996
+original,vdn,9.25,17.75,loss,28,2.8493150684931488
+original,fop,9.375,19.0,loss,19,-1.205479452054795
+original,qmix,8.875,16.25,win,26,20.0
+original,qplex,11.375,19.25,loss,23,-2.191780821917808
+original,computer ai,9.125,13.0,loss,31,1.2054794520547931
+original,qplex,8.125,13.625,loss,24,0.8767123287671241
+original,fop,9.375,16.875,loss,25,1.534246575342464
+original,coma,9.75,18.25,win,22,20.0
+original,coma,11.0,14.375,win,22,20.0
+original,dop,10.75,18.875,loss,17,-0.8767123287671241
+original,fop,8.75,13.0,draw,60,3.6164383561643816
+original,qplex,11.375,16.0,win,18,20.0
+original,qplex,10.125,18.75,loss,20,-0.16438356164383716
+original,qtran,10.25,13.75,win,22,20.0
+original,iql,9.875,12.625,loss,20,-0.8219178082191778
+original,qtran,10.625,17.125,win,25,19.999999999999996
+original,vdn,10.75,18.875,draw,60,1.2602739726027394
+original,dop,8.875,16.25,win,24,20.0
+original,vdn,9.875,18.5,loss,23,1.1506849315068477
+original,coma,10.875,19.125,loss,20,0.49315068493150616
+original,qmix,9.875,18.625,loss,25,2.8493150684931505
+original,qmix,8.625,14.25,win,29,19.999999999999996
+original,qmix,10.75,19.375,loss,19,-0.8767123287671241
+original,vdn,8.5,15.25,win,21,20.0
+original,qplex,9.125,15.375,draw,60,4.602739726027396
+original,dop,8.5,16.375,win,22,20.0
+original,dop,10.5,13.125,loss,25,0.8767123287671224
+original,iql,8.5,14.375,loss,22,0.5479452054794507
+original,dop,11.125,13.5,loss,22,0.8767123287671241
+original,qmix,10.5,12.875,loss,22,-0.16438356164383716
+original,dop,10.75,16.0,loss,24,2.520547945205476
+original,qtran,10.5,15.375,loss,25,2.8493150684931505
+original,fop,11.0,14.125,loss,21,0.1643835616438336
+original,qplex,8.625,17.125,loss,26,2.520547945205478
+original,vdn,10.25,19.375,draw,60,-0.4383561643835616
+original,qtran,11.0,14.375,draw,60,4.602739726027394
+original,computer ai,9.125,15.375,win,20,20.0
+original,vdn,11.125,13.5,draw,60,3.2876712328767117
+original,iql,9.5,14.875,loss,29,0.8767123287671232
+original,computer ai,8.5,15.25,win,21,20.0
+original,fop,9.25,18.5,loss,23,2.1917808219178063
+original,iql,10.75,19.25,draw,60,2.5753424657534247
+original,qplex,8.375,18.0,loss,24,1.8630136986301364
+original,fop,8.125,13.125,loss,22,0.16438356164383539
+original,iql,8.125,13.625,loss,35,0.5479452054794525
+original,fop,9.875,19.125,loss,19,-0.8767123287671241
+original,iql,9.875,14.875,win,22,20.0
+original,iql,9.375,17.625,win,19,20.0
+original,qtran,10.5,13.125,loss,25,2.520547945205476
+original,coma,10.0,18.625,loss,22,0.8219178082191751
+original,qtran,9.375,18.625,loss,28,2.191780821917807
+original,qtran,8.75,12.5,draw,60,1.9178082191780814
+original,qmix,8.75,14.875,draw,60,4.273972602739725
+original,qplex,9.625,18.875,loss,19,0.49315068493150616
+original,qmix,8.5,13.25,loss,23,0.5479452054794498
+original,vdn,10.5,13.125,loss,21,0.8219178082191769
+original,qplex,8.75,14.625,win,20,20.0
+original,fop,8.75,18.375,loss,27,2.520547945205478
+original,qplex,9.0,14.625,draw,60,3.287671232876711
+original,coma,8.5,13.25,loss,25,1.534246575342464
+original,qmix,9.875,14.875,loss,35,2.1917808219178054
+original,coma,8.625,12.625,draw,60,3.287671232876711
+original,iql,8.125,13.25,loss,27,0.5479452054794525
+original,computer ai,10.375,12.625,loss,25,2.8493150684931488
+original,coma,9.25,18.5,loss,25,2.191780821917807
+original,dop,11.0,18.375,loss,21,1.205479452054794
+original,vdn,10.625,17.125,draw,60,3.6164383561643834
+original,qplex,8.75,12.5,loss,22,-0.49315068493150793
+original,qtran,9.875,16.5,win,22,20.0
+original,dop,8.125,18.625,loss,27,1.205479452054795
+original,vdn,8.75,12.5,loss,21,-0.16438356164383627
+original,qplex,9.875,18.625,loss,28,2.849315068493147
+original,coma,9.125,17.5,loss,23,2.8493150684931488
+original,qplex,9.375,12.75,loss,24,0.8767123287671232
+original,qmix,10.125,16.25,win,20,20.0
+original,qmix,11.25,14.75,draw,60,3.2876712328767126
+original,computer ai,9.375,17.625,win,20,20.0
+original,qmix,11.375,16.0,loss,24,2.191780821917807
+original,qtran,9.375,17.625,loss,23,0.8767123287671215
+original,qmix,8.5,17.625,loss,27,2.8493150684931488
+original,iql,8.125,17.25,win,25,19.999999999999996
+original,fop,10.25,19.375,draw,60,1.5890410958904106
+original,computer ai,10.5,14.875,win,23,20.0
+original,dop,10.625,17.125,loss,26,1.534246575342464
+original,qmix,8.125,18.625,loss,24,1.8630136986301347
+original,qmix,9.5,15.125,win,24,20.0
+original,iql,8.75,14.625,loss,35,0.5479452054794525
+original,vdn,10.5,15.875,win,22,19.999999999999996
+original,coma,10.25,15.25,win,18,20.0
+original,fop,8.125,18.625,loss,26,0.8767123287671224
+original,qplex,10.625,18.125,loss,21,1.808219178082191
+original,dop,10.25,15.25,win,22,20.0
+original,qmix,11.0,14.125,draw,60,3.6164383561643825
+original,fop,11.125,18.25,loss,20,0.1643835616438336
+original,qtran,10.75,16.0,loss,24,1.8630136986301347
+original,computer ai,9.875,12.625,loss,21,-0.16438356164383716
+original,vdn,11.375,13.875,draw,60,3.2876712328767126
+original,vdn,9.125,17.5,win,20,20.0
+original,iql,9.25,18.5,loss,21,-0.16438356164383716
+original,qtran,10.625,13.5,loss,21,1.205479452054794
+original,iql,9.125,17.5,loss,24,1.534246575342464
+original,coma,8.75,14.625,win,23,20.0
+original,computer ai,10.875,14.75,win,24,20.0
+original,vdn,10.5,19.25,draw,60,-1.4246575342465753
+original,qtran,10.375,19.5,loss,34,-2.191780821917808
+original,qtran,9.5,15.125,win,19,20.0
+original,qplex,8.25,15.375,draw,60,3.945205479452055
+original,coma,9.375,19.0,loss,19,-0.49315068493150704
+original,vdn,8.0,16.25,win,23,20.0
+original,coma,8.125,18.625,win,23,20.0
+original,qplex,10.625,13.5,draw,60,3.2876712328767126
+original,vdn,10.125,16.25,win,21,20.0
+original,qplex,9.25,18.5,loss,24,1.1506849315068477
+original,qmix,9.75,13.625,loss,23,0.5479452054794507
+original,coma,8.125,18.875,win,27,20.0
+original,dop,11.375,16.0,win,25,20.0
+original,qtran,11.25,14.75,win,20,20.0
+original,coma,10.75,19.25,loss,22,-1.8630136986301369
+original,computer ai,10.25,14.875,win,18,20.0
+original,fop,10.25,15.25,win,22,20.0
+original,qmix,8.25,18.125,win,22,20.0
+original,coma,9.0,13.625,loss,26,1.8630136986301347
+original,computer ai,8.875,16.25,win,19,20.0
+original,computer ai,8.5,17.625,win,20,20.0
+original,fop,9.875,12.625,loss,22,-0.16438356164383716
+original,qtran,8.5,13.25,win,27,20.0
+original,qmix,11.0,14.375,loss,23,2.520547945205476
+original,qmix,10.75,14.875,win,25,20.0
+original,coma,11.375,16.5,loss,22,1.8630136986301347
+original,computer ai,8.0,19.25,loss,32,1.205479452054795
+original,fop,8.875,18.875,loss,20,-0.8219178082191787
+original,coma,11.0,14.125,win,19,20.0
+original,fop,11.25,16.625,loss,19,0.49315068493150616
+original,vdn,10.625,17.0,win,23,19.999999999999996
+original,qplex,8.5,15.375,win,27,20.0
+original,dop,9.25,14.375,loss,26,2.8493150684931488
+original,fop,9.25,18.375,loss,20,-0.49315068493150793
+original,iql,11.125,17.875,loss,24,1.8630136986301364
+original,computer ai,8.75,14.625,loss,28,2.520547945205476
+original,dop,8.125,19.25,loss,21,-1.205479452054795
+original,dop,10.75,14.625,loss,22,0.8767123287671224
+original,qplex,10.875,15.0,draw,60,3.2876712328767126
+original,qtran,11.5,14.25,win,21,20.0
+original,coma,8.25,18.125,win,25,20.0
+original,computer ai,9.875,19.125,loss,20,0.49315068493150616
+original,iql,9.375,16.875,win,23,20.0
+original,dop,8.25,13.0,loss,24,-0.16438356164383716
+original,vdn,9.75,18.25,draw,60,3.6164383561643834
+original,qmix,8.25,16.5,win,20,20.0
+original,iql,9.625,14.125,loss,35,0.8767123287671215
+original,iql,8.75,15.625,loss,36,1.205479452054795
+original,computer ai,8.125,15.625,win,25,19.999999999999996
+original,coma,8.5,13.375,win,27,20.0
+original,qtran,8.25,18.125,loss,28,2.520547945205476
+original,dop,11.375,16.5,loss,24,2.8493150684931488
+original,dop,8.25,15.375,win,25,20.0
+original,qplex,8.0,19.25,loss,26,2.520547945205478
+original,coma,8.5,16.375,loss,26,1.8630136986301364
+original,qplex,10.5,15.875,loss,20,1.205479452054794
+original,qmix,9.625,16.0,win,26,20.0
+original,vdn,11.375,16.0,win,17,20.0
+original,qtran,9.75,13.625,loss,26,2.520547945205478
+original,iql,10.5,13.125,loss,38,0.5479452054794507
+original,qtran,8.125,19.25,draw,60,-0.4383561643835616
+original,qplex,11.125,13.5,loss,18,-0.16438356164383627
+original,coma,8.25,14.375,win,23,20.0
+original,iql,10.125,18.75,loss,25,1.8630136986301364
+original,computer ai,8.125,17.5,win,20,20.0
+original,computer ai,8.25,13.0,loss,32,1.205479452054795
+original,iql,9.0,13.625,loss,52,0.8767123287671241
+original,dop,8.5,17.625,draw,60,3.9452054794520532
+original,fop,9.0,13.625,loss,19,-0.16438356164383627
+original,coma,9.125,15.125,loss,26,1.5342465753424657
+original,coma,9.5,17.375,loss,25,2.5205479452054798
+original,fop,11.25,17.375,win,18,20.0
+original,iql,8.5,15.25,win,24,20.0
+original,qtran,10.875,15.5,win,23,20.0
+original,qplex,9.125,17.5,win,23,20.0
+original,iql,9.5,15.125,win,26,20.0
+original,iql,10.25,14.875,win,28,20.0
+original,qplex,10.5,13.625,loss,21,0.5479452054794507
+original,dop,9.375,13.625,loss,21,-0.49315068493150793
+original,computer ai,8.125,17.25,win,22,20.0
+original,fop,9.875,14.875,win,20,19.999999999999996
+original,computer ai,9.25,16.375,win,21,20.0
+original,qplex,11.5,14.25,loss,17,0.1643835616438336
+original,coma,9.625,16.0,win,25,20.0
+original,computer ai,8.5,16.375,win,20,20.0
+original,fop,11.375,16.0,win,20,20.0
+original,iql,9.75,18.25,loss,26,1.8630136986301347
+original,vdn,10.125,13.5,loss,30,1.5342465753424674
+original,qplex,8.5,16.125,loss,27,2.520547945205478
+original,fop,8.5,16.375,loss,26,1.8630136986301347
+original,qmix,11.375,16.5,win,20,20.0
+original,fop,8.25,15.375,loss,25,1.205479452054795
+original,qplex,10.75,16.0,win,22,20.0
+original,vdn,8.875,16.25,win,23,20.0
+original,vdn,10.25,14.875,win,18,20.0
+original,computer ai,10.625,17.0,win,18,20.0
+original,computer ai,8.5,13.25,loss,33,1.8630136986301364
+original,computer ai,10.0,13.75,loss,30,1.205479452054795
+original,vdn,8.25,15.375,win,21,20.0
+original,iql,9.25,17.75,win,28,20.0
+original,coma,8.875,18.875,loss,24,1.5342465753424657
+original,coma,11.125,17.875,win,25,20.0
+original,iql,10.625,19.0,loss,18,-0.5479452054794534
+original,qmix,9.875,16.5,win,21,20.0
+original,fop,10.625,17.125,loss,24,1.8630136986301347
+original,iql,10.5,14.875,loss,24,2.8493150684931505
+original,fop,10.5,13.625,win,23,20.0
+original,computer ai,9.0,17.25,win,23,20.0
+original,fop,10.5,13.125,loss,18,-0.49315068493150704
+original,qtran,8.125,13.25,win,24,20.0
+original,coma,10.25,19.5,loss,18,-0.5479452054794534
+original,iql,9.5,19.25,loss,19,-0.5479452054794534
+original,coma,9.625,18.875,loss,20,0.8219178082191769
+original,qtran,8.5,13.375,loss,25,2.191780821917807
+original,qplex,10.0,18.625,loss,21,1.8630136986301356
+original,fop,8.5,13.375,draw,60,3.2876712328767126
+original,dop,10.5,19.25,loss,21,-0.16438356164383716
+original,iql,11.5,14.25,loss,38,0.8767123287671241
+original,qtran,8.0,19.25,loss,32,-2.1917808219178085
+original,computer ai,10.5,13.125,loss,17,-1.205479452054795
+original,qplex,9.5,14.875,draw,60,3.287671232876711
+original,computer ai,10.75,14.875,win,21,20.0
+original,qmix,9.125,13.0,loss,23,-0.16438356164383716
+original,qtran,8.125,17.25,win,25,20.0
+original,qmix,10.0,13.75,loss,23,0.8767123287671224
+original,iql,9.875,18.5,loss,28,1.205479452054795
+original,fop,9.125,15.125,loss,23,1.534246575342464
+original,qplex,8.25,14.375,loss,24,0.8767123287671215
+original,coma,10.0,13.75,win,23,20.0
+original,vdn,10.375,14.5,win,20,20.0
+original,computer ai,9.625,14.125,win,25,20.0
+original,qmix,8.25,14.375,win,23,20.0
+original,qtran,10.75,14.625,loss,27,2.849315068493147
+original,iql,9.75,17.5,loss,24,1.534246575342464
+original,fop,10.5,15.875,loss,21,1.5342465753424657
+original,coma,10.25,19.375,loss,19,-0.5479452054794534
+original,vdn,9.5,17.375,win,23,20.0
+original,qtran,9.125,15.375,win,24,20.0
+original,iql,11.0,13.375,loss,20,-0.49315068493150793
+original,vdn,10.5,13.625,draw,60,3.2876712328767126
+original,qtran,10.125,18.75,loss,21,-1.205479452054795
+original,vdn,10.5,12.875,draw,60,3.6164383561643834
+original,qmix,8.75,12.5,loss,23,-0.16438356164383539
+original,fop,10.875,19.125,loss,18,0.1643835616438345
+original,qplex,9.75,13.625,loss,19,-0.16438356164383627
+original,vdn,10.0,13.75,loss,21,0.8219178082191769
+original,vdn,9.625,16.0,win,20,20.0
+original,vdn,8.125,19.25,win,27,20.0
+original,iql,8.75,14.875,loss,37,2.191780821917807
+original,iql,9.75,13.625,loss,18,-0.8767123287671241
+original,dop,8.125,13.125,loss,22,-0.49315068493150616
+original,vdn,9.5,15.125,win,19,20.0
+original,dop,10.625,17.625,win,22,20.0
+original,qplex,10.75,19.0,loss,22,1.5342465753424657
+original,qplex,8.5,17.625,win,28,19.999999999999996
+original,coma,9.875,15.125,win,21,20.0
+original,qmix,9.125,15.125,loss,37,2.1917808219178054
+original,fop,8.5,15.25,win,20,20.0
+original,dop,9.875,16.5,loss,26,2.520547945205476
+original,iql,8.75,18.875,loss,37,1.5342465753424657
+original,vdn,10.875,15.0,win,18,20.0
+original,coma,10.375,14.5,win,18,20.0
+original,iql,10.75,16.0,win,21,20.0
+original,dop,11.25,17.375,win,23,20.0
+original,iql,11.125,13.5,loss,25,0.8767123287671232
+original,computer ai,11.125,17.875,loss,23,2.191780821917807
+original,fop,9.375,13.625,draw,60,3.2876712328767126
+original,iql,9.25,14.375,win,29,19.999999999999996
+original,dop,8.125,13.625,loss,24,0.8767123287671215
+original,fop,10.25,19.5,loss,23,0.8219178082191751
+original,iql,10.25,19.375,loss,19,-0.8767123287671241
+original,qmix,10.875,19.125,loss,17,-1.205479452054795
+original,dop,9.875,12.625,loss,23,0.8767123287671232
+original,qtran,9.875,12.625,draw,60,3.2876712328767126
+original,vdn,10.125,18.75,loss,23,1.1506849315068477
+original,iql,10.5,19.25,loss,21,0.8767123287671232
+original,qmix,9.375,12.75,loss,25,-0.16438356164383716
+original,fop,9.625,18.875,loss,18,-0.8767123287671241
+original,vdn,8.125,13.625,loss,26,2.8493150684931488
+original,iql,8.625,16.0,win,21,20.0
+original,dop,9.375,18.625,loss,24,1.8630136986301364
+original,computer ai,10.5,15.375,win,19,20.0
+original,coma,10.75,13.25,loss,23,1.5342465753424657
+original,qplex,10.75,13.25,loss,21,0.5479452054794507
+original,dop,10.875,15.5,loss,21,1.205479452054795
+original,dop,8.25,16.5,win,24,20.0
+original,qplex,9.875,18.5,loss,21,0.4931506849315044
+original,computer ai,10.375,19.375,loss,18,-0.8767123287671241
+original,coma,11.25,17.375,win,24,20.0
+original,qplex,8.75,18.0,win,26,20.0
+original,qmix,10.5,15.875,loss,24,2.8493150684931488
+original,qmix,8.25,13.625,loss,25,0.8767123287671224
+original,iql,8.625,12.625,loss,49,0.4931506849315044
+original,qmix,8.625,16.0,loss,27,2.8493150684931505
+original,coma,9.25,17.75,win,24,20.0
+original,vdn,8.125,17.25,win,22,20.0
+original,vdn,8.5,13.375,draw,60,3.2876712328767117
+original,qplex,10.75,19.375,win,25,20.0
+original,qtran,10.5,19.25,loss,21,-0.49315068493150793
+original,iql,8.25,14.375,win,28,19.999999999999996
+original,qplex,8.875,16.25,win,25,20.0
+original,qplex,10.75,14.875,loss,20,0.1643835616438336
+original,fop,9.625,18.125,draw,60,3.6164383561643816
+original,computer ai,10.75,19.25,loss,18,-1.5342465753424657
+original,computer ai,9.375,12.75,loss,30,0.5479452054794525
+original,iql,10.75,18.875,loss,25,1.8630136986301347
+original,iql,10.125,16.25,win,18,20.0
+original,qtran,10.625,17.625,win,22,20.0
+original,qmix,9.875,12.625,loss,23,0.8767123287671215
+original,fop,10.625,18.875,draw,60,1.2602739726027399
+original,iql,8.25,18.125,win,30,19.999999999999996
+original,dop,10.625,17.0,loss,20,0.5479452054794507
+original,qmix,10.125,13.5,loss,34,1.205479452054795
+original,fop,8.25,15.125,loss,27,2.8493150684931488
+original,fop,10.25,13.375,loss,21,0.4931506849315044
+original,dop,9.375,16.875,win,25,20.0
+original,qmix,9.0,14.625,loss,42,0.8767123287671232
+original,vdn,9.0,13.125,loss,24,0.8767123287671224
+original,coma,11.0,18.375,loss,21,1.4794520547945202
+original,fop,8.875,16.25,win,20,20.0
+original,computer ai,8.75,12.5,loss,23,0.5479452054794507
+original,dop,9.125,15.375,win,25,19.999999999999996
+original,fop,9.75,16.375,win,22,20.0
+original,qtran,11.375,19.25,draw,60,-0.7671232876712328
+original,coma,8.0,16.25,loss,27,2.8493150684931488
+original,coma,8.375,18.0,win,24,20.0
+original,qplex,8.125,13.25,loss,23,-0.16438356164383716
+original,qmix,9.75,18.25,loss,24,1.8630136986301364
+original,fop,9.375,17.625,win,26,20.0
+original,dop,8.5,13.25,loss,23,-0.49315068493150793
+original,qplex,8.0,16.25,win,24,20.0
+original,iql,11.125,19.125,loss,17,-0.5479452054794534
+original,vdn,8.125,13.125,draw,60,4.273972602739725
+original,qtran,9.125,13.0,loss,25,2.191780821917807
+original,dop,10.25,13.75,loss,20,0.5479452054794525
+original,computer ai,8.75,18.0,win,20,20.0
+original,iql,9.5,17.375,win,22,20.0
+original,iql,8.125,19.25,loss,23,-0.16438356164383716
+original,iql,10.625,17.625,win,20,20.0
+original,coma,11.375,18.5,loss,17,-0.21917808219178259
+original,iql,8.875,18.875,loss,22,0.5479452054794498
+original,dop,10.5,12.875,loss,22,0.4931506849315044
+original,fop,8.625,14.25,loss,22,0.8767123287671232
+original,dop,10.125,18.75,loss,22,-0.49315068493150793
+original,qplex,9.25,16.375,win,26,20.0
+original,computer ai,9.5,17.375,win,22,20.0
+original,coma,8.0,19.25,loss,22,0.8767123287671232
+original,vdn,9.875,19.125,loss,23,0.8219178082191751
+original,qtran,8.875,16.25,win,23,20.0
+original,qmix,10.125,18.75,loss,25,1.8630136986301364
+original,dop,11.125,18.25,loss,23,1.205479452054794
+original,coma,8.5,14.375,win,23,20.0
+original,fop,10.875,15.0,loss,25,2.8493150684931488
+original,computer ai,8.75,18.375,win,24,20.0
+original,iql,8.25,15.375,win,22,20.0
+original,iql,10.875,14.75,win,21,20.0
+original,computer ai,8.625,18.625,win,23,20.0
+original,coma,8.5,17.625,loss,23,1.205479452054795
+original,coma,10.125,16.25,win,23,20.0
+original,computer ai,8.5,13.375,loss,24,1.5342465753424657
+original,qmix,9.75,16.375,win,25,20.0
+original,coma,10.625,17.125,win,21,20.0
+original,fop,9.875,18.5,loss,21,-0.16438356164383716
+original,iql,10.625,18.125,loss,20,0.5479452054794507
+original,vdn,10.75,14.875,win,23,20.0
+original,vdn,8.5,13.25,win,25,20.0
+original,fop,8.25,14.375,win,22,20.0
+original,qplex,8.25,13.625,loss,23,0.8767123287671215
+original,dop,9.625,14.125,draw,60,3.287671232876711
+original,coma,10.75,14.625,win,26,20.0
+original,qtran,8.625,16.0,win,25,20.0
+original,qtran,9.625,14.125,loss,24,1.8630136986301364
+original,qplex,8.75,15.625,win,24,20.0
+original,iql,10.0,18.625,loss,29,1.534246575342464
+original,coma,8.125,13.25,loss,25,0.5479452054794507
+original,qtran,9.5,19.25,draw,60,-0.7671232876712328
+original,qmix,9.125,18.75,win,29,20.0
+original,computer ai,10.0,19.125,win,23,20.0
+original,qmix,8.75,14.625,draw,60,3.287671232876711
+original,qplex,10.625,18.875,loss,25,2.8493150684931488
+original,coma,11.125,18.25,loss,18,0.49315068493150616
+original,qtran,8.0,16.25,win,22,20.0
+original,vdn,8.75,18.375,win,26,20.0
+original,coma,9.125,13.75,loss,31,1.5342465753424657
+original,coma,9.5,19.25,loss,18,-1.5342465753424661
+original,qmix,9.875,18.5,loss,25,1.205479452054795
+original,qtran,9.875,18.625,loss,29,0.1643835616438336
+original,coma,10.25,13.75,win,22,20.0
+original,qplex,11.125,18.25,loss,23,1.808219178082191
+original,coma,10.875,15.0,win,20,20.0
+original,vdn,10.75,19.25,loss,23,-0.8767123287671241
+original,fop,10.375,19.375,draw,60,0.9315068493150687
+original,qplex,11.0,14.125,win,21,20.0
+original,qtran,11.375,18.5,loss,18,-0.5479452054794534
+original,iql,11.0,19.125,loss,19,-0.8219178082191787
+original,coma,8.75,12.5,draw,60,1.5890410958904106
+original,iql,11.25,17.375,win,19,20.0
+original,qmix,8.25,13.0,loss,27,1.8630136986301347
+original,qplex,8.875,18.875,win,25,20.0
+original,dop,11.125,17.875,loss,25,0.8767123287671241
+original,dop,8.125,15.625,win,21,20.0
+original,vdn,9.125,18.75,loss,19,-0.8767123287671241
+original,fop,8.625,16.0,loss,27,2.520547945205478
+original,vdn,10.875,15.5,win,18,20.0
+original,coma,9.875,18.625,loss,21,1.8630136986301356
+original,fop,10.75,14.625,win,21,20.0
+original,vdn,10.25,19.5,draw,60,-0.1095890410958904
+original,computer ai,10.625,19.0,win,22,20.0
+original,vdn,9.875,18.625,loss,25,1.534246575342464
+original,qmix,9.25,18.5,loss,26,1.8630136986301364
+original,computer ai,8.625,14.25,win,21,20.0
+original,qplex,10.75,19.25,loss,19,0.49315068493150616
+original,coma,9.0,14.625,win,20,20.0
+original,iql,9.875,18.625,loss,21,0.8219178082191769
+original,vdn,10.0,18.625,loss,25,1.8630136986301364
+original,dop,9.25,16.375,win,25,20.0
+original,fop,8.125,13.25,draw,60,3.2876712328767126
+original,coma,10.5,15.375,win,20,20.0
+original,dop,10.375,19.375,loss,22,-0.16438356164383716
+original,vdn,11.25,16.625,win,18,20.0
+original,qtran,9.625,18.875,loss,22,1.150684931506846
+original,fop,10.625,19.0,loss,18,-0.8767123287671241
+original,qtran,9.25,17.75,draw,60,3.6164383561643834
+original,qmix,10.75,13.25,win,23,20.0
+original,qtran,10.625,18.125,win,24,20.0
+original,fop,11.0,14.375,loss,25,2.849315068493147
+original,coma,10.25,13.375,loss,24,2.8493150684931488
+original,qmix,9.25,14.375,loss,26,1.8630136986301347
+original,iql,8.5,17.625,win,22,20.0
+original,dop,10.375,19.5,draw,60,-0.7671232876712328
+original,vdn,10.875,14.75,win,20,20.0
+original,qtran,9.625,18.125,loss,22,-0.16438356164383716
+original,dop,10.25,14.875,loss,25,2.191780821917807
+original,iql,8.75,12.5,loss,22,-0.49315068493150793
+original,computer ai,9.125,17.5,win,20,20.0
+original,iql,8.5,16.125,loss,25,2.5205479452054798
+original,coma,11.0,13.375,draw,60,3.2876712328767126
+original,qmix,11.125,13.5,loss,34,1.8630136986301364
+original,qmix,8.75,18.0,loss,26,2.1917808219178054
+original,computer ai,11.0,14.125,loss,28,0.5479452054794507
+original,computer ai,8.5,14.375,win,27,19.999999999999996
+original,computer ai,8.625,12.625,loss,23,0.5479452054794507
+original,coma,8.5,15.375,loss,28,2.520547945205476
+original,qplex,9.875,15.125,loss,24,1.2054794520547931
+original,qplex,8.625,14.25,loss,25,1.8630136986301364
+original,qplex,10.625,17.125,loss,25,2.520547945205478
+original,qplex,8.125,18.875,loss,24,0.4931506849315044
+original,dop,9.875,14.875,win,24,20.0
+original,qtran,11.375,17.125,win,24,20.0
+original,qplex,10.875,15.5,win,17,20.0
+original,coma,9.875,12.625,loss,22,0.16438356164383539
+original,dop,10.625,18.875,loss,19,-0.49315068493150616
+original,qplex,8.125,17.5,loss,24,1.8630136986301356
+original,iql,9.25,16.375,win,24,20.0
+original,fop,10.0,18.625,loss,25,1.5342465753424648
+original,vdn,10.75,14.625,win,20,20.0
+original,qplex,9.0,13.125,win,27,20.0
+original,fop,10.375,12.625,draw,60,3.6164383561643834
+original,qmix,8.125,13.25,loss,24,0.5479452054794507
+original,coma,8.5,16.125,loss,26,2.8493150684931488
+original,computer ai,8.5,15.375,win,24,20.0
+original,dop,10.75,19.375,draw,60,-0.7671232876712328
+original,computer ai,9.25,18.5,loss,21,0.49315068493150616
+original,qmix,8.25,15.125,win,24,20.0
+original,coma,10.5,19.25,win,28,20.0
+original,iql,10.25,13.375,loss,21,-0.16438356164383716
+original,fop,9.875,15.125,win,21,20.0
+original,dop,8.25,15.125,draw,60,4.602739726027396
+original,qtran,9.25,18.5,draw,60,3.2876712328767126
+original,fop,8.75,14.625,win,21,20.0
+original,computer ai,11.125,13.5,win,18,20.0
+original,qplex,9.25,14.375,draw,60,3.2876712328767117
+original,qmix,11.375,18.5,loss,19,-0.8767123287671241
+original,qplex,11.125,19.125,loss,17,-1.5342465753424657
+original,qtran,10.25,19.375,draw,60,-0.7671232876712328
+original,qplex,10.25,15.25,win,22,19.999999999999996
+original,iql,10.625,17.125,win,21,20.0
+original,qmix,8.625,17.125,loss,27,2.8493150684931488
+original,coma,10.625,17.0,win,25,19.999999999999996
+original,qtran,11.0,14.125,win,25,20.0
+original,coma,9.0,17.25,win,22,20.0
+original,coma,11.375,19.25,draw,60,1.2602739726027394
+original,dop,9.5,15.125,loss,24,2.1917808219178054
+original,vdn,8.25,15.125,win,23,20.0
+original,coma,10.625,17.625,loss,24,2.191780821917807
+original,fop,11.5,14.25,loss,22,2.191780821917807
+original,vdn,10.875,19.125,win,27,20.0
+original,qplex,8.5,13.25,loss,22,-0.16438356164383716
+original,dop,9.0,13.625,loss,24,0.5479452054794525
+original,computer ai,8.125,18.625,loss,22,0.16438356164383539
+original,qmix,11.375,17.125,win,19,20.0
+original,qmix,10.5,19.25,loss,23,-0.49315068493150793
+original,fop,8.75,18.0,loss,23,1.5342465753424657
+original,computer ai,10.5,13.625,loss,17,-0.8767123287671241
+original,iql,9.875,15.125,loss,22,0.8767123287671224
+original,dop,8.0,19.25,loss,20,-0.5479452054794534
+original,coma,8.25,13.625,loss,27,2.191780821917807
+original,qmix,10.75,16.0,win,21,20.0
+original,dop,8.75,14.625,draw,60,3.945205479452055
+original,iql,9.625,18.125,win,29,19.999999999999996
+original,coma,9.375,13.625,draw,60,3.2876712328767126
+original,qplex,8.25,15.125,win,22,20.0
+original,qmix,10.5,13.125,loss,23,0.49315068493150616
+original,qmix,10.625,18.875,loss,20,0.8767123287671232
+original,dop,8.125,17.5,loss,27,2.1917808219178054
+original,iql,10.625,18.875,loss,21,0.8767123287671206
+original,coma,9.375,12.75,loss,26,2.5205479452054798
+original,qtran,10.875,15.0,win,18,20.0
+original,coma,9.875,14.875,win,21,20.0
+original,dop,9.625,18.125,draw,60,3.2876712328767126
+original,qmix,11.0,19.125,loss,21,0.49315068493150616
+original,qplex,8.5,14.375,loss,23,0.5479452054794507
+original,vdn,8.75,13.0,draw,60,3.6164383561643825
+original,iql,10.75,14.625,win,28,20.0
+original,qplex,11.0,14.375,draw,60,3.287671232876711
+original,qplex,8.75,13.0,draw,60,3.2876712328767126
+original,computer ai,10.375,14.5,win,20,20.0
+original,qtran,8.25,16.5,win,23,20.0
+original,qtran,8.5,17.625,loss,23,-0.16438356164383716
+original,qmix,11.25,16.625,win,21,20.0
+original,qtran,10.75,19.375,draw,60,-0.1095890410958904
+original,dop,9.875,18.625,loss,21,0.1643835616438336
+original,qmix,9.375,16.875,win,20,20.0
+original,computer ai,9.625,18.875,win,22,20.0
+original,qplex,9.25,18.625,loss,28,2.520547945205478
+original,dop,9.0,17.25,loss,26,1.534246575342464
+original,fop,10.0,19.125,loss,23,-2.191780821917808
+original,vdn,8.75,18.875,draw,60,3.287671232876711
+original,qplex,8.125,15.625,win,26,20.0
+original,coma,10.5,14.875,win,19,20.0
+original,coma,8.25,13.0,draw,60,1.9178082191780814
+original,qtran,10.5,12.875,loss,25,2.520547945205478
+original,vdn,9.875,14.875,loss,21,2.191780821917808
+original,dop,11.5,14.25,loss,24,2.520547945205478
+original,qplex,8.5,13.375,loss,26,1.2054794520547931
+original,qplex,8.125,18.625,loss,24,0.1643835616438336
+original,fop,9.875,18.625,loss,22,-0.16438356164383716
+original,computer ai,10.25,19.375,loss,18,-0.21917808219178259
+original,computer ai,11.25,16.625,win,17,20.0
+original,fop,9.75,18.25,loss,28,1.8630136986301347
+original,qtran,8.25,13.625,loss,27,2.520547945205478
+original,computer ai,8.5,16.125,win,20,20.0
+original,coma,10.75,18.875,loss,17,-0.8767123287671241
+original,qplex,11.375,16.5,win,20,20.0
+original,coma,10.75,19.375,loss,24,-1.5342465753424657
+original,dop,8.25,18.125,win,27,20.0
+original,qplex,11.0,19.125,loss,26,-0.16438356164383716
+original,qplex,8.5,16.375,loss,27,2.8493150684931488
+original,qmix,10.5,15.375,draw,60,3.6164383561643834
+original,coma,10.75,14.875,draw,60,3.2876712328767126
+original,coma,8.75,18.875,loss,25,2.191780821917807
+original,coma,9.75,13.625,draw,60,3.2876712328767126
+original,qmix,10.5,14.875,draw,60,3.2876712328767126
+original,vdn,10.5,15.375,win,21,20.0
+original,iql,8.25,15.125,win,24,20.0
+original,qmix,10.375,19.375,loss,18,-0.8767123287671241
+original,qmix,8.0,16.25,win,22,20.0
+original,coma,11.5,14.25,win,18,20.0
+original,qplex,8.625,12.625,loss,23,-0.16438356164383716
+original,iql,10.375,14.5,loss,34,0.8767123287671232
+original,iql,10.875,15.5,loss,23,1.8630136986301364
+original,qtran,10.5,15.875,win,21,20.0
+original,dop,11.125,19.125,loss,22,0.16438356164383539
+original,fop,10.5,15.375,win,24,20.0
+original,coma,10.5,12.875,loss,20,-0.16438356164383627
+original,qmix,10.625,19.0,loss,24,-2.191780821917808
+original,coma,10.375,19.5,draw,60,2.246575342465753
+original,fop,9.625,14.125,win,25,20.0
+original,qtran,8.875,18.875,loss,20,-0.8767123287671241
+original,vdn,8.125,17.5,win,23,20.0
+original,vdn,10.375,19.375,draw,60,0.2191780821917808
+original,dop,10.5,13.625,draw,60,3.287671232876711
+original,computer ai,9.0,13.625,loss,30,0.8767123287671224
+original,qmix,11.125,18.25,draw,60,3.9452054794520532
+original,qtran,11.0,19.125,loss,20,-1.808219178082192
+original,vdn,11.25,14.75,win,18,20.0
+original,qmix,10.0,18.625,loss,25,1.8630136986301347
+original,fop,9.125,15.375,win,21,20.0
+original,coma,10.125,13.5,win,21,20.0
+original,coma,10.5,13.625,draw,60,3.945205479452055
+original,dop,10.0,13.75,draw,60,3.6164383561643825
+original,qtran,9.0,14.625,win,25,20.0
+original,iql,8.25,16.5,win,22,20.0
+original,coma,9.875,19.125,loss,18,-0.49315068493150704
+original,coma,10.75,19.0,loss,17,-0.8767123287671241
+original,coma,8.25,15.125,win,20,20.0
+original,dop,9.125,18.75,loss,20,-0.8219178082191787
+original,qmix,8.125,17.5,loss,24,2.191780821917807
+original,dop,8.5,15.375,loss,23,1.534246575342464
+original,qplex,9.25,18.375,loss,24,1.4794520547945185
+original,qtran,9.375,12.75,loss,25,2.8493150684931505
+original,qmix,9.125,13.75,loss,39,2.191780821917807
+original,coma,10.625,18.875,loss,18,-0.8219178082191787
+original,iql,9.125,15.375,win,22,20.0
+original,iql,11.0,14.375,loss,36,2.191780821917807
+original,dop,10.75,19.0,draw,60,-0.4383561643835616
+original,iql,8.75,18.375,win,22,20.0
+original,qtran,9.875,15.125,win,22,20.0
+original,qtran,11.0,18.375,win,22,20.0
+original,vdn,9.375,19.0,draw,60,-0.4383561643835616
+original,coma,9.875,16.5,win,24,20.0
+original,fop,11.125,19.125,loss,22,-1.205479452054795
+original,qtran,8.625,17.125,win,24,20.0
+original,qtran,8.125,17.5,loss,24,0.8767123287671232
+original,fop,8.5,16.125,win,21,20.0
+original,coma,11.0,19.125,loss,18,-1.5342465753424657
+original,coma,9.625,14.125,win,18,20.0
+original,qtran,8.5,15.375,win,19,20.0
+original,iql,11.375,18.5,loss,17,0.49315068493150616
+original,coma,8.75,13.0,draw,60,3.945205479452055
+original,iql,11.0,14.125,loss,34,1.8630136986301347
+original,fop,9.75,17.5,win,22,20.0
+original,qmix,8.125,17.25,win,21,20.0
+original,computer ai,8.125,13.25,loss,19,-0.2191780821917808
+original,vdn,10.625,19.0,loss,24,-0.16438356164383716
+original,iql,9.875,16.5,win,22,20.0
+original,qmix,10.25,19.375,loss,20,0.16438356164383539
+original,coma,8.25,16.5,loss,22,1.2054794520547931
+original,vdn,8.75,14.875,win,21,20.0
+original,fop,10.625,13.5,draw,60,3.2876712328767126
+original,fop,9.5,15.125,win,20,20.0
+original,qmix,8.375,18.0,win,22,20.0
+original,dop,11.375,17.125,win,18,20.0
+original,qplex,9.375,13.625,loss,22,0.5479452054794507
+original,qmix,9.625,18.125,win,28,19.999999999999996
+original,fop,9.5,19.25,draw,60,-0.4383561643835616
+original,qtran,10.5,14.875,win,19,20.0
+original,qmix,9.5,17.375,win,23,19.999999999999996
+original,vdn,10.625,18.125,draw,60,3.6164383561643834
+original,fop,9.25,16.375,win,22,20.0
+original,qplex,10.875,19.125,loss,18,-0.8767123287671241
+original,qtran,10.125,16.25,win,25,19.999999999999996
+original,dop,8.75,18.875,loss,23,0.8767123287671215
+original,computer ai,10.5,12.875,loss,18,-0.49315068493150616
+original,computer ai,10.625,13.5,loss,33,0.8767123287671241
+original,qmix,8.5,15.25,loss,30,2.520547945205476
+original,dop,10.125,16.25,win,22,20.0
+original,dop,10.5,15.375,draw,60,3.2876712328767126
+original,qmix,11.25,17.375,loss,23,2.8493150684931505
+original,vdn,9.375,13.625,draw,60,3.2876712328767126
+original,qmix,8.875,18.875,loss,23,0.1643835616438336
+original,coma,10.375,12.625,loss,25,1.534246575342464
+original,computer ai,10.25,15.25,win,21,20.0
+original,qtran,8.75,14.625,win,26,20.0
+original,qmix,9.25,18.375,win,24,20.0
+original,qplex,9.25,17.75,loss,21,0.8219178082191769
+original,fop,8.125,17.5,loss,25,1.205479452054795
+original,vdn,9.625,18.125,loss,23,1.205479452054795
+original,dop,9.375,17.625,loss,28,2.1917808219178054
+original,qplex,10.0,13.75,loss,19,-0.16438356164383716
+original,dop,9.375,19.0,loss,21,-0.49315068493150793
+original,vdn,9.25,18.625,loss,23,0.1643835616438336
+original,dop,10.25,19.5,loss,26,-2.8493150684931505
+original,dop,8.625,16.0,win,25,20.0
+original,computer ai,11.375,19.25,loss,21,0.8219178082191751
+original,fop,10.75,13.25,draw,60,3.2876712328767126
+original,computer ai,8.75,14.875,win,20,20.0
+original,qplex,10.5,15.375,win,23,20.0
+original,fop,10.625,17.625,win,25,20.0
+original,dop,9.125,13.75,loss,22,0.16438356164383539
+original,dop,8.5,15.25,win,24,20.0
+original,iql,8.5,16.375,win,24,20.0
+original,qtran,8.75,18.375,loss,24,-0.16438356164383716
+original,dop,11.25,16.625,win,20,20.0
+original,dop,9.125,17.5,loss,24,2.520547945205476
+original,coma,10.375,19.375,draw,60,3.561643835616439
+original,iql,8.5,15.375,win,21,20.0
+original,qplex,8.625,18.625,win,28,20.0
+original,qmix,10.375,19.5,loss,21,-2.191780821917808
+original,vdn,9.25,14.375,win,28,20.0
+original,coma,10.875,14.75,win,18,20.0
+original,dop,9.875,18.5,loss,22,0.8767123287671215
+original,dop,9.0,13.125,loss,26,0.8767123287671241
+original,fop,10.5,14.875,win,20,20.0
+original,qmix,9.125,17.5,win,24,20.0
+original,iql,8.25,13.625,loss,23,0.5479452054794507
+original,vdn,8.5,17.625,loss,25,0.8767123287671215
+original,qplex,10.25,13.375,loss,22,0.8767123287671224
+original,dop,11.375,18.5,loss,17,-1.205479452054795
+original,computer ai,10.625,17.625,win,23,20.0
+original,qmix,8.5,14.375,loss,42,1.2054794520547931
+original,qmix,10.625,17.0,win,22,20.0
+original,qtran,8.25,15.375,win,20,20.0
+original,iql,11.125,18.25,loss,22,1.205479452054795
+original,computer ai,9.125,15.125,win,20,20.0
+original,qtran,8.5,14.375,loss,24,2.5205479452054798
+original,qtran,9.625,16.0,loss,26,2.520547945205478
+original,iql,9.375,13.625,loss,21,0.1643835616438336
+original,coma,10.875,15.5,win,17,20.0
+original,fop,8.0,19.25,loss,23,-0.21917808219178259
+original,qtran,9.125,15.125,win,22,20.0
+original,iql,10.625,13.5,loss,21,-0.16438356164383716
+original,vdn,9.75,16.375,win,25,20.0
+original,qmix,8.5,15.375,win,25,20.0
+original,qplex,9.375,17.625,win,25,20.0
+original,qplex,11.25,16.625,win,18,20.0
+original,fop,9.0,17.25,win,23,20.0
+original,dop,9.75,13.625,draw,60,3.6164383561643842
+original,qplex,8.75,14.875,win,26,20.0
+original,iql,10.75,13.25,loss,24,0.8767123287671224
+original,vdn,9.25,18.375,loss,24,1.8630136986301347
+original,iql,10.875,19.125,loss,20,0.49315068493150616
+original,qtran,10.75,19.25,draw,60,-0.7671232876712328
+original,qplex,10.625,17.625,loss,24,2.1917808219178054
+original,qmix,8.75,18.875,loss,27,2.5205479452054798
+original,vdn,8.5,14.375,win,25,20.0
+original,qmix,8.125,13.125,win,28,20.0
+original,dop,9.125,15.125,win,23,20.0
+original,fop,8.5,13.25,draw,60,3.6164383561643834
+original,computer ai,10.125,13.5,win,23,20.0
+original,qplex,8.25,18.125,loss,23,0.8219178082191769
+original,dop,8.625,12.625,loss,23,-0.16438356164383716
+original,iql,11.25,14.75,loss,22,0.8767123287671241
+original,iql,8.75,18.0,loss,22,0.1643835616438336
+original,fop,8.125,17.25,loss,26,0.8767123287671224
+original,iql,10.75,19.375,loss,22,0.8219178082191751
+original,qmix,8.125,13.625,loss,23,0.8767123287671215
+original,vdn,9.375,18.625,loss,25,1.534246575342464
+original,qtran,8.125,15.625,win,23,20.0
+original,coma,9.125,18.75,loss,21,1.205479452054795
+original,vdn,8.625,18.625,loss,23,0.4931506849315044
+original,qmix,9.375,18.625,loss,23,1.5342465753424657
+original,fop,10.75,18.875,loss,17,-1.205479452054795
+original,coma,9.5,15.125,win,21,20.0
+original,vdn,10.25,13.375,loss,24,1.8630136986301364
+original,iql,8.875,16.25,win,19,20.0
+original,coma,10.25,14.875,win,19,20.0
+original,iql,9.875,19.125,loss,23,1.1506849315068477
+original,fop,10.75,19.25,loss,24,-2.5205479452054793
+original,vdn,9.875,12.625,loss,24,2.136986301369862
+original,coma,8.625,16.0,win,25,20.0
+original,qplex,9.125,13.0,draw,60,3.287671232876711
+original,coma,10.75,16.0,loss,23,0.8767123287671241
+original,qmix,10.25,15.25,win,24,20.0
+original,qtran,9.375,13.625,loss,25,2.520547945205478
+original,iql,10.0,13.75,win,23,20.0
+original,dop,10.375,12.625,draw,60,3.287671232876711
+original,vdn,10.75,19.375,draw,60,-0.4383561643835616
+original,qplex,8.125,13.125,loss,23,-0.16438356164383716
+original,qmix,10.375,14.5,win,24,19.999999999999996
+original,computer ai,10.5,15.875,win,20,20.0
+original,vdn,11.0,14.375,win,21,20.0
+original,qmix,9.25,17.75,loss,26,1.5342465753424657
+original,qmix,9.0,13.625,loss,36,1.534246575342464
+original,fop,10.75,16.0,win,19,20.0
+original,iql,8.5,13.25,loss,22,-0.16438356164383716
+original,qtran,8.625,12.625,draw,60,1.5890410958904106
+original,computer ai,10.25,19.5,loss,19,0.1643835616438345
+original,fop,8.75,18.875,loss,20,-1.205479452054795
+original,qplex,9.125,18.75,loss,25,2.520547945205478
+original,computer ai,9.0,13.125,win,25,20.0
+original,computer ai,10.5,19.25,loss,18,-0.8767123287671241
+original,coma,8.125,19.25,loss,24,1.5342465753424657
+original,qtran,11.0,13.375,loss,26,2.520547945205478
+original,iql,10.75,19.0,loss,20,0.1643835616438336
+original,vdn,10.25,13.75,win,22,20.0
+original,fop,8.25,16.5,win,22,20.0
+original,computer ai,10.0,18.625,win,20,20.0
+original,fop,10.25,13.75,win,26,20.0
+original,qmix,8.75,13.0,loss,22,-0.8219178082191787
+original,dop,9.25,17.75,win,24,19.999999999999996
+original,vdn,8.875,18.875,loss,22,0.1643835616438336
+original,computer ai,8.25,15.125,win,20,20.0
+original,vdn,9.125,13.0,loss,24,0.8767123287671232
+original,computer ai,11.375,17.125,win,17,20.0
+original,computer ai,9.5,14.875,win,23,20.0
+original,qmix,9.0,13.125,loss,37,2.1917808219178054
+original,computer ai,11.25,14.75,win,18,20.0
+original,iql,11.375,16.0,win,20,20.0
+original,vdn,10.75,16.0,win,20,20.0
+original,qtran,10.25,14.875,win,20,19.999999999999996
+original,coma,10.625,19.0,loss,22,1.4794520547945185
+original,coma,11.375,17.125,win,21,20.0
+original,computer ai,9.75,13.625,win,25,20.0
+original,coma,10.0,19.125,loss,18,-1.205479452054795
+original,vdn,11.0,14.125,loss,58,1.5342465753424657
+original,dop,8.75,18.0,win,28,19.999999999999996
+original,fop,11.0,18.375,loss,22,1.4794520547945185
+original,qplex,10.125,16.25,win,21,20.0
+original,qtran,10.625,19.0,loss,21,1.5342465753424648
+original,iql,9.0,14.625,loss,24,1.5342465753424657
+original,coma,11.25,16.625,win,21,20.0
+original,vdn,9.125,13.75,win,21,20.0
+original,computer ai,8.25,14.375,loss,31,0.8767123287671241
+original,vdn,9.375,12.75,loss,24,2.191780821917807
+original,fop,9.75,13.625,draw,60,3.2876712328767126
+original,fop,8.125,13.625,win,27,20.0
+original,computer ai,11.0,14.375,loss,28,0.8767123287671241
+original,iql,11.375,16.5,loss,25,2.849315068493147
+original,iql,8.625,14.25,loss,36,1.2054794520547931
+original,qtran,9.875,19.125,loss,19,-0.8767123287671241
+original,coma,8.75,14.875,win,21,20.0
+original,iql,8.625,18.625,win,27,20.0
+original,vdn,10.0,19.125,loss,23,0.4931506849315044
+original,dop,9.75,18.25,loss,22,0.5479452054794507
+original,qmix,10.75,14.625,draw,60,4.602739726027394
+original,iql,8.125,15.625,win,23,20.0
+original,qtran,9.0,13.625,loss,25,2.520547945205478
+original,fop,11.25,14.75,loss,23,1.534246575342464
+original,computer ai,11.5,14.25,win,17,20.0
+original,qmix,11.375,13.875,loss,19,0.8767123287671232
+original,dop,8.5,16.125,win,20,20.0
+original,vdn,9.5,19.25,draw,60,-0.1095890410958904
+original,dop,8.125,17.25,win,23,20.0
+original,qplex,9.875,19.125,loss,25,0.4931506849315044
+original,qtran,10.375,12.625,win,27,20.0
+original,qtran,10.625,17.0,win,21,20.0
+original,computer ai,10.25,13.75,loss,27,0.8767123287671232
+original,iql,9.25,18.625,loss,20,0.49315068493150616
+original,dop,9.5,17.375,win,22,20.0
+original,computer ai,10.875,15.5,win,19,20.0
+original,qmix,8.5,16.125,loss,25,2.8493150684931488
+original,coma,9.25,16.375,loss,23,1.205479452054795
+original,computer ai,10.625,18.875,win,23,20.0
+original,qtran,8.75,18.0,loss,23,0.4931506849315044
+original,vdn,9.625,14.125,win,26,20.0
+original,coma,9.125,15.375,win,24,19.999999999999996
+original,qplex,10.625,17.0,win,22,20.0
+original,computer ai,9.875,14.875,win,20,20.0
+original,computer ai,9.375,16.875,win,22,20.0
+original,dop,11.375,19.25,loss,19,-1.205479452054795
+original,fop,10.75,19.375,draw,60,-0.1095890410958904
+original,dop,8.625,18.625,win,28,20.0
+original,computer ai,9.75,17.5,win,20,20.0
+original,dop,8.25,14.375,loss,22,0.5479452054794507
+original,vdn,11.5,14.25,win,20,20.0
+original,qtran,10.125,13.5,win,22,20.0
+original,fop,9.125,18.75,loss,19,-0.49315068493150793
+original,dop,10.5,14.875,draw,60,3.2876712328767126
+original,iql,11.0,18.375,loss,24,2.191780821917809
+original,fop,8.5,17.625,win,28,19.999999999999996
+original,fop,10.875,14.75,win,24,20.0
+original,qtran,10.0,18.625,loss,23,1.5342465753424648
+original,iql,10.25,15.25,win,22,20.0
+original,qtran,9.0,17.25,loss,26,2.520547945205476
+original,qmix,9.75,17.5,win,22,20.0
+original,coma,11.125,13.5,win,20,20.0
+original,fop,11.125,13.5,loss,17,0.1643835616438345
+original,coma,10.5,13.125,draw,60,3.2876712328767126
+original,qplex,8.5,15.25,loss,24,0.8767123287671224
+original,vdn,8.25,16.5,win,20,20.0
+original,fop,10.75,14.875,loss,23,0.8767123287671232
+original,iql,8.125,17.5,win,24,20.0
+original,vdn,9.875,16.5,win,19,20.0
+original,qplex,9.125,13.75,draw,60,3.2876712328767126
+original,qmix,10.25,13.75,loss,24,1.8630136986301364
+original,dop,8.375,18.0,win,24,20.0
+original,qtran,8.125,13.125,win,25,20.0
+original,iql,8.375,18.0,win,22,20.0
+original,iql,8.75,13.0,loss,37,0.5479452054794507
+original,qplex,11.375,13.875,loss,24,0.5479452054794507
+original,fop,9.5,14.875,win,21,20.0
+original,vdn,8.25,14.375,win,24,20.0
+original,vdn,8.625,16.0,win,22,20.0
+original,qtran,10.0,13.75,loss,25,2.1917808219178054
+original,computer ai,9.25,18.625,loss,19,-0.16438356164383627
+original,coma,10.5,15.875,win,20,20.0
+original,vdn,8.125,13.25,draw,60,4.273972602739725
+original,computer ai,9.875,15.125,win,20,20.0
+original,dop,10.0,18.625,loss,22,1.2054794520547922
+original,fop,8.75,12.5,loss,22,-0.16438356164383716
+original,coma,8.125,17.5,win,23,20.0
+original,fop,8.625,17.125,loss,26,2.1917808219178054
+original,qmix,10.25,19.5,loss,24,1.8082191780821892
+original,qtran,8.25,14.375,win,23,20.0
+original,qmix,8.75,15.625,win,23,20.0
+original,dop,10.875,19.125,loss,25,-2.5205479452054793
+original,dop,8.75,18.375,loss,28,2.8493150684931488
+original,vdn,9.0,13.625,loss,45,0.8767123287671232
+original,coma,9.75,16.375,win,22,20.0
+original,qtran,9.25,18.625,loss,24,-0.49315068493150793
+original,coma,11.375,13.875,win,19,20.0
+original,qtran,8.25,13.0,loss,25,2.1917808219178054
+original,fop,10.0,13.75,loss,18,0.49315068493150616
+original,fop,10.625,18.125,draw,60,3.287671232876711
+original,dop,9.25,18.375,loss,25,1.8630136986301347
+original,fop,8.25,13.0,draw,60,3.287671232876711
+original,qtran,9.25,14.375,loss,26,2.520547945205478
+original,computer ai,11.375,16.0,win,20,20.0
+original,iql,9.125,13.0,loss,22,-0.16438356164383716
+original,computer ai,9.875,16.5,win,21,20.0
+original,fop,11.375,16.5,loss,22,2.5205479452054798
+original,qplex,10.625,19.0,win,24,20.0
+original,qtran,8.5,16.125,win,24,20.0
+original,qplex,9.0,17.25,loss,22,1.150684931506846
+original,vdn,8.625,14.25,win,22,20.0
+original,fop,10.125,16.25,win,24,20.0
+original,qmix,10.625,17.625,loss,21,1.205479452054795
+original,computer ai,10.75,19.375,loss,18,-0.5479452054794534
+original,iql,10.625,17.0,win,17,20.0
+original,vdn,11.125,18.25,loss,20,0.4931506849315044
+original,vdn,10.625,17.625,win,20,20.0
+original,coma,8.875,16.25,win,20,20.0
+original,fop,9.0,14.625,loss,30,1.5342465753424657
+original,qplex,9.125,15.125,win,23,20.0
+original,computer ai,10.75,19.0,loss,18,-0.8767123287671241
+original,qplex,10.0,19.125,loss,19,-0.8767123287671241
+original,coma,9.375,18.625,loss,24,1.8630136986301347
+original,coma,9.125,13.0,draw,60,3.6164383561643825
+original,qmix,10.5,13.625,loss,23,1.2054794520547922
+original,qmix,11.375,19.25,loss,23,1.8630136986301329
+original,fop,8.125,15.625,win,26,20.0
+original,dop,9.75,16.375,win,21,20.0
+original,vdn,9.75,17.5,loss,27,2.1917808219178054
+original,dop,8.125,18.875,loss,22,-0.16438356164383716
+original,iql,8.0,16.25,win,22,20.0
+original,qmix,10.25,14.875,win,21,20.0
+original,computer ai,10.875,15.0,win,19,20.0
+original,coma,9.25,18.625,loss,19,-0.8767123287671241
+original,dop,8.625,14.25,loss,22,0.5479452054794525
+original,fop,11.375,13.875,loss,19,0.8767123287671232
+original,vdn,10.75,19.0,loss,52,0.49315068493150616
+original,computer ai,8.25,15.375,win,21,20.0
+original,qplex,9.875,14.875,win,22,20.0
+original,fop,8.125,19.25,loss,21,-1.205479452054795
+original,iql,8.125,13.125,loss,24,0.5479452054794507
+original,fop,10.375,19.5,draw,60,-0.4383561643835616
+original,computer ai,9.25,17.75,win,25,20.0
+original,coma,8.625,18.625,loss,23,1.534246575342464
+original,qtran,8.75,14.875,win,22,20.0
+original,qmix,8.625,18.625,draw,60,3.6164383561643842
+original,qplex,9.75,17.5,loss,23,1.2054794520547931
+original,qplex,11.25,17.375,win,22,20.0
+original,computer ai,10.625,17.125,win,17,20.0
+original,computer ai,10.25,13.375,loss,19,0.5479452054794516
+original,coma,11.125,19.125,loss,22,1.4794520547945202
+original,computer ai,8.75,13.0,win,22,20.0
+original,qmix,8.25,15.375,loss,26,0.5479452054794516
+original,qmix,9.5,14.875,draw,60,3.945205479452055
+original,qmix,8.75,18.375,win,26,20.0
+original,qtran,10.875,19.125,draw,60,-0.7671232876712328
+original,coma,8.125,13.625,win,27,20.0
+original,fop,8.5,14.375,draw,60,3.9452054794520532
+original,qtran,10.375,19.375,draw,60,-0.4383561643835616
+original,qplex,11.25,14.75,win,20,20.0
+original,vdn,8.5,15.375,win,22,20.0
+original,qtran,9.375,16.875,loss,24,2.191780821917807
+original,vdn,11.375,17.125,win,19,20.0
+original,qtran,10.0,19.125,loss,23,1.205479452054794
+original,qtran,9.75,16.375,loss,26,2.191780821917807
+original,dop,11.0,19.125,draw,60,-0.4383561643835616
+original,qplex,9.5,15.125,win,21,20.0
+original,iql,9.625,16.0,win,20,20.0
+original,dop,10.0,19.125,loss,18,-0.5479452054794534
+original,dop,8.875,18.875,loss,23,-0.16438356164383716
+original,dop,8.5,14.375,win,24,20.0
+original,coma,9.5,14.875,win,23,20.0
+original,qplex,10.5,13.125,loss,21,-0.49315068493150793
+original,vdn,8.25,13.0,loss,29,2.8493150684931488
+original,qplex,11.0,18.375,win,25,20.0
+original,qplex,11.0,13.375,loss,20,-0.16438356164383716
+original,dop,10.375,14.5,win,22,20.0
+original,fop,8.25,18.125,win,24,20.0
+original,computer ai,8.375,18.0,win,24,20.0
+original,iql,10.375,12.625,loss,22,0.1643835616438336
+original,qplex,9.75,18.25,loss,19,-0.16438356164383539
+original,vdn,8.0,19.25,draw,60,0.9315068493150682
+original,qplex,10.125,13.5,loss,23,0.8767123287671224
+original,qplex,10.25,19.5,loss,22,-0.16438356164383716
+original,dop,10.625,18.125,loss,20,0.1643835616438336
+original,coma,10.125,18.75,loss,21,0.49315068493150616
+original,iql,11.375,13.875,win,25,20.0
+original,dop,10.875,15.0,win,21,20.0
+original,coma,8.75,15.625,win,22,20.0
+original,iql,10.75,14.875,loss,34,1.205479452054795
+original,vdn,9.25,16.375,win,22,20.0
+original,qtran,11.125,13.5,draw,60,3.2876712328767117
+original,computer ai,9.25,18.375,win,22,20.0
+original,qtran,9.5,14.875,win,23,20.0
+original,dop,10.625,13.5,loss,22,0.5479452054794507
+original,vdn,11.0,18.375,loss,25,2.520547945205478
+original,iql,10.875,15.0,loss,26,2.191780821917807
+original,qmix,9.875,15.125,loss,26,2.520547945205478
+original,qmix,9.125,15.375,win,21,20.0
+original,computer ai,10.125,18.75,win,22,20.0
+original,vdn,9.125,15.375,win,21,20.0
+original,qtran,9.375,19.0,draw,60,0.9315068493150682
+original,qplex,10.375,12.625,loss,20,-0.16438356164383539
+original,qtran,10.75,14.875,win,23,20.0
+original,coma,9.875,18.5,loss,22,1.4794520547945185
+original,vdn,11.0,13.375,draw,60,3.6164383561643842
+original,coma,8.75,18.0,win,26,20.0
+original,qtran,9.125,18.75,loss,22,0.49315068493150616
+original,iql,8.0,19.25,loss,22,0.1643835616438336
+original,fop,11.0,19.125,loss,24,-2.5205479452054793
+original,qmix,11.125,17.875,loss,20,0.8767123287671232
+original,dop,8.125,13.25,draw,60,3.287671232876711
+original,dop,9.625,18.875,loss,20,-0.16438356164383627
+original,iql,10.5,12.875,loss,46,1.2054794520547931
+original,qtran,9.75,17.5,loss,22,0.16438356164383539
+original,coma,8.625,14.25,draw,60,3.2876712328767126
+original,qtran,8.375,18.0,loss,23,0.1643835616438336
+original,vdn,11.125,19.125,win,31,20.0
+original,iql,9.25,18.375,loss,24,2.5205479452054798
+original,computer ai,8.625,16.0,win,21,20.0
+original,qmix,10.875,15.5,loss,25,2.8493150684931505
+original,fop,8.75,14.875,win,19,20.0
+original,qtran,11.375,16.5,loss,21,0.8767123287671241
+original,coma,9.25,14.375,win,22,20.0
+original,qmix,10.625,17.125,win,23,20.0
+original,fop,10.125,18.75,loss,21,0.1643835616438336
+original,qtran,9.875,14.875,win,27,20.0
+original,qtran,9.875,18.5,loss,23,-0.16438356164383716
+original,dop,10.75,13.25,loss,23,0.8767123287671224
+original,qplex,9.0,13.625,draw,60,3.2876712328767126
+original,qtran,11.25,16.625,win,19,20.0
+original,iql,8.5,13.375,loss,23,-0.16438356164383716
+original,computer ai,9.25,14.375,win,22,20.0
+original,vdn,11.25,17.375,win,21,20.0
+original,fop,10.5,12.875,loss,18,-0.8767123287671241
+original,qplex,8.25,13.0,loss,24,0.5479452054794507
+original,vdn,9.75,13.625,draw,60,3.2876712328767126
+original,computer ai,11.375,13.875,loss,27,0.5479452054794507
+original,qtran,8.625,18.625,loss,24,0.1643835616438336
+original,iql,11.375,19.25,loss,22,2.191780821917807
+original,qtran,9.125,13.75,loss,23,1.5342465753424657
+original,qplex,11.125,17.875,loss,21,0.8767123287671215
+original,computer ai,9.75,16.375,win,19,20.0
+original,qmix,8.0,19.25,loss,22,-0.16438356164383716
+original,dop,8.75,15.625,win,24,19.999999999999996
+original,qmix,8.125,15.625,win,27,20.0
+original,qmix,10.75,19.0,loss,20,0.16438356164383539
+original,qmix,8.125,19.25,loss,23,-0.49315068493150793
+original,fop,8.625,12.625,loss,23,0.5479452054794507
+original,computer ai,11.375,16.5,win,18,20.0
+original,dop,8.25,13.625,draw,60,3.287671232876711
+original,fop,11.375,17.125,loss,23,1.534246575342464
+original,qtran,11.125,19.125,draw,60,-0.7671232876712328
+original,computer ai,9.5,15.125,win,20,20.0
+original,dop,9.75,17.5,loss,22,1.205479452054795
+original,vdn,8.75,18.0,loss,24,2.136986301369859
+original,computer ai,11.0,19.125,loss,18,-0.5479452054794534
+original,qmix,9.25,16.375,win,23,20.0
+original,iql,10.375,19.375,loss,21,-0.16438356164383716
+original,qmix,8.5,13.375,loss,22,0.5479452054794507
+original,vdn,10.375,12.625,draw,60,3.6164383561643816
+original,qtran,8.25,15.125,win,25,20.0
+original,fop,11.0,13.375,loss,21,0.8767123287671241
+original,dop,9.25,18.5,loss,29,2.8493150684931488
+original,computer ai,9.375,18.625,win,23,20.0
+original,qplex,9.375,19.0,loss,24,0.8219178082191769
+original,iql,10.5,15.375,win,21,20.0
+original,dop,9.0,14.625,win,27,19.999999999999996
+original,qplex,10.375,19.5,loss,22,0.8219178082191769
+original,iql,10.5,13.625,loss,43,0.8767123287671224
+original,qtran,8.5,16.375,win,25,20.0
+original,dop,10.125,13.5,loss,22,0.5479452054794507
+original,iql,10.0,19.125,loss,18,-0.8767123287671241
+original,fop,9.125,13.75,draw,60,3.2876712328767126
+original,qplex,9.625,18.125,loss,21,0.8219178082191769
+original,coma,9.25,18.375,win,22,20.0
+original,fop,8.25,13.625,loss,23,0.8767123287671241
+original,fop,10.375,14.5,win,19,20.0
+original,dop,10.5,15.875,loss,18,0.8767123287671224
+original,fop,8.375,18.0,loss,25,0.1643835616438336
+original,qmix,9.375,19.0,loss,19,-0.5479452054794534
+original,dop,9.25,18.625,loss,20,-0.16438356164383539
+original,dop,11.0,14.125,loss,24,0.5479452054794516
+original,vdn,9.25,18.5,loss,21,1.1506849315068477
+original,iql,8.625,17.125,win,23,20.0
+original,computer ai,10.75,13.25,loss,29,0.5479452054794507
+original,computer ai,9.5,19.25,loss,21,1.5342465753424657
+original,qtran,9.125,17.5,loss,24,1.534246575342464
+original,computer ai,9.375,19.0,loss,28,2.520547945205476
+original,qtran,9.75,18.25,loss,23,-0.16438356164383716
+original,qtran,9.25,16.375,win,22,20.0
+original,qmix,8.5,16.375,loss,28,2.849315068493147
+original,computer ai,9.625,16.0,win,20,20.0
+original,qmix,10.625,18.125,loss,24,2.520547945205478
+trained,qtran,10.625,18.875,win,21,20.0
+trained,vdn,9.875,15.125,win,19,20.0
+trained,qmix,9.625,18.875,win,23,20.0
+trained,iql,10.375,19.5,win,20,20.0
+trained,fop,9.125,13.0,win,21,20.0
+trained,fop,10.25,14.875,win,19,20.0
+trained,vdn,9.375,17.625,win,19,20.0
+trained,qmix,9.375,13.625,loss,26,0.5479452054794525
+trained,qplex,9.625,16.0,win,21,20.0
+trained,fop,10.5,19.25,draw,60,1.5890410958904106
+trained,qtran,8.75,13.0,win,24,20.0
+trained,qplex,9.875,16.5,win,20,20.0
+trained,coma,11.375,16.0,win,19,20.0
+trained,qmix,10.375,12.625,win,27,20.0
+trained,coma,11.25,14.75,win,18,20.0
+trained,qplex,8.125,19.25,win,24,20.0
+trained,coma,9.375,17.625,win,20,20.0
+trained,coma,8.125,13.125,win,25,20.0
+trained,coma,8.125,17.25,win,23,20.0
+trained,dop,8.75,13.0,win,23,20.0
+trained,iql,11.25,16.625,win,22,20.0
+trained,fop,10.625,17.0,win,20,20.0
+trained,qmix,9.5,19.25,win,26,19.999999999999996
+trained,fop,9.375,12.75,loss,27,1.5342465753424657
+trained,qplex,10.25,19.375,win,26,20.0
+trained,dop,10.25,19.375,win,20,20.0
+trained,vdn,11.375,16.5,win,17,20.0
+trained,fop,11.125,17.875,win,23,20.0
+trained,computer ai,8.875,18.875,win,20,20.0
+trained,iql,9.625,18.875,win,21,20.0
+trained,qtran,10.25,13.375,win,24,20.0
+trained,vdn,8.625,12.625,win,24,20.0
+trained,qmix,10.625,13.5,win,25,20.0
+trained,dop,8.75,14.875,win,24,20.0
+trained,computer ai,10.75,18.875,win,23,20.0
+trained,dop,8.75,12.5,win,27,20.0
+trained,fop,8.625,18.625,win,22,20.0
+trained,computer ai,8.75,18.875,win,23,20.0
+trained,qplex,10.875,14.75,win,24,20.0
+trained,qtran,8.125,18.625,win,24,20.0
+trained,iql,9.125,18.75,win,22,20.0
+trained,qmix,8.125,18.875,win,23,20.0
+trained,qplex,8.25,16.5,win,21,20.0
+trained,computer ai,9.125,13.75,win,23,20.0
+trained,computer ai,9.375,13.625,win,24,20.0
+trained,computer ai,9.0,14.625,win,21,20.0
+trained,dop,10.875,14.75,win,18,20.0
+trained,qmix,11.0,13.375,win,20,20.0
+trained,qtran,10.25,15.25,win,24,20.0
+trained,vdn,8.75,14.625,win,21,20.0
+trained,computer ai,10.375,19.5,win,20,20.0
+trained,coma,9.0,13.125,win,23,20.0
+trained,qtran,10.75,13.25,win,20,20.0
+trained,iql,9.0,13.125,win,26,20.0
+trained,coma,9.375,16.875,win,21,20.0
+trained,computer ai,8.125,19.25,win,22,20.0
+trained,qmix,9.0,17.25,win,22,20.0
+trained,qmix,10.875,15.0,win,20,20.0
+trained,qplex,9.375,18.625,win,22,20.0
+trained,coma,9.75,17.5,win,19,20.0
+trained,iql,10.5,15.875,loss,26,1.534246575342464
+trained,computer ai,10.875,19.125,win,23,20.0
+trained,dop,11.25,14.75,win,20,20.0
+trained,computer ai,9.625,18.125,win,20,20.0
+trained,vdn,11.125,17.875,win,20,20.0
+trained,qplex,10.5,14.875,win,19,20.0
+trained,qplex,10.75,14.625,win,21,20.0
+trained,computer ai,11.125,18.25,win,22,20.0
+trained,qtran,9.0,13.125,win,23,20.0
+trained,fop,10.75,19.0,win,18,20.0
+trained,qmix,9.375,17.625,win,23,20.0
+trained,qtran,8.125,18.875,loss,28,2.8493150684931488
+trained,dop,10.625,19.0,win,24,20.0
+trained,qplex,10.375,14.5,win,21,20.0
+trained,iql,9.375,18.625,win,24,20.0
+trained,computer ai,8.25,13.625,win,22,20.0
+trained,qplex,9.75,16.375,win,22,20.0
+trained,vdn,8.5,16.375,win,23,20.0
+trained,qtran,10.75,19.0,win,22,19.999999999999996
+trained,vdn,9.125,15.125,win,20,20.0
+trained,qplex,10.5,19.25,win,22,20.0
+trained,qmix,11.0,18.375,loss,24,0.8767123287671241
+trained,dop,9.125,13.0,win,24,20.0
+trained,dop,9.625,16.0,win,22,20.0
+trained,vdn,8.125,18.625,win,22,20.0
+trained,qmix,9.25,18.625,win,23,20.0
+trained,dop,8.0,16.25,win,22,20.0
+trained,vdn,8.25,13.625,win,22,20.0
+trained,vdn,9.0,14.625,win,21,20.0
+trained,qmix,10.25,13.375,win,26,20.0
+trained,qtran,11.25,17.375,win,21,20.0
+trained,qplex,8.75,18.375,win,24,20.0
+trained,qmix,8.625,12.625,win,22,20.0
+trained,qmix,11.125,19.125,win,21,20.0
+trained,computer ai,10.125,16.25,win,19,20.0
+trained,qplex,11.375,18.5,loss,28,2.849315068493147
+trained,qplex,11.375,17.125,win,21,20.0
+trained,fop,8.125,18.875,draw,60,3.2876712328767126
+trained,iql,9.75,16.375,win,21,20.0
+trained,computer ai,11.125,19.125,win,21,20.0
+trained,qplex,9.375,16.875,win,20,20.0
+trained,dop,9.5,14.875,win,19,20.0
+trained,vdn,10.375,19.5,win,23,20.0
+trained,fop,10.125,13.5,win,20,20.0
+trained,dop,8.625,17.125,win,21,20.0
+trained,computer ai,11.0,13.375,win,19,20.0
+trained,dop,11.0,13.375,win,19,20.0
+trained,computer ai,9.875,18.625,win,20,20.0
+trained,qmix,10.0,19.125,win,21,20.0
+trained,fop,9.625,16.0,win,21,20.0
+trained,qmix,9.625,14.125,win,28,20.0
+trained,vdn,9.375,16.875,win,20,20.0
+trained,iql,9.375,12.75,win,22,20.0
+trained,vdn,9.0,17.25,win,21,20.0
+trained,coma,8.25,15.375,win,24,20.0
+trained,vdn,11.375,19.25,win,20,20.0
+trained,iql,10.125,13.5,loss,26,0.5479452054794525
+trained,computer ai,8.25,16.5,win,25,19.999999999999996
+trained,dop,10.25,13.375,win,20,20.0
+trained,vdn,10.75,13.25,win,22,20.0
+trained,qplex,10.25,13.75,win,20,20.0
+trained,dop,9.5,19.25,win,27,20.0
+trained,coma,8.125,15.625,win,21,20.0
+trained,coma,8.75,18.375,win,21,20.0
+trained,dop,8.5,13.375,win,24,20.0
+trained,computer ai,9.75,18.25,win,22,20.0
+trained,computer ai,10.75,16.0,win,19,20.0
+trained,qplex,9.5,19.25,win,23,20.0
+trained,fop,10.875,15.5,win,25,20.0
+trained,computer ai,10.75,14.625,win,19,20.0
+trained,qplex,10.25,14.875,win,23,20.0
+trained,fop,9.25,18.625,loss,28,2.5205479452054798
+trained,qplex,9.625,14.125,loss,26,0.5479452054794516
+trained,dop,10.75,19.25,win,24,20.0
+trained,fop,9.375,18.625,win,20,20.0
+trained,dop,9.375,12.75,win,28,20.0
+trained,qtran,10.75,18.875,win,21,20.0
+trained,qtran,8.125,13.625,win,23,20.0
+trained,vdn,11.375,18.5,win,20,20.0
+trained,qmix,10.75,19.25,win,21,20.0
+trained,vdn,10.5,14.875,win,20,20.0
+trained,coma,10.625,13.5,win,22,19.999999999999996
+trained,qmix,9.875,19.125,win,24,20.0
+trained,qtran,11.125,18.25,win,21,20.0
+trained,qplex,10.375,19.375,win,22,20.0
+trained,vdn,8.625,17.125,win,21,19.999999999999996
+trained,iql,9.0,17.25,win,21,20.0
+trained,computer ai,8.125,13.625,win,22,20.0
+trained,dop,10.75,14.875,win,22,20.0
+trained,fop,8.0,16.25,win,25,20.0
+trained,iql,10.25,13.75,win,19,20.0
+trained,iql,11.375,17.125,win,23,20.0
+trained,qtran,8.75,15.625,win,20,20.0
+trained,vdn,11.0,19.125,win,18,20.0
+trained,computer ai,11.25,17.375,win,20,20.0
+trained,qmix,10.875,14.75,win,21,20.0
+trained,vdn,8.75,15.625,win,21,20.0
+trained,qplex,8.625,16.0,win,25,20.0
+trained,computer ai,8.125,18.875,win,22,20.0
+trained,coma,9.625,18.125,win,22,20.0
+trained,vdn,8.125,15.625,win,26,20.0
+trained,dop,11.0,14.375,loss,24,0.5479452054794507
+trained,qtran,10.375,14.5,win,20,20.0
+trained,computer ai,8.125,13.125,win,22,20.0
+trained,dop,9.875,19.125,win,22,20.0
+trained,qplex,10.75,18.875,win,20,20.0
+trained,qmix,10.75,18.875,win,24,20.0
+trained,computer ai,9.875,18.5,win,22,20.0
+trained,dop,9.875,15.125,win,25,20.0
+trained,iql,10.25,19.5,win,21,20.0
+trained,iql,8.125,18.625,win,22,20.0
+trained,vdn,8.25,18.125,win,21,20.0
+trained,vdn,8.125,18.875,win,22,20.0
+trained,qtran,9.25,18.375,win,27,19.999999999999996
+trained,fop,9.25,14.375,win,21,20.0
+trained,computer ai,11.375,18.5,win,18,20.0
+trained,computer ai,8.75,15.625,win,23,20.0
+trained,fop,9.25,17.75,win,22,20.0
+trained,vdn,9.5,14.875,win,19,20.0
+trained,fop,8.5,15.375,win,21,20.0
+trained,dop,11.375,13.875,win,19,20.0
+trained,coma,8.625,17.125,win,20,20.0
+trained,qtran,10.5,13.625,win,21,20.0
+trained,vdn,10.25,15.25,win,21,20.0
+trained,coma,8.5,15.25,win,21,20.0
+trained,fop,11.375,19.25,draw,60,3.6164383561643825
+trained,qtran,8.5,15.25,win,24,20.0
+trained,fop,8.75,15.625,win,23,20.0
+trained,coma,10.625,18.125,win,21,20.0
+trained,fop,9.875,16.5,win,19,20.0
+trained,qtran,11.375,16.0,win,18,20.0
+trained,qplex,8.125,17.25,win,23,20.0
+trained,iql,9.375,19.0,win,24,20.0
+trained,iql,8.125,18.875,win,26,20.0
+trained,vdn,8.375,18.0,win,21,20.0
+trained,computer ai,11.0,18.375,win,19,20.0
+trained,vdn,9.625,18.875,win,28,19.999999999999996
+trained,qtran,11.375,13.875,loss,20,0.5479452054794516
+trained,fop,11.375,18.5,win,22,20.0
+trained,vdn,10.625,18.875,win,22,20.0
+trained,vdn,10.625,13.5,win,21,19.999999999999996
+trained,qtran,10.25,19.5,win,23,20.0
+trained,qtran,8.75,18.875,win,24,20.0
+trained,qplex,8.75,18.875,win,22,20.0
+trained,vdn,8.5,16.125,win,23,20.0
+trained,qtran,9.5,17.375,win,27,20.0
+trained,computer ai,8.25,18.125,loss,27,0.5479452054794516
+trained,computer ai,8.0,16.25,loss,25,0.8767123287671241
+trained,computer ai,9.125,18.75,win,20,20.0
+trained,iql,8.25,13.0,win,23,20.0
+trained,qplex,9.5,17.375,win,21,20.0
+trained,fop,9.5,17.375,win,23,20.0
+trained,fop,9.125,17.5,win,22,20.0
+trained,qplex,9.875,12.625,win,24,20.0
+trained,qtran,10.875,14.75,win,19,20.0
+trained,qtran,11.125,17.875,win,20,20.0
+trained,qmix,11.5,14.25,win,21,20.0
+trained,qplex,10.5,12.875,win,20,20.0
+trained,qtran,8.625,14.25,win,21,20.0
+trained,computer ai,8.625,17.125,win,23,20.0
+trained,fop,9.0,13.125,win,21,20.0
+trained,iql,9.125,13.75,win,22,20.0
+trained,iql,9.125,15.125,win,19,20.0
+trained,computer ai,10.625,18.125,win,23,20.0
+trained,vdn,9.25,17.75,win,20,20.0
+trained,fop,9.375,19.0,draw,60,3.2876712328767117
+trained,qmix,8.875,16.25,win,26,20.0
+trained,qplex,11.375,19.25,win,22,20.0
+trained,computer ai,9.125,13.0,win,24,20.0
+trained,qplex,8.125,13.625,win,25,20.0
+trained,fop,9.375,16.875,win,21,20.0
+trained,coma,9.75,18.25,win,21,20.0
+trained,coma,11.0,14.375,win,20,20.0
+trained,dop,10.75,18.875,loss,27,0.8767123287671241
+trained,fop,8.75,13.0,win,27,20.0
+trained,qplex,11.375,16.0,win,18,20.0
+trained,qplex,10.125,18.75,win,21,20.0
+trained,qtran,10.25,13.75,win,22,20.0
+trained,iql,9.875,12.625,win,25,19.999999999999996
+trained,qtran,10.625,17.125,win,22,20.0
+trained,vdn,10.75,18.875,win,20,20.0
+trained,dop,8.875,16.25,win,23,20.0
+trained,vdn,9.875,18.5,win,20,20.0
+trained,coma,10.875,19.125,win,24,20.0
+trained,qmix,9.875,18.625,win,22,20.0
+trained,qmix,8.625,14.25,win,23,20.0
+trained,qmix,10.75,19.375,draw,60,3.2876712328767126
+trained,vdn,8.5,15.25,win,22,20.0
+trained,qplex,9.125,15.375,win,21,20.0
+trained,dop,8.5,16.375,win,24,19.999999999999996
+trained,dop,10.5,13.125,win,22,20.0
+trained,iql,8.5,14.375,win,23,19.999999999999996
+trained,dop,11.125,13.5,win,21,20.0
+trained,qmix,10.5,12.875,win,21,20.0
+trained,dop,10.75,16.0,win,20,20.0
+trained,qtran,10.5,15.375,win,20,20.0
+trained,fop,11.0,14.125,win,21,20.0
+trained,qplex,8.625,17.125,win,22,20.0
+trained,vdn,10.25,19.375,loss,27,2.8493150684931488
+trained,qtran,11.0,14.375,win,22,20.0
+trained,computer ai,9.125,15.375,win,21,20.0
+trained,vdn,11.125,13.5,win,21,20.0
+trained,iql,9.5,14.875,win,21,20.0
+trained,computer ai,8.5,15.25,win,22,20.0
+trained,fop,9.25,18.5,win,21,20.0
+trained,iql,10.75,19.25,loss,32,0.5479452054794507
+trained,qplex,8.375,18.0,win,23,20.0
+trained,fop,8.125,13.125,win,22,20.0
+trained,iql,8.125,13.625,win,25,20.0
+trained,fop,9.875,19.125,win,24,20.0
+trained,iql,9.875,14.875,win,21,20.0
+trained,iql,9.375,17.625,win,20,20.0
+trained,qtran,10.5,13.125,win,22,20.0
+trained,coma,10.0,18.625,win,20,20.0
+trained,qtran,9.375,18.625,win,23,20.0
+trained,qtran,8.75,12.5,win,21,20.0
+trained,qmix,8.75,14.875,win,22,20.0
+trained,qplex,9.625,18.875,win,20,20.0
+trained,qmix,8.5,13.25,draw,60,3.945205479452054
+trained,vdn,10.5,13.125,win,22,20.0
+trained,qplex,8.75,14.625,win,23,20.0
+trained,fop,8.75,18.375,win,23,20.0
+trained,qplex,9.0,14.625,win,23,20.0
+trained,coma,8.5,13.25,win,21,20.0
+trained,qmix,9.875,14.875,win,22,20.0
+trained,coma,8.625,12.625,win,23,20.0
+trained,iql,8.125,13.25,win,23,20.0
+trained,computer ai,10.375,12.625,win,26,20.0
+trained,coma,9.25,18.5,win,22,20.0
+trained,dop,11.0,18.375,win,24,20.0
+trained,vdn,10.625,17.125,win,19,20.0
+trained,qplex,8.75,12.5,win,22,20.0
+trained,qtran,9.875,16.5,win,22,20.0
+trained,dop,8.125,18.625,win,21,20.0
+trained,vdn,8.75,12.5,win,25,20.0
+trained,qplex,9.875,18.625,win,19,20.0
+trained,coma,9.125,17.5,win,25,20.0
+trained,qplex,9.375,12.75,win,23,20.0
+trained,qmix,10.125,16.25,win,21,20.0
+trained,qmix,11.25,14.75,win,19,20.0
+trained,computer ai,9.375,17.625,win,22,20.0
+trained,qmix,11.375,16.0,win,21,20.0
+trained,qtran,9.375,17.625,win,21,20.0
+trained,qmix,8.5,17.625,win,23,20.0
+trained,iql,8.125,17.25,win,27,19.999999999999996
+trained,fop,10.25,19.375,win,20,20.0
+trained,computer ai,10.5,14.875,win,20,20.0
+trained,dop,10.625,17.125,win,22,20.0
+trained,qmix,8.125,18.625,win,23,20.0
+trained,qmix,9.5,15.125,win,22,20.0
+trained,iql,8.75,14.625,win,22,20.0
+trained,vdn,10.5,15.875,win,20,20.0
+trained,coma,10.25,15.25,win,19,20.0
+trained,fop,8.125,18.625,loss,33,0.5479452054794525
+trained,qplex,10.625,18.125,win,22,20.0
+trained,dop,10.25,15.25,win,21,20.0
+trained,qmix,11.0,14.125,win,24,20.0
+trained,fop,11.125,18.25,win,18,20.0
+trained,qtran,10.75,16.0,win,22,20.0
+trained,computer ai,9.875,12.625,win,20,20.0
+trained,vdn,11.375,13.875,win,22,20.0
+trained,vdn,9.125,17.5,win,20,20.0
+trained,iql,9.25,18.5,win,23,20.0
+trained,qtran,10.625,13.5,win,21,20.0
+trained,iql,9.125,17.5,win,21,20.0
+trained,coma,8.75,14.625,win,20,20.0
+trained,computer ai,10.875,14.75,win,18,20.0
+trained,vdn,10.5,19.25,win,21,20.0
+trained,qtran,10.375,19.5,win,25,19.999999999999996
+trained,qtran,9.5,15.125,win,22,20.0
+trained,qplex,8.25,15.375,win,23,20.0
+trained,coma,9.375,19.0,win,21,20.0
+trained,vdn,8.0,16.25,win,21,20.0
+trained,coma,8.125,18.625,win,25,20.0
+trained,qplex,10.625,13.5,win,21,20.0
+trained,vdn,10.125,16.25,win,20,20.0
+trained,qplex,9.25,18.5,win,25,20.0
+trained,qmix,9.75,13.625,draw,60,3.2876712328767117
+trained,coma,8.125,18.875,win,23,20.0
+trained,dop,11.375,16.0,win,21,20.0
+trained,qtran,11.25,14.75,win,20,20.0
+trained,coma,10.75,19.25,win,21,20.0
+trained,computer ai,10.25,14.875,win,21,20.0
+trained,fop,10.25,15.25,win,23,20.0
+trained,qmix,8.25,18.125,win,26,20.0
+trained,coma,9.0,13.625,win,24,20.0
+trained,computer ai,8.875,16.25,win,22,20.0
+trained,computer ai,8.5,17.625,win,21,20.0
+trained,fop,9.875,12.625,loss,27,2.1917808219178054
+trained,qtran,8.5,13.25,win,21,20.0
+trained,qmix,11.0,14.375,win,21,20.0
+trained,qmix,10.75,14.875,win,22,20.0
+trained,coma,11.375,16.5,win,19,20.0
+trained,computer ai,8.0,19.25,win,22,20.0
+trained,fop,8.875,18.875,win,22,20.0
+trained,coma,11.0,14.125,win,19,20.0
+trained,fop,11.25,16.625,win,20,20.0
+trained,vdn,10.625,17.0,win,20,20.0
+trained,qplex,8.5,15.375,win,23,20.0
+trained,dop,9.25,14.375,win,21,20.0
+trained,fop,9.25,18.375,win,20,20.0
+trained,iql,11.125,17.875,win,20,20.0
+trained,computer ai,8.75,14.625,win,22,20.0
+trained,dop,8.125,19.25,win,25,19.999999999999996
+trained,dop,10.75,14.625,win,24,20.0
+trained,qplex,10.875,15.0,win,23,20.0
+trained,qtran,11.5,14.25,win,22,20.0
+trained,coma,8.25,18.125,win,27,19.999999999999996
+trained,computer ai,9.875,19.125,win,20,20.0
+trained,iql,9.375,16.875,win,20,20.0
+trained,dop,8.25,13.0,win,24,20.0
+trained,vdn,9.75,18.25,win,20,20.0
+trained,qmix,8.25,16.5,win,21,20.0
+trained,iql,9.625,14.125,win,21,20.0
+trained,iql,8.75,15.625,win,28,20.0
+trained,computer ai,8.125,15.625,win,23,20.0
+trained,coma,8.5,13.375,win,26,19.999999999999996
+trained,qtran,8.25,18.125,win,24,19.999999999999996
+trained,dop,11.375,16.5,win,21,19.999999999999996
+trained,dop,8.25,15.375,win,24,20.0
+trained,qplex,8.0,19.25,loss,29,1.534246575342464
+trained,coma,8.5,16.375,win,25,20.0
+trained,qplex,10.5,15.875,win,20,20.0
+trained,qmix,9.625,16.0,win,21,20.0
+trained,vdn,11.375,16.0,win,18,20.0
+trained,qtran,9.75,13.625,win,25,20.0
+trained,iql,10.5,13.125,draw,60,3.945205479452055
+trained,qtran,8.125,19.25,win,23,20.0
+trained,qplex,11.125,13.5,win,18,20.0
+trained,coma,8.25,14.375,win,21,20.0
+trained,iql,10.125,18.75,win,22,20.0
+trained,computer ai,8.125,17.5,win,26,20.0
+trained,computer ai,8.25,13.0,win,23,20.0
+trained,iql,9.0,13.625,win,23,19.999999999999996
+trained,dop,8.5,17.625,loss,26,0.5479452054794525
+trained,fop,9.0,13.625,win,25,20.0
+trained,coma,9.125,15.125,win,19,20.0
+trained,coma,9.5,17.375,win,22,20.0
+trained,fop,11.25,17.375,win,20,20.0
+trained,iql,8.5,15.25,win,26,20.0
+trained,qtran,10.875,15.5,win,19,20.0
+trained,qplex,9.125,17.5,win,20,20.0
+trained,iql,9.5,15.125,win,20,20.0
+trained,iql,10.25,14.875,win,23,20.0
+trained,qplex,10.5,13.625,win,21,20.0
+trained,dop,9.375,13.625,win,21,20.0
+trained,computer ai,8.125,17.25,win,22,20.0
+trained,fop,9.875,14.875,win,20,20.0
+trained,computer ai,9.25,16.375,win,21,20.0
+trained,qplex,11.5,14.25,win,22,20.0
+trained,coma,9.625,16.0,win,22,20.0
+trained,computer ai,8.5,16.375,win,21,20.0
+trained,fop,11.375,16.0,win,18,20.0
+trained,iql,9.75,18.25,win,22,20.0
+trained,vdn,10.125,13.5,win,21,20.0
+trained,qplex,8.5,16.125,win,22,20.0
+trained,fop,8.5,16.375,win,22,20.0
+trained,qmix,11.375,16.5,win,18,20.0
+trained,fop,8.25,15.375,win,21,20.0
+trained,qplex,10.75,16.0,win,21,20.0
+trained,vdn,8.875,16.25,win,20,20.0
+trained,vdn,10.25,14.875,win,19,20.0
+trained,computer ai,10.625,17.0,win,19,20.0
+trained,computer ai,8.5,13.25,win,21,20.0
+trained,computer ai,10.0,13.75,win,23,20.0
+trained,vdn,8.25,15.375,win,22,20.0
+trained,iql,9.25,17.75,win,21,20.0
+trained,coma,8.875,18.875,win,23,20.0
+trained,coma,11.125,17.875,loss,24,2.8493150684931505
+trained,iql,10.625,19.0,win,20,20.0
+trained,qmix,9.875,16.5,win,20,20.0
+trained,fop,10.625,17.125,win,21,20.0
+trained,iql,10.5,14.875,win,20,20.0
+trained,fop,10.5,13.625,loss,27,1.534246575342464
+trained,computer ai,9.0,17.25,win,24,20.0
+trained,fop,10.5,13.125,win,22,20.0
+trained,qtran,8.125,13.25,win,23,20.0
+trained,coma,10.25,19.5,win,18,20.0
+trained,iql,9.5,19.25,win,21,20.0
+trained,coma,9.625,18.875,win,20,20.0
+trained,qtran,8.5,13.375,win,21,20.0
+trained,qplex,10.0,18.625,win,29,20.0
+trained,fop,8.5,13.375,win,22,20.0
+trained,dop,10.5,19.25,win,20,20.0
+trained,iql,11.5,14.25,win,18,20.0
+trained,qtran,8.0,19.25,win,26,20.0
+trained,computer ai,10.5,13.125,win,19,20.0
+trained,qplex,9.5,14.875,win,19,20.0
+trained,computer ai,10.75,14.875,win,22,20.0
+trained,qmix,9.125,13.0,win,29,20.0
+trained,qtran,8.125,17.25,win,23,20.0
+trained,qmix,10.0,13.75,win,23,20.0
+trained,iql,9.875,18.5,win,21,20.0
+trained,fop,9.125,15.125,win,21,20.0
+trained,qplex,8.25,14.375,win,23,20.0
+trained,coma,10.0,13.75,win,22,20.0
+trained,vdn,10.375,14.5,win,20,20.0
+trained,computer ai,9.625,14.125,win,21,20.0
+trained,qmix,8.25,14.375,win,22,20.0
+trained,qtran,10.75,14.625,win,21,20.0
+trained,iql,9.75,17.5,win,24,20.0
+trained,fop,10.5,15.875,win,21,20.0
+trained,coma,10.25,19.375,win,27,20.0
+trained,vdn,9.5,17.375,win,20,20.0
+trained,qtran,9.125,15.375,win,21,20.0
+trained,iql,11.0,13.375,win,21,20.0
+trained,vdn,10.5,13.625,win,20,20.0
+trained,qtran,10.125,18.75,loss,25,0.5479452054794525
+trained,vdn,10.5,12.875,win,21,20.0
+trained,qmix,8.75,12.5,win,21,20.0
+trained,fop,10.875,19.125,win,20,20.0
+trained,qplex,9.75,13.625,loss,28,1.534246575342464
+trained,vdn,10.0,13.75,win,20,20.0
+trained,vdn,9.625,16.0,win,22,20.0
+trained,vdn,8.125,19.25,win,25,20.0
+trained,iql,8.75,14.875,win,20,20.0
+trained,iql,9.75,13.625,win,20,20.0
+trained,dop,8.125,13.125,win,28,20.0
+trained,vdn,9.5,15.125,win,21,20.0
+trained,dop,10.625,17.625,win,21,20.0
+trained,qplex,10.75,19.0,win,20,20.0
+trained,qplex,8.5,17.625,win,25,20.0
+trained,coma,9.875,15.125,win,22,20.0
+trained,qmix,9.125,15.125,win,22,20.0
+trained,fop,8.5,15.25,win,20,20.0
+trained,dop,9.875,16.5,win,24,20.0
+trained,iql,8.75,18.875,win,22,20.0
+trained,vdn,10.875,15.0,win,20,20.0
+trained,coma,10.375,14.5,win,21,20.0
+trained,iql,10.75,16.0,win,20,20.0
+trained,dop,11.25,17.375,win,24,20.0
+trained,iql,11.125,13.5,loss,29,0.8767123287671241
+trained,computer ai,11.125,17.875,win,24,20.0
+trained,fop,9.375,13.625,loss,34,0.8767123287671224
+trained,iql,9.25,14.375,win,21,20.0
+trained,dop,8.125,13.625,win,26,20.0
+trained,fop,10.25,19.5,win,22,20.0
+trained,iql,10.25,19.375,win,20,20.0
+trained,qmix,10.875,19.125,win,20,20.0
+trained,dop,9.875,12.625,win,22,20.0
+trained,qtran,9.875,12.625,win,24,20.0
+trained,vdn,10.125,18.75,win,21,20.0
+trained,iql,10.5,19.25,win,27,20.0
+trained,qmix,9.375,12.75,win,23,20.0
+trained,fop,9.625,18.875,loss,31,1.205479452054795
+trained,vdn,8.125,13.625,win,23,20.0
+trained,iql,8.625,16.0,win,25,20.0
+trained,dop,9.375,18.625,win,22,20.0
+trained,computer ai,10.5,15.375,win,21,20.0
+trained,coma,10.75,13.25,win,20,20.0
+trained,qplex,10.75,13.25,win,18,20.0
+trained,dop,10.875,15.5,win,19,20.0
+trained,dop,8.25,16.5,win,22,20.0
+trained,qplex,9.875,18.5,win,25,20.0
+trained,computer ai,10.375,19.375,win,19,20.0
+trained,coma,11.25,17.375,win,20,20.0
+trained,qplex,8.75,18.0,win,22,20.0
+trained,qmix,10.5,15.875,win,20,20.0
+trained,qmix,8.25,13.625,draw,60,3.2876712328767126
+trained,iql,8.625,12.625,win,26,20.0
+trained,qmix,8.625,16.0,win,22,20.0
+trained,coma,9.25,17.75,win,23,20.0
+trained,vdn,8.125,17.25,win,20,20.0
+trained,vdn,8.5,13.375,win,22,20.0
+trained,qplex,10.75,19.375,draw,60,1.5890410958904106
+trained,qtran,10.5,19.25,win,27,20.0
+trained,iql,8.25,14.375,loss,28,2.8493150684931488
+trained,qplex,8.875,16.25,win,21,20.0
+trained,qplex,10.75,14.875,win,20,20.0
+trained,fop,9.625,18.125,loss,23,0.5479452054794525
+trained,computer ai,10.75,19.25,win,19,20.0
+trained,computer ai,9.375,12.75,win,21,20.0
+trained,iql,10.75,18.875,win,21,20.0
+trained,iql,10.125,16.25,win,19,20.0
+trained,qtran,10.625,17.625,win,21,20.0
+trained,qmix,9.875,12.625,loss,31,0.8767123287671224
+trained,fop,10.625,18.875,win,20,20.0
+trained,iql,8.25,18.125,loss,33,0.5479452054794507
+trained,dop,10.625,17.0,win,20,20.0
+trained,qmix,10.125,13.5,win,21,20.0
+trained,fop,8.25,15.125,win,23,20.0
+trained,fop,10.25,13.375,win,21,20.0
+trained,dop,9.375,16.875,win,23,20.0
+trained,qmix,9.0,14.625,win,22,20.0
+trained,vdn,9.0,13.125,win,24,19.999999999999996
+trained,coma,11.0,18.375,win,21,20.0
+trained,fop,8.875,16.25,win,24,20.0
+trained,computer ai,8.75,12.5,win,26,20.0
+trained,dop,9.125,15.375,win,23,20.0
+trained,fop,9.75,16.375,win,20,20.0
+trained,qtran,11.375,19.25,win,26,20.0
+trained,coma,8.0,16.25,win,25,19.999999999999996
+trained,coma,8.375,18.0,win,22,20.0
+trained,qplex,8.125,13.25,draw,60,3.287671232876711
+trained,qmix,9.75,18.25,win,25,20.0
+trained,fop,9.375,17.625,win,23,19.999999999999996
+trained,dop,8.5,13.25,win,21,20.0
+trained,qplex,8.0,16.25,win,21,20.0
+trained,iql,11.125,19.125,win,19,20.0
+trained,vdn,8.125,13.125,win,22,20.0
+trained,qtran,9.125,13.0,win,21,20.0
+trained,dop,10.25,13.75,loss,31,2.1917808219178054
+trained,computer ai,8.75,18.0,win,22,20.0
+trained,iql,9.5,17.375,win,21,20.0
+trained,iql,8.125,19.25,win,26,20.0
+trained,iql,10.625,17.625,win,20,20.0
+trained,coma,11.375,18.5,win,18,20.0
+trained,iql,8.875,18.875,win,21,20.0
+trained,dop,10.5,12.875,win,23,20.0
+trained,fop,8.625,14.25,win,22,20.0
+trained,dop,10.125,18.75,win,24,20.0
+trained,qplex,9.25,16.375,win,22,20.0
+trained,computer ai,9.5,17.375,win,21,20.0
+trained,coma,8.0,19.25,win,28,20.0
+trained,vdn,9.875,19.125,loss,25,2.191780821917807
+trained,qtran,8.875,16.25,loss,24,0.5479452054794525
+trained,qmix,10.125,18.75,win,25,20.0
+trained,dop,11.125,18.25,win,24,20.0
+trained,coma,8.5,14.375,win,22,20.0
+trained,fop,10.875,15.0,win,20,20.0
+trained,computer ai,8.75,18.375,win,20,20.0
+trained,iql,8.25,15.375,win,23,20.0
+trained,iql,10.875,14.75,win,22,20.0
+trained,computer ai,8.625,18.625,win,26,20.0
+trained,coma,8.5,17.625,win,22,20.0
+trained,coma,10.125,16.25,win,24,20.0
+trained,computer ai,8.5,13.375,win,27,20.0
+trained,qmix,9.75,16.375,win,20,20.0
+trained,coma,10.625,17.125,win,26,20.0
+trained,fop,9.875,18.5,loss,27,1.8630136986301364
+trained,iql,10.625,18.125,win,22,20.0
+trained,vdn,10.75,14.875,win,18,20.0
+trained,vdn,8.5,13.25,win,30,19.999999999999996
+trained,fop,8.25,14.375,win,22,20.0
+trained,qplex,8.25,13.625,win,23,20.0
+trained,dop,9.625,14.125,win,22,20.0
+trained,coma,10.75,14.625,win,21,20.0
+trained,qtran,8.625,16.0,win,21,20.0
+trained,qtran,9.625,14.125,win,22,20.0
+trained,qplex,8.75,15.625,win,21,20.0
+trained,iql,10.0,18.625,win,27,19.999999999999996
+trained,coma,8.125,13.25,win,23,20.0
+trained,qtran,9.5,19.25,loss,53,0.5479452054794507
+trained,qmix,9.125,18.75,win,25,20.0
+trained,computer ai,10.0,19.125,win,22,20.0
+trained,qmix,8.75,14.625,win,23,20.0
+trained,qplex,10.625,18.875,win,23,20.0
+trained,coma,11.125,18.25,win,17,20.0
+trained,qtran,8.0,16.25,win,22,20.0
+trained,vdn,8.75,18.375,win,22,20.0
+trained,coma,9.125,13.75,win,24,20.0
+trained,coma,9.5,19.25,win,27,20.0
+trained,qmix,9.875,18.5,win,24,19.999999999999996
+trained,qtran,9.875,18.625,win,22,20.0
+trained,coma,10.25,13.75,win,19,20.0
+trained,qplex,11.125,18.25,win,22,20.0
+trained,coma,10.875,15.0,win,22,20.0
+trained,vdn,10.75,19.25,win,20,20.0
+trained,fop,10.375,19.375,loss,30,0.5479452054794525
+trained,qplex,11.0,14.125,win,18,20.0
+trained,qtran,11.375,18.5,win,22,20.0
+trained,iql,11.0,19.125,win,21,20.0
+trained,coma,8.75,12.5,win,21,20.0
+trained,iql,11.25,17.375,win,25,20.0
+trained,qmix,8.25,13.0,win,23,20.0
+trained,qplex,8.875,18.875,win,24,20.0
+trained,dop,11.125,17.875,win,19,20.0
+trained,dop,8.125,15.625,win,26,20.0
+trained,vdn,9.125,18.75,win,22,20.0
+trained,fop,8.625,16.0,win,28,19.999999999999996
+trained,vdn,10.875,15.5,win,20,20.0
+trained,coma,9.875,18.625,win,23,20.0
+trained,fop,10.75,14.625,loss,29,0.5479452054794516
+trained,vdn,10.25,19.5,win,21,20.0
+trained,computer ai,10.625,19.0,win,19,20.0
+trained,vdn,9.875,18.625,win,21,20.0
+trained,qmix,9.25,18.5,win,25,20.0
+trained,computer ai,8.625,14.25,win,20,20.0
+trained,qplex,10.75,19.25,win,20,20.0
+trained,coma,9.0,14.625,win,22,20.0
+trained,iql,9.875,18.625,win,21,20.0
+trained,vdn,10.0,18.625,win,21,20.0
+trained,dop,9.25,16.375,win,20,20.0
+trained,fop,8.125,13.25,win,27,20.0
+trained,coma,10.5,15.375,win,20,20.0
+trained,dop,10.375,19.375,win,21,20.0
+trained,vdn,11.25,16.625,win,17,20.0
+trained,qtran,9.625,18.875,win,22,20.0
+trained,fop,10.625,19.0,loss,24,0.5479452054794507
+trained,qtran,9.25,17.75,win,23,20.0
+trained,qmix,10.75,13.25,win,23,20.0
+trained,qtran,10.625,18.125,loss,25,1.205479452054795
+trained,fop,11.0,14.375,win,19,20.0
+trained,coma,10.25,13.375,loss,30,0.5479452054794516
+trained,qmix,9.25,14.375,loss,28,2.849315068493147
+trained,iql,8.5,17.625,win,21,20.0
+trained,dop,10.375,19.5,win,18,20.0
+trained,vdn,10.875,14.75,win,20,20.0
+trained,qtran,9.625,18.125,win,19,20.0
+trained,dop,10.25,14.875,win,20,20.0
+trained,iql,8.75,12.5,win,23,20.0
+trained,computer ai,9.125,17.5,win,20,20.0
+trained,iql,8.5,16.125,win,21,20.0
+trained,coma,11.0,13.375,win,20,20.0
+trained,qmix,11.125,13.5,win,18,20.0
+trained,qmix,8.75,18.0,win,22,20.0
+trained,computer ai,11.0,14.125,win,20,20.0
+trained,computer ai,8.5,14.375,win,22,20.0
+trained,computer ai,8.625,12.625,win,26,20.0
+trained,coma,8.5,15.375,win,22,20.0
+trained,qplex,9.875,15.125,win,20,20.0
+trained,qplex,8.625,14.25,win,21,20.0
+trained,qplex,10.625,17.125,win,20,20.0
+trained,qplex,8.125,18.875,win,24,20.0
+trained,dop,9.875,14.875,win,23,20.0
+trained,qtran,11.375,17.125,win,20,20.0
+trained,qplex,10.875,15.5,win,20,20.0
+trained,coma,9.875,12.625,win,23,20.0
+trained,dop,10.625,18.875,loss,23,0.5479452054794507
+trained,qplex,8.125,17.5,win,22,20.0
+trained,iql,9.25,16.375,win,21,19.999999999999996
+trained,fop,10.0,18.625,win,23,20.0
+trained,vdn,10.75,14.625,win,19,20.0
+trained,qplex,9.0,13.125,win,21,20.0
+trained,fop,10.375,12.625,win,20,20.0
+trained,qmix,8.125,13.25,win,23,20.0
+trained,coma,8.5,16.125,win,23,20.0
+trained,computer ai,8.5,15.375,win,24,20.0
+trained,dop,10.75,19.375,win,20,20.0
+trained,computer ai,9.25,18.5,win,20,20.0
+trained,qmix,8.25,15.125,win,25,20.0
+trained,coma,10.5,19.25,win,24,20.0
+trained,iql,10.25,13.375,win,24,20.0
+trained,fop,9.875,15.125,win,22,20.0
+trained,dop,8.25,15.125,win,24,20.0
+trained,qtran,9.25,18.5,win,23,20.0
+trained,fop,8.75,14.625,win,22,20.0
+trained,computer ai,11.125,13.5,win,19,20.0
+trained,qplex,9.25,14.375,win,24,20.0
+trained,qmix,11.375,18.5,win,19,20.0
+trained,qplex,11.125,19.125,win,19,20.0
+trained,qtran,10.25,19.375,win,24,20.0
+trained,qplex,10.25,15.25,win,21,20.0
+trained,iql,10.625,17.125,win,23,20.0
+trained,qmix,8.625,17.125,win,21,20.0
+trained,coma,10.625,17.0,win,28,20.0
+trained,qtran,11.0,14.125,win,21,20.0
+trained,coma,9.0,17.25,win,20,20.0
+trained,coma,11.375,19.25,win,21,20.0
+trained,dop,9.5,15.125,win,21,20.0
+trained,vdn,8.25,15.125,win,25,20.0
+trained,coma,10.625,17.625,win,20,20.0
+trained,fop,11.5,14.25,win,24,20.0
+trained,vdn,10.875,19.125,win,19,20.0
+trained,qplex,8.5,13.25,win,26,20.0
+trained,dop,9.0,13.625,win,24,20.0
+trained,computer ai,8.125,18.625,win,23,20.0
+trained,qmix,11.375,17.125,win,21,20.0
+trained,qmix,10.5,19.25,win,19,20.0
+trained,fop,8.75,18.0,win,23,20.0
+trained,computer ai,10.5,13.625,win,20,20.0
+trained,iql,9.875,15.125,win,21,20.0
+trained,dop,8.0,19.25,loss,30,1.534246575342464
+trained,coma,8.25,13.625,win,26,20.0
+trained,qmix,10.75,16.0,win,21,20.0
+trained,dop,8.75,14.625,win,21,20.0
+trained,iql,9.625,18.125,win,21,20.0
+trained,coma,9.375,13.625,win,21,20.0
+trained,qplex,8.25,15.125,win,21,20.0
+trained,qmix,10.5,13.125,win,25,20.0
+trained,qmix,10.625,18.875,win,21,20.0
+trained,dop,8.125,17.5,win,22,20.0
+trained,iql,10.625,18.875,win,23,20.0
+trained,coma,9.375,12.75,win,25,20.0
+trained,qtran,10.875,15.0,win,22,20.0
+trained,coma,9.875,14.875,win,21,20.0
+trained,dop,9.625,18.125,win,19,20.0
+trained,qmix,11.0,19.125,win,22,20.0
+trained,qplex,8.5,14.375,win,22,20.0
+trained,vdn,8.75,13.0,win,21,20.0
+trained,iql,10.75,14.625,win,19,20.0
+trained,qplex,11.0,14.375,win,19,20.0
+trained,qplex,8.75,13.0,win,21,20.0
+trained,computer ai,10.375,14.5,win,21,20.0
+trained,qtran,8.25,16.5,win,21,19.999999999999996
+trained,qtran,8.5,17.625,win,24,20.0
+trained,qmix,11.25,16.625,win,25,20.0
+trained,qtran,10.75,19.375,win,20,20.0
+trained,dop,9.875,18.625,win,23,19.999999999999996
+trained,qmix,9.375,16.875,win,21,20.0
+trained,computer ai,9.625,18.875,win,22,19.999999999999996
+trained,qplex,9.25,18.625,win,25,19.999999999999996
+trained,dop,9.0,17.25,win,23,20.0
+trained,fop,10.0,19.125,win,27,20.0
+trained,vdn,8.75,18.875,win,24,20.0
+trained,qplex,8.125,15.625,win,22,20.0
+trained,coma,10.5,14.875,win,22,20.0
+trained,coma,8.25,13.0,win,23,20.0
+trained,qtran,10.5,12.875,win,22,20.0
+trained,vdn,9.875,14.875,win,20,20.0
+trained,dop,11.5,14.25,win,21,20.0
+trained,qplex,8.5,13.375,win,23,20.0
+trained,qplex,8.125,18.625,win,25,20.0
+trained,fop,9.875,18.625,win,25,20.0
+trained,computer ai,10.25,19.375,loss,19,0.5479452054794516
+trained,computer ai,11.25,16.625,win,20,20.0
+trained,fop,9.75,18.25,win,25,20.0
+trained,qtran,8.25,13.625,win,22,20.0
+trained,computer ai,8.5,16.125,win,21,20.0
+trained,coma,10.75,18.875,win,20,20.0
+trained,qplex,11.375,16.5,win,18,20.0
+trained,coma,10.75,19.375,win,20,20.0
+trained,dop,8.25,18.125,win,27,20.0
+trained,qplex,11.0,19.125,win,21,20.0
+trained,qplex,8.5,16.375,win,22,20.0
+trained,qmix,10.5,15.375,loss,22,1.2054794520547931
+trained,coma,10.75,14.875,win,18,19.999999999999996
+trained,coma,8.75,18.875,win,20,20.0
+trained,coma,9.75,13.625,win,25,20.0
+trained,qmix,10.5,14.875,win,18,20.0
+trained,vdn,10.5,15.375,win,21,20.0
+trained,iql,8.25,15.125,win,21,20.0
+trained,qmix,10.375,19.375,win,20,20.0
+trained,qmix,8.0,16.25,win,24,20.0
+trained,coma,11.5,14.25,win,19,20.0
+trained,qplex,8.625,12.625,draw,60,3.2876712328767117
+trained,iql,10.375,14.5,win,20,20.0
+trained,iql,10.875,15.5,win,20,20.0
+trained,qtran,10.5,15.875,win,20,20.0
+trained,dop,11.125,19.125,win,20,20.0
+trained,fop,10.5,15.375,win,21,20.0
+trained,coma,10.5,12.875,win,21,20.0
+trained,qmix,10.625,19.0,win,19,20.0
+trained,coma,10.375,19.5,win,23,20.0
+trained,fop,9.625,14.125,win,24,20.0
+trained,qtran,8.875,18.875,win,29,20.0
+trained,vdn,8.125,17.5,win,21,20.0
+trained,vdn,10.375,19.375,win,20,20.0
+trained,dop,10.5,13.625,win,22,20.0
+trained,computer ai,9.0,13.625,win,22,20.0
+trained,qmix,11.125,18.25,win,24,20.0
+trained,qtran,11.0,19.125,win,21,20.0
+trained,vdn,11.25,14.75,win,20,20.0
+trained,qmix,10.0,18.625,win,27,20.0
+trained,fop,9.125,15.375,win,20,20.0
+trained,coma,10.125,13.5,win,22,20.0
+trained,coma,10.5,13.625,win,20,20.0
+trained,dop,10.0,13.75,win,19,20.0
+trained,qtran,9.0,14.625,win,22,20.0
+trained,iql,8.25,16.5,win,22,20.0
+trained,coma,9.875,19.125,win,23,20.0
+trained,coma,10.75,19.0,win,22,20.0
+trained,coma,8.25,15.125,win,22,20.0
+trained,dop,9.125,18.75,win,24,20.0
+trained,qmix,8.125,17.5,win,21,20.0
+trained,dop,8.5,15.375,win,22,20.0
+trained,qplex,9.25,18.375,win,21,20.0
+trained,qtran,9.375,12.75,win,23,20.0
+trained,qmix,9.125,13.75,win,21,20.0
+trained,coma,10.625,18.875,win,20,20.0
+trained,iql,9.125,15.375,win,21,20.0
+trained,iql,11.0,14.375,win,21,20.0
+trained,dop,10.75,19.0,win,24,20.0
+trained,iql,8.75,18.375,win,26,20.0
+trained,qtran,9.875,15.125,win,20,20.0
+trained,qtran,11.0,18.375,win,21,20.0
+trained,vdn,9.375,19.0,win,22,20.0
+trained,coma,9.875,16.5,win,20,20.0
+trained,fop,11.125,19.125,win,19,20.0
+trained,qtran,8.625,17.125,win,20,20.0
+trained,qtran,8.125,17.5,win,27,20.0
+trained,fop,8.5,16.125,win,26,20.0
+trained,coma,11.0,19.125,win,20,20.0
+trained,coma,9.625,14.125,win,19,20.0
+trained,qtran,8.5,15.375,win,23,19.999999999999996
+trained,iql,11.375,18.5,loss,25,1.534246575342464
+trained,coma,8.75,13.0,win,23,20.0
+trained,iql,11.0,14.125,win,22,20.0
+trained,fop,9.75,17.5,win,19,20.0
+trained,qmix,8.125,17.25,win,24,20.0
+trained,computer ai,8.125,13.25,win,22,20.0
+trained,vdn,10.625,19.0,win,19,20.0
+trained,iql,9.875,16.5,win,23,20.0
+trained,qmix,10.25,19.375,win,23,20.0
+trained,coma,8.25,16.5,win,23,20.0
+trained,vdn,8.75,14.875,win,21,20.0
+trained,fop,10.625,13.5,win,23,20.0
+trained,fop,9.5,15.125,win,21,20.0
+trained,qmix,8.375,18.0,win,21,20.0
+trained,dop,11.375,17.125,win,21,20.0
+trained,qplex,9.375,13.625,win,21,20.0
+trained,qmix,9.625,18.125,win,22,20.0
+trained,fop,9.5,19.25,win,20,20.0
+trained,qtran,10.5,14.875,win,23,20.0
+trained,qmix,9.5,17.375,win,22,20.0
+trained,vdn,10.625,18.125,win,20,20.0
+trained,fop,9.25,16.375,win,21,20.0
+trained,qplex,10.875,19.125,win,22,20.0
+trained,qtran,10.125,16.25,win,19,20.0
+trained,dop,8.75,18.875,win,23,20.0
+trained,computer ai,10.5,12.875,win,19,20.0
+trained,computer ai,10.625,13.5,win,19,20.0
+trained,qmix,8.5,15.25,win,24,20.0
+trained,dop,10.125,16.25,win,22,20.0
+trained,dop,10.5,15.375,win,23,20.0
+trained,qmix,11.25,17.375,win,19,20.0
+trained,vdn,9.375,13.625,win,20,20.0
+trained,qmix,8.875,18.875,draw,60,3.6164383561643825
+trained,coma,10.375,12.625,win,20,20.0
+trained,computer ai,10.25,15.25,loss,25,0.8767123287671224
+trained,qtran,8.75,14.625,win,24,20.0
+trained,qmix,9.25,18.375,win,24,20.0
+trained,qplex,9.25,17.75,win,22,20.0
+trained,fop,8.125,17.5,win,22,20.0
+trained,vdn,9.625,18.125,win,21,20.0
+trained,dop,9.375,17.625,win,24,20.0
+trained,qplex,10.0,13.75,win,21,20.0
+trained,dop,9.375,19.0,loss,26,0.5479452054794507
+trained,vdn,9.25,18.625,win,21,20.0
+trained,dop,10.25,19.5,win,20,20.0
+trained,dop,8.625,16.0,win,25,20.0
+trained,computer ai,11.375,19.25,win,21,20.0
+trained,fop,10.75,13.25,win,22,20.0
+trained,computer ai,8.75,14.875,win,21,20.0
+trained,qplex,10.5,15.375,win,21,20.0
+trained,fop,10.625,17.625,win,22,20.0
+trained,dop,9.125,13.75,win,24,20.0
+trained,dop,8.5,15.25,win,21,20.0
+trained,iql,8.5,16.375,win,27,20.0
+trained,qtran,8.75,18.375,win,23,20.0
+trained,dop,11.25,16.625,draw,60,3.2876712328767126
+trained,dop,9.125,17.5,win,24,20.0
+trained,coma,10.375,19.375,win,23,20.0
+trained,iql,8.5,15.375,win,21,20.0
+trained,qplex,8.625,18.625,win,22,20.0
+trained,qmix,10.375,19.5,win,20,20.0
+trained,vdn,9.25,14.375,win,20,20.0
+trained,coma,10.875,14.75,win,18,20.0
+trained,dop,9.875,18.5,loss,24,1.205479452054795
+trained,dop,9.0,13.125,win,21,20.0
+trained,fop,10.5,14.875,loss,21,0.5479452054794507
+trained,qmix,9.125,17.5,win,21,20.0
+trained,iql,8.25,13.625,draw,60,3.287671232876711
+trained,vdn,8.5,17.625,win,21,20.0
+trained,qplex,10.25,13.375,win,20,20.0
+trained,dop,11.375,18.5,win,17,20.0
+trained,computer ai,10.625,17.625,win,21,20.0
+trained,qmix,8.5,14.375,win,22,20.0
+trained,qmix,10.625,17.0,win,22,20.0
+trained,qtran,8.25,15.375,win,29,20.0
+trained,iql,11.125,18.25,draw,60,3.6164383561643825
+trained,computer ai,9.125,15.125,win,20,20.0
+trained,qtran,8.5,14.375,win,25,20.0
+trained,qtran,9.625,16.0,win,20,20.0
+trained,iql,9.375,13.625,win,26,20.0
+trained,coma,10.875,15.5,win,19,20.0
+trained,fop,8.0,19.25,win,24,20.0
+trained,qtran,9.125,15.125,win,22,20.0
+trained,iql,10.625,13.5,win,25,20.0
+trained,vdn,9.75,16.375,win,21,20.0
+trained,qmix,8.5,15.375,win,23,20.0
+trained,qplex,9.375,17.625,win,24,20.0
+trained,qplex,11.25,16.625,win,22,20.0
+trained,fop,9.0,17.25,win,21,20.0
+trained,dop,9.75,13.625,win,19,20.0
+trained,qplex,8.75,14.875,win,21,20.0
+trained,iql,10.75,13.25,win,23,20.0
+trained,vdn,9.25,18.375,win,21,20.0
+trained,iql,10.875,19.125,win,20,20.0
+trained,qtran,10.75,19.25,win,20,20.0
+trained,qplex,10.625,17.625,win,20,20.0
+trained,qmix,8.75,18.875,win,24,20.0
+trained,vdn,8.5,14.375,win,21,20.0
+trained,qmix,8.125,13.125,win,29,20.0
+trained,dop,9.125,15.125,win,23,20.0
+trained,fop,8.5,13.25,win,22,20.0
+trained,computer ai,10.125,13.5,win,20,20.0
+trained,qplex,8.25,18.125,win,22,20.0
+trained,dop,8.625,12.625,win,27,20.0
+trained,iql,11.25,14.75,win,23,20.0
+trained,iql,8.75,18.0,win,26,20.0
+trained,fop,8.125,17.25,win,23,20.0
+trained,iql,10.75,19.375,win,21,20.0
+trained,qmix,8.125,13.625,win,29,19.999999999999996
+trained,vdn,9.375,18.625,win,24,20.0
+trained,qtran,8.125,15.625,win,21,20.0
+trained,coma,9.125,18.75,win,22,20.0
+trained,vdn,8.625,18.625,win,28,20.0
+trained,qmix,9.375,18.625,win,23,20.0
+trained,fop,10.75,18.875,win,22,20.0
+trained,coma,9.5,15.125,win,20,20.0
+trained,vdn,10.25,13.375,win,22,20.0
+trained,iql,8.875,16.25,win,20,20.0
+trained,coma,10.25,14.875,win,21,20.0
+trained,iql,9.875,19.125,win,20,20.0
+trained,fop,10.75,19.25,win,22,19.999999999999996
+trained,vdn,9.875,12.625,win,22,20.0
+trained,coma,8.625,16.0,win,22,19.999999999999996
+trained,qplex,9.125,13.0,win,24,20.0
+trained,coma,10.75,16.0,win,18,20.0
+trained,qmix,10.25,15.25,win,19,20.0
+trained,qtran,9.375,13.625,win,21,20.0
+trained,iql,10.0,13.75,win,26,20.0
+trained,dop,10.375,12.625,win,22,20.0
+trained,vdn,10.75,19.375,win,20,20.0
+trained,qplex,8.125,13.125,win,22,20.0
+trained,qmix,10.375,14.5,win,21,20.0
+trained,computer ai,10.5,15.875,win,22,20.0
+trained,vdn,11.0,14.375,loss,27,1.8630136986301347
+trained,qmix,9.25,17.75,loss,26,0.5479452054794525
+trained,qmix,9.0,13.625,win,28,19.999999999999996
+trained,fop,10.75,16.0,win,22,20.0
+trained,iql,8.5,13.25,win,27,20.0
+trained,qtran,8.625,12.625,win,22,20.0
+trained,computer ai,10.25,19.5,win,21,20.0
+trained,fop,8.75,18.875,draw,60,3.2876712328767126
+trained,qplex,9.125,18.75,loss,23,2.13698630136986
+trained,computer ai,9.0,13.125,win,21,20.0
+trained,computer ai,10.5,19.25,win,20,20.0
+trained,coma,8.125,19.25,win,25,20.0
+trained,qtran,11.0,13.375,win,19,20.0
+trained,iql,10.75,19.0,loss,25,2.8493150684931488
+trained,vdn,10.25,13.75,win,21,20.0
+trained,fop,8.25,16.5,loss,28,1.8630136986301347
+trained,computer ai,10.0,18.625,win,20,20.0
+trained,fop,10.25,13.75,win,21,20.0
+trained,qmix,8.75,13.0,win,26,20.0
+trained,dop,9.25,17.75,win,24,20.0
+trained,vdn,8.875,18.875,win,21,20.0
+trained,computer ai,8.25,15.125,loss,28,2.191780821917807
+trained,vdn,9.125,13.0,win,23,20.0
+trained,computer ai,11.375,17.125,win,19,20.0
+trained,computer ai,9.5,14.875,win,25,20.0
+trained,qmix,9.0,13.125,win,25,20.0
+trained,computer ai,11.25,14.75,loss,25,0.8767123287671224
+trained,iql,11.375,16.0,win,19,20.0
+trained,vdn,10.75,16.0,win,19,20.0
+trained,qtran,10.25,14.875,win,19,20.0
+trained,coma,10.625,19.0,win,22,20.0
+trained,coma,11.375,17.125,win,20,20.0
+trained,computer ai,9.75,13.625,win,20,20.0
+trained,coma,10.0,19.125,win,22,20.0
+trained,vdn,11.0,14.125,win,20,20.0
+trained,dop,8.75,18.0,win,21,20.0
+trained,fop,11.0,18.375,win,19,20.0
+trained,qplex,10.125,16.25,win,21,20.0
+trained,qtran,10.625,19.0,win,20,20.0
+trained,iql,9.0,14.625,loss,28,1.5342465753424648
+trained,coma,11.25,16.625,win,18,20.0
+trained,vdn,9.125,13.75,win,20,20.0
+trained,computer ai,8.25,14.375,win,22,20.0
+trained,vdn,9.375,12.75,win,26,20.0
+trained,fop,9.75,13.625,win,20,20.0
+trained,fop,8.125,13.625,win,22,20.0
+trained,computer ai,11.0,14.375,win,21,20.0
+trained,iql,11.375,16.5,win,18,20.0
+trained,iql,8.625,14.25,win,21,20.0
+trained,qtran,9.875,19.125,win,21,20.0
+trained,coma,8.75,14.875,win,24,20.0
+trained,iql,8.625,18.625,win,26,20.0
+trained,vdn,10.0,19.125,win,21,20.0
+trained,dop,9.75,18.25,win,21,20.0
+trained,qmix,10.75,14.625,win,19,20.0
+trained,iql,8.125,15.625,win,24,20.0
+trained,qtran,9.0,13.625,win,22,20.0
+trained,fop,11.25,14.75,win,23,20.0
+trained,computer ai,11.5,14.25,loss,23,1.8630136986301364
+trained,qmix,11.375,13.875,win,18,20.0
+trained,dop,8.5,16.125,win,22,20.0
+trained,vdn,9.5,19.25,win,25,20.0
+trained,dop,8.125,17.25,win,24,20.0
+trained,qplex,9.875,19.125,win,22,20.0
+trained,qtran,10.375,12.625,win,23,20.0
+trained,qtran,10.625,17.0,win,21,20.0
+trained,computer ai,10.25,13.75,win,23,20.0
+trained,iql,9.25,18.625,win,22,20.0
+trained,dop,9.5,17.375,win,22,20.0
+trained,computer ai,10.875,15.5,win,24,20.0
+trained,qmix,8.5,16.125,win,23,20.0
+trained,coma,9.25,16.375,win,22,20.0
+trained,computer ai,10.625,18.875,loss,24,2.8493150684931505
+trained,qtran,8.75,18.0,win,25,20.0
+trained,vdn,9.625,14.125,win,20,20.0
+trained,coma,9.125,15.375,win,22,20.0
+trained,qplex,10.625,17.0,win,19,20.0
+trained,computer ai,9.875,14.875,win,21,20.0
+trained,computer ai,9.375,16.875,win,20,20.0
+trained,dop,11.375,19.25,win,24,20.0
+trained,fop,10.75,19.375,loss,26,1.5342465753424657
+trained,dop,8.625,18.625,win,21,20.0
+trained,computer ai,9.75,17.5,win,23,20.0
+trained,dop,8.25,14.375,win,25,20.0
+trained,vdn,11.5,14.25,win,18,20.0
+trained,qtran,10.125,13.5,win,21,20.0
+trained,fop,9.125,18.75,win,19,20.0
+trained,dop,10.5,14.875,win,21,20.0
+trained,iql,11.0,18.375,win,22,20.0
+trained,fop,8.5,17.625,loss,30,0.8767123287671224
+trained,fop,10.875,14.75,win,19,20.0
+trained,qtran,10.0,18.625,win,22,20.0
+trained,iql,10.25,15.25,win,23,20.0
+trained,qtran,9.0,17.25,win,22,20.0
+trained,qmix,9.75,17.5,win,21,20.0
+trained,coma,11.125,13.5,win,19,20.0
+trained,fop,11.125,13.5,win,18,20.0
+trained,coma,10.5,13.125,win,20,20.0
+trained,qplex,8.5,15.25,win,23,20.0
+trained,vdn,8.25,16.5,win,21,20.0
+trained,fop,10.75,14.875,loss,25,2.8493150684931488
+trained,iql,8.125,17.5,win,24,20.0
+trained,vdn,9.875,16.5,win,21,20.0
+trained,qplex,9.125,13.75,win,22,20.0
+trained,qmix,10.25,13.75,win,21,20.0
+trained,dop,8.375,18.0,win,21,20.0
+trained,qtran,8.125,13.125,win,23,20.0
+trained,iql,8.375,18.0,loss,29,0.8767123287671224
+trained,iql,8.75,13.0,win,22,20.0
+trained,qplex,11.375,13.875,win,19,20.0
+trained,fop,9.5,14.875,win,21,20.0
+trained,vdn,8.25,14.375,win,19,20.0
+trained,vdn,8.625,16.0,win,23,20.0
+trained,qtran,10.0,13.75,win,20,20.0
+trained,computer ai,9.25,18.625,win,23,20.0
+trained,coma,10.5,15.875,win,19,20.0
+trained,vdn,8.125,13.25,win,24,20.0
+trained,computer ai,9.875,15.125,win,19,20.0
+trained,dop,10.0,18.625,win,21,20.0
+trained,fop,8.75,12.5,win,25,20.0
+trained,coma,8.125,17.5,win,24,20.0
+trained,fop,8.625,17.125,win,21,20.0
+trained,qmix,10.25,19.5,loss,27,2.8493150684931488
+trained,qtran,8.25,14.375,win,22,20.0
+trained,qmix,8.75,15.625,win,20,20.0
+trained,dop,10.875,19.125,win,24,20.0
+trained,dop,8.75,18.375,loss,27,1.534246575342464
+trained,vdn,9.0,13.625,win,23,20.0
+trained,coma,9.75,16.375,win,19,20.0
+trained,qtran,9.25,18.625,win,21,20.0
+trained,coma,11.375,13.875,win,19,20.0
+trained,qtran,8.25,13.0,win,22,20.0
+trained,fop,10.0,13.75,win,22,20.0
+trained,fop,10.625,18.125,loss,23,0.5479452054794507
+trained,dop,9.25,18.375,win,21,20.0
+trained,fop,8.25,13.0,win,23,20.0
+trained,qtran,9.25,14.375,win,21,20.0
+trained,computer ai,11.375,16.0,win,22,20.0
+trained,iql,9.125,13.0,win,21,20.0
+trained,computer ai,9.875,16.5,win,21,20.0
+trained,fop,11.375,16.5,win,18,20.0
+trained,qplex,10.625,19.0,win,23,20.0
+trained,qtran,8.5,16.125,win,21,20.0
+trained,qplex,9.0,17.25,win,25,20.0
+trained,vdn,8.625,14.25,win,21,20.0
+trained,fop,10.125,16.25,win,19,20.0
+trained,qmix,10.625,17.625,draw,60,3.2876712328767117
+trained,computer ai,10.75,19.375,win,22,20.0
+trained,iql,10.625,17.0,win,20,20.0
+trained,vdn,11.125,18.25,win,20,20.0
+trained,vdn,10.625,17.625,win,22,20.0
+trained,coma,8.875,16.25,win,23,20.0
+trained,fop,9.0,14.625,win,21,20.0
+trained,qplex,9.125,15.125,win,24,20.0
+trained,computer ai,10.75,19.0,win,22,20.0
+trained,qplex,10.0,19.125,win,22,20.0
+trained,coma,9.375,18.625,win,20,20.0
+trained,coma,9.125,13.0,win,22,20.0
+trained,qmix,10.5,13.625,win,21,20.0
+trained,qmix,11.375,19.25,win,23,19.999999999999996
+trained,fop,8.125,15.625,win,25,20.0
+trained,dop,9.75,16.375,loss,29,1.534246575342464
+trained,vdn,9.75,17.5,win,20,20.0
+trained,dop,8.125,18.875,win,25,20.0
+trained,iql,8.0,16.25,win,25,20.0
+trained,qmix,10.25,14.875,win,21,20.0
+trained,computer ai,10.875,15.0,win,19,20.0
+trained,coma,9.25,18.625,win,21,20.0
+trained,dop,8.625,14.25,win,22,20.0
+trained,fop,11.375,13.875,win,20,20.0
+trained,vdn,10.75,19.0,win,19,20.0
+trained,computer ai,8.25,15.375,win,21,20.0
+trained,qplex,9.875,14.875,win,27,20.0
+trained,fop,8.125,19.25,win,25,20.0
+trained,iql,8.125,13.125,win,26,20.0
+trained,fop,10.375,19.5,win,25,20.0
+trained,computer ai,9.25,17.75,win,20,20.0
+trained,coma,8.625,18.625,loss,30,2.520547945205476
+trained,qtran,8.75,14.875,win,21,20.0
+trained,qmix,8.625,18.625,win,23,20.0
+trained,qplex,9.75,17.5,win,20,20.0
+trained,qplex,11.25,17.375,win,19,20.0
+trained,computer ai,10.625,17.125,win,19,20.0
+trained,computer ai,10.25,13.375,win,21,20.0
+trained,coma,11.125,19.125,win,25,20.0
+trained,computer ai,8.75,13.0,win,23,20.0
+trained,qmix,8.25,15.375,win,22,20.0
+trained,qmix,9.5,14.875,win,23,20.0
+trained,qmix,8.75,18.375,win,24,20.0
+trained,qtran,10.875,19.125,win,22,20.0
+trained,coma,8.125,13.625,win,23,20.0
+trained,fop,8.5,14.375,win,22,20.0
+trained,qtran,10.375,19.375,win,21,20.0
+trained,qplex,11.25,14.75,win,20,20.0
+trained,vdn,8.5,15.375,win,22,20.0
+trained,qtran,9.375,16.875,win,23,20.0
+trained,vdn,11.375,17.125,win,20,20.0
+trained,qtran,10.0,19.125,win,20,20.0
+trained,qtran,9.75,16.375,win,20,20.0
+trained,dop,11.0,19.125,win,22,20.0
+trained,qplex,9.5,15.125,win,20,20.0
+trained,iql,9.625,16.0,win,20,20.0
+trained,dop,10.0,19.125,win,20,20.0
+trained,dop,8.875,18.875,win,24,19.999999999999996
+trained,dop,8.5,14.375,win,23,20.0
+trained,coma,9.5,14.875,win,21,20.0
+trained,qplex,10.5,13.125,win,21,20.0
+trained,vdn,8.25,13.0,win,21,20.0
+trained,qplex,11.0,18.375,win,21,20.0
+trained,qplex,11.0,13.375,win,19,20.0
+trained,dop,10.375,14.5,win,23,20.0
+trained,fop,8.25,18.125,loss,32,0.5479452054794507
+trained,computer ai,8.375,18.0,loss,33,1.534246575342464
+trained,iql,10.375,12.625,win,21,20.0
+trained,qplex,9.75,18.25,win,25,20.0
+trained,vdn,8.0,19.25,win,21,20.0
+trained,qplex,10.125,13.5,win,23,20.0
+trained,qplex,10.25,19.5,win,19,20.0
+trained,dop,10.625,18.125,win,21,20.0
+trained,coma,10.125,18.75,win,20,20.0
+trained,iql,11.375,13.875,win,19,20.0
+trained,dop,10.875,15.0,win,21,20.0
+trained,coma,8.75,15.625,win,20,20.0
+trained,iql,10.75,14.875,win,25,20.0
+trained,vdn,9.25,16.375,win,20,20.0
+trained,qtran,11.125,13.5,win,24,20.0
+trained,computer ai,9.25,18.375,win,21,20.0
+trained,qtran,9.5,14.875,win,23,20.0
+trained,dop,10.625,13.5,win,19,20.0
+trained,vdn,11.0,18.375,win,20,20.0
+trained,iql,10.875,15.0,win,20,20.0
+trained,qmix,9.875,15.125,win,21,20.0
+trained,qmix,9.125,15.375,draw,60,4.273972602739725
+trained,computer ai,10.125,18.75,win,21,20.0
+trained,vdn,9.125,15.375,win,23,20.0
+trained,qtran,9.375,19.0,win,22,20.0
+trained,qplex,10.375,12.625,draw,60,3.6164383561643825
+trained,qtran,10.75,14.875,win,20,20.0
+trained,coma,9.875,18.5,win,24,20.0
+trained,vdn,11.0,13.375,win,18,20.0
+trained,coma,8.75,18.0,win,21,20.0
+trained,qtran,9.125,18.75,win,26,19.999999999999996
+trained,iql,8.0,19.25,win,27,20.0
+trained,fop,11.0,19.125,win,22,20.0
+trained,qmix,11.125,17.875,win,22,20.0
+trained,dop,8.125,13.25,draw,60,3.945205479452055
+trained,dop,9.625,18.875,win,25,20.0
+trained,iql,10.5,12.875,win,22,20.0
+trained,qtran,9.75,17.5,win,23,20.0
+trained,coma,8.625,14.25,win,22,20.0
+trained,qtran,8.375,18.0,win,24,20.0
+trained,vdn,11.125,19.125,win,21,20.0
+trained,iql,9.25,18.375,win,25,20.0
+trained,computer ai,8.625,16.0,win,21,20.0
+trained,qmix,10.875,15.5,win,26,19.999999999999996
+trained,fop,8.75,14.875,win,21,20.0
+trained,qtran,11.375,16.5,win,18,20.0
+trained,coma,9.25,14.375,win,20,20.0
+trained,qmix,10.625,17.125,win,19,20.0
+trained,fop,10.125,18.75,draw,60,3.9452054794520532
+trained,qtran,9.875,14.875,win,24,20.0
+trained,qtran,9.875,18.5,win,23,20.0
+trained,dop,10.75,13.25,win,19,20.0
+trained,qplex,9.0,13.625,win,21,20.0
+trained,qtran,11.25,16.625,win,21,20.0
+trained,iql,8.5,13.375,loss,33,0.8767123287671224
+trained,computer ai,9.25,14.375,win,22,20.0
+trained,vdn,11.25,17.375,win,22,20.0
+trained,fop,10.5,12.875,win,22,20.0
+trained,qplex,8.25,13.0,win,23,20.0
+trained,vdn,9.75,13.625,win,20,20.0
+trained,computer ai,11.375,13.875,win,20,20.0
+trained,qtran,8.625,18.625,win,23,20.0
+trained,iql,11.375,19.25,win,23,20.0
+trained,qtran,9.125,13.75,win,24,20.0
+trained,qplex,11.125,17.875,win,20,20.0
+trained,computer ai,9.75,16.375,win,22,20.0
+trained,qmix,8.0,19.25,loss,35,0.5479452054794516
+trained,dop,8.75,15.625,win,23,20.0
+trained,qmix,8.125,15.625,win,25,20.0
+trained,qmix,10.75,19.0,win,20,20.0
+trained,qmix,8.125,19.25,win,26,20.0
+trained,fop,8.625,12.625,win,26,19.999999999999996
+trained,computer ai,11.375,16.5,win,18,20.0
+trained,dop,8.25,13.625,win,23,20.0
+trained,fop,11.375,17.125,win,19,20.0
+trained,qtran,11.125,19.125,win,22,20.0
+trained,computer ai,9.5,15.125,win,21,20.0
+trained,dop,9.75,17.5,win,25,20.0
+trained,vdn,8.75,18.0,win,20,20.0
+trained,computer ai,11.0,19.125,win,21,20.0
+trained,qmix,9.25,16.375,win,20,20.0
+trained,iql,10.375,19.375,win,23,20.0
+trained,qmix,8.5,13.375,win,25,19.999999999999996
+trained,vdn,10.375,12.625,win,23,20.0
+trained,qtran,8.25,15.125,win,22,20.0
+trained,fop,11.0,13.375,win,20,20.0
+trained,dop,9.25,18.5,win,23,20.0
+trained,computer ai,9.375,18.625,win,21,20.0
+trained,qplex,9.375,19.0,win,22,20.0
+trained,iql,10.5,15.375,win,20,20.0
+trained,dop,9.0,14.625,win,23,20.0
+trained,qplex,10.375,19.5,win,26,20.0
+trained,iql,10.5,13.625,win,22,20.0
+trained,qtran,8.5,16.375,win,22,20.0
+trained,dop,10.125,13.5,win,20,20.0
+trained,iql,10.0,19.125,win,21,20.0
+trained,fop,9.125,13.75,draw,60,3.287671232876711
+trained,qplex,9.625,18.125,win,20,20.0
+trained,coma,9.25,18.375,win,24,20.0
+trained,fop,8.25,13.625,win,25,20.0
+trained,fop,10.375,14.5,win,20,20.0
+trained,dop,10.5,15.875,loss,34,1.5342465753424657
+trained,fop,8.375,18.0,win,27,20.0
+trained,qmix,9.375,19.0,win,23,20.0
+trained,dop,9.25,18.625,loss,26,0.5479452054794507
+trained,dop,11.0,14.125,win,24,20.0
+trained,vdn,9.25,18.5,win,23,20.0
+trained,iql,8.625,17.125,win,25,20.0
+trained,computer ai,10.75,13.25,win,20,20.0
+trained,computer ai,9.5,19.25,win,23,20.0
+trained,qtran,9.125,17.5,win,21,20.0
+trained,computer ai,9.375,19.0,win,21,20.0
+trained,qtran,9.75,18.25,win,21,20.0
+trained,qtran,9.25,16.375,win,25,20.0
+trained,qmix,8.5,16.375,win,22,20.0
+trained,computer ai,9.625,16.0,win,19,20.0
+trained,qmix,10.625,18.125,win,19,20.0
