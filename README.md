@@ -4,9 +4,13 @@
 - The results in SC2BA (https://arxiv.org/abs/1902.04043) use SC2.4.6.2.69232 not SC2.4.10.
 ```
 
-# SC2BA
+# SC2BA Lab
 
-## VDN 混合对抗实验 · 2026-11-24
+基于 [SC2BA](https://github.com/dooliu/SC2BA) 的多智能体对抗实验项目。各批次分别记录场景、训练算法和对手库，实验面板用于查看与发布结果。
+
+## 实验批次
+
+### VDN 混合对抗实验 · 2026-11-24
 
 [打开实验时间轴](https://baichunhui-9803.github.io/SC2BA/?batch=vdn-formal-20261124&version=mixed-opponents-v1#timeline)
 
