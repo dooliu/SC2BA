@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SC2BA 探针状态覆盖</title>
+<style>
+:root {
+    color-scheme: light;
+    --page: #f5f7fa;
+    --paper: #fff;
+    --text: #172332;
+    --muted: #526173;
+    --line: #dbe2eb;
+    --grid: #e9edf3;
+    --fixed: #ad570b;
+    --mixed: #087c72;
+    --shared: #6645a8;
+    --ally: #255dab;
+    --enemy: #bf3f58;
+    font-family: Inter, "Microsoft YaHei UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); line-height: 1.55; }
+main { width: min(1320px, 100%); margin: auto; padding: 28px clamp(14px, 3vw, 38px) 36px; }
+h1 { margin: 0; font-size: clamp(25px, 3.1vw, 35px); letter-spacing: -.035em; }
+h2 { margin: 0; font-size: 19px; }
+p { margin: 0; }
+.header { display: flex; align-items: end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.muted, .note { color: var(--muted); }
+.note { font-size: 13px; }
+.controls { display: flex; gap: 10px; align-items: end; flex-wrap: wrap; }
+.controls label, .frame-choice { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+button, select { font: inherit; color: var(--text); background: var(--paper); }
+button, select {
+    padding: 6px 10px; min-height: 36px; border: 1px solid #bbc6d4; border-radius: 7px;
+}
+button { cursor: pointer; }
+button:disabled { cursor: default; opacity: .56; }
+:focus-visible { outline: 2px solid #336dbe; outline-offset: 3px; }
+.numbers {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;
+    margin: 18px 0 12px;
+}
+.number, .pane { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; }
+.number { padding: 9px 14px; }
+.number strong { display: block; font-size: 24px; font-variant-numeric: tabular-nums; }
+.number span { display: block; font-size: 13px; color: var(--muted); }
+.number.fixed strong, .key.fixed { color: var(--fixed); }
+.number.mixed strong, .key.mixed { color: var(--mixed); }
+.number.shared strong, .key.shared { color: var(--shared); }
+.views { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(290px, 1fr); gap: 12px; align-items: start; }
+.pane { padding: 15px; min-width: 0; }
+.panel-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+svg { display: block; width: 100%; height: auto; overflow: visible; color: var(--text); }
+.axis-text { fill: var(--muted); font-size: 14px; }
+.field .axis-text { font-size: 12px; }
+.grid { stroke: var(--grid); stroke-width: 1; }
+.plot-border { fill: none; stroke: #cdd6e1; stroke-width: 1; }
+.legend { display: flex; gap: 6px 15px; flex-wrap: wrap; color: var(--muted); font-size: 13px; }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+.key { width: 20px; height: 17px; line-height: 17px; text-align: center; display: inline-block; font-size: 17px; }
+#map-scatter { margin: 3px 0; }
+.mark { cursor: pointer; }
+.mark .disc { fill: currentColor; stroke: var(--paper); stroke-width: 1px; opacity: .89; }
+.mark.shared .disc { fill: none; stroke: currentColor; stroke-width: 2.15px; }
+.mark .focus-ring { fill: none; stroke: currentColor; opacity: 0; stroke-width: 1.3px; }
+.mark:hover .focus-ring, .mark:focus-visible .focus-ring, .mark.active .focus-ring { opacity: 1; }
+.mark.active .focus-ring { stroke: var(--text); stroke-width: 1.8px; }
+.mark.fixed { color: var(--fixed); }
+.mark.mixed { color: var(--mixed); }
+.mark.shared { color: var(--shared); }
+.case-tools { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: end; margin-top: 9px; }
+.frame-choice { margin-top: 8px; }
+.frame-choice select { max-width: 100%; }
+.case-tools .frame-choice { margin-top: 0; }
+.case-text { min-height: 20px; font-size: 13px; margin-top: 10px; }
+.field { margin: 3px 0; }
+.ally { color: var(--ally); }
+.enemy { color: var(--enemy); }
+.frame-meta {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px;
+    margin: 8px 0 0; font-size: 13px;
+}
+.frame-meta dt { color: var(--muted); }
+.frame-meta dd { margin: 0; overflow-wrap: anywhere; }
+#match { margin-top: 12px; }
+#match-note { margin: 5px 0 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+th, td { padding: 5px 9px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+th:first-child { text-align: left; }
+thead th { font-weight: 600; color: var(--muted); }
+.table-scroll { overflow-x: auto; }
+details { margin-top: 13px; }
+summary { cursor: pointer; font-size: 14px; }
+details p { margin-top: 7px; }
+@media (max-width: 900px) {
+    .views { grid-template-columns: 1fr; }
+    .field { max-width: 580px; margin-inline: auto; }
+}
+@media (max-width: 480px) {
+    .numbers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pane { padding: 11px; }
+    .case-tools { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main>
+    <header class="header">
+        <div>
+            <h1>SC2BA 探针状态覆盖</h1>
+            <p id="subtitle" class="muted"></p>
+        </div>
+        <div class="controls">
+            <label>场景 <select id="scene"></select></label>
+            <label>时段 <select id="scope"><option value="all">全部窗口</option><option value="later">首窗之后</option></select></label>
+            <label>显示类型 <select id="category"><option value="all">全部类型</option><option value="fixed">仅固定访问</option><option value="mixed">仅混合访问</option><option value="shared">两者共有</option></select></label>
+        </div>
+    </header>
+    <section class="numbers" aria-label="档案关系类型数">
+        <div class="number fixed"><strong id="fixed-count"></strong><span>仅固定脚本访问</span></div>
+        <div class="number mixed"><strong id="mixed-count"></strong><span>仅混合脚本访问</span></div>
+        <div class="number shared"><strong id="shared-count"></strong><span>两者共有</span></div>
+        <div class="number"><strong id="union-count"></strong><span>全部访问类型</span></div>
+    </section>
+    <div class="views">
+        <section class="pane" aria-labelledby="embedding-title">
+            <div class="panel-heading">
+                <h2 id="embedding-title">定性关系类型的 t-SNE</h2>
+                <button type="button" id="download">下载点数据 CSV</button>
+            </div>
+            <div class="legend" aria-label="投影图图例">
+                <span><b class="key fixed">◆</b>仅固定访问</span>
+                <span><b class="key mixed">●</b>仅混合访问</span>
+                <span><b class="key shared">○</b>两者共有</span>
+            </div>
+            <svg id="map-scatter" viewBox="0 0 760 430" role="group" aria-label="关系类型的 t-SNE 散点，支持点击每点查看观测"></svg>
+            <p id="scatter-note" class="note"></p>
+        </section>
+        <section class="pane" aria-labelledby="frame-title">
+            <h2 id="frame-title">对应的实际观测</h2>
+            <div class="case-tools">
+                <label class="frame-choice">关系类型 <select id="profile"></select></label>
+                <button type="button" id="paired">查看配对观测</button>
+            </div>
+            <label class="frame-choice">观测窗口 <select id="frame"></select></label>
+            <p id="case-text" class="case-text" aria-live="polite"></p>
+            <svg class="field" id="unit-map" viewBox="0 0 405 211" role="img" aria-label="双方存活单位实际坐标及射程内连线"></svg>
+            <div class="legend">
+                <span class="ally"><b class="key">●</b>我方</span>
+                <span class="enemy"><b class="key">●</b>对手</span>
+                <span>连线表示射程内</span>
+            </div>
+            <dl id="frame-meta" class="frame-meta"></dl>
+        </section>
+    </div>
+    <section id="match" class="pane" aria-labelledby="match-title">
+        <h2 id="match-title">等量配对抽样</h2>
+        <p id="match-note" class="note"></p>
+        <div class="table-scroll">
+            <table aria-label="同预算内访问到的去重关系类型">
+                <thead><tr><th scope="col">采样方式</th><th scope="col">平均覆盖数</th><th scope="col">第 5 至 95 百分位</th></tr></thead>
+                <tbody id="match-table"></tbody>
+            </table>
+        </div>
+        <details>
+            <summary>统计口径</summary>
+            <p class="note">一个类型由双方存活数和 64 格关系直方图组成。对每个跨队单位对，分别标记两个方向的射程内、最近和最远，共六个二元标记，再统计各种组合出现的次数。</p>
+            <p class="note">各场景分别拟合 t-SNE，输入为双方存活比例及按频率归一化的关系直方图。直方图频率开平方后缩放。时段切换沿用同一投影，颜色根据该时段的访问情况更新。</p>
+            <p class="note">按开局、对手和重复编号配对。每个组合的样本预算为两种脚本可用窗口数的较小值。各条件按同配额无放回抽样，合并条件在每组尽量各取一半。区间反映当前轨迹上的抽样波动。</p>
+        </details>
+    </section>
+</main>
+<script type="application/json" id="coverage-data">__COVERAGE_DATA__</script>
+<script>
+"use strict";
+const report = JSON.parse(document.getElementById("coverage-data").textContent);
+const get = id => document.getElementById(id);
+const names = Object.keys(report.scenarios);
+const svgURI = "http://www.w3.org/2000/svg";
+const fixed = "legacy-nearest";
+const labels = { fixed: "仅固定访问", mixed: "仅混合访问", shared: "两者共有" };
+const display = { [fixed]: "固定脚本", mixed: "混合脚本" };
+const sceneInput = get("scene"), scopeInput = get("scope"), categoryInput = get("category");
+const profileInput = get("profile"), frameInput = get("frame");
+const scatter = get("map-scatter"), unitMap = get("unit-map");
+let scene, profiles = [], selectedFrame;
+
+function element(name, attr = {}, content) {
+    const item = document.createElementNS(svgURI, name);
+    for (const [key, value] of Object.entries(attr)) item.setAttribute(key, value);
+    if (content !== undefined) item.textContent = content;
+    return item;
+}
+function option(select, value, label) {
+    const item = new Option(label, value);
+    select.add(item);
+}
+function extent(values) {
+    const a = Math.min(...values), b = Math.max(...values);
+    const pad = Math.max((b - a) * .06, .5);
+    return [a - pad, b + pad];
+}
+function gridScale(xDomain, yDomain, area, equal = false) {
+    const [x0, y0, width, height] = area;
+    const ranges = [xDomain[1] - xDomain[0], yDomain[1] - yDomain[0]];
+    const independent = [width / ranges[0], height / ranges[1]];
+    const [sx, sy] = equal ? [Math.min(...independent), Math.min(...independent)] : independent;
+    const left = x0 + (width - ranges[0] * sx) / 2, top = y0 + (height - ranges[1] * sy) / 2;
+    return {
+        x: x => left + (x - xDomain[0]) * sx,
+        y: y => top + (yDomain[1] - y) * sy,
+        edges: [left, top, ranges[0] * sx, ranges[1] * sy],
+    };
+}
+function ticks(domain, target = 5) {
+    const raw = (domain[1] - domain[0]) / target;
+    const scale = 10 ** Math.floor(Math.log10(raw));
+    const step = [1, 2, 5, 10].find(value => value >= raw / scale) * scale;
+    const start = Math.ceil(domain[0] / step) * step;
+    const values = [];
+    for (let value = start; value < domain[1] + step * 1e-8; value += step) {
+        values.push(Math.abs(value) < 1e-8 ? 0 : Number(value.toPrecision(6)));
+    }
+    return values;
+}
+function drawGrid(svg, scale, xDomain, yDomain, xLabel, yLabel) {
+    const [left, top, width, height] = scale.edges;
+    const coords = element("g", { "aria-hidden": "true" });
+    for (const value of ticks(xDomain)) {
+        const x = scale.x(value);
+        coords.append(element("line", { x1: x, y1: top, x2: x, y2: top + height, class: "grid" }),
+            element("text", { x, y: top + height + 17, class: "axis-text", "text-anchor": "middle" }, value));
+    }
+    for (const value of ticks(yDomain)) {
+        const y = scale.y(value);
+        coords.append(element("line", { x1: left, y1: y, x2: left + width, y2: y, class: "grid" }),
+            element("text", { x: left - 7, y: y + 4, class: "axis-text", "text-anchor": "end" }, value));
+    }
+    coords.append(element("rect", { x: left, y: top, width, height, class: "plot-border" }));
+    coords.append(element("text", { x: left + width / 2, y: top + height + 34, class: "axis-text",
+        "text-anchor": "middle" }, xLabel));
+    const labelX = left - 38, labelY = top + height / 2;
+    coords.append(element("text", { x: labelX, y: labelY, class: "axis-text", "text-anchor": "middle",
+        transform: "rotate(-90 " + labelX + " " + labelY + ")" }, yLabel));
+    svg.append(coords);
+}
+function activeProfiles() {
+    return scene.points.flatMap((point, index) => {
+        const windows = point.frames.filter(frame => scopeInput.value === "all" || scene.frames[frame].step > 0);
+        if (!windows.length) return [];
+        const fixedCount = windows.filter(frame => scene.frames[frame].behavior === fixed).length;
+        const mixedCount = windows.length - fixedCount;
+        const type = fixedCount && mixedCount ? "shared" : fixedCount ? "fixed" : "mixed";
+        return [{ ...point, index, windows, fixedCount, mixedCount, type }];
+    });
+}
+function drawScatter() {
+    const area = [58, 12, 689, 376];
+    const domains = [0, 1].map(index => extent(scene.points.map(point => point.xy[index])));
+    const spanPerPixel = Math.max(...domains.map(([min, max], index) => (max - min) / area[index + 2]));
+    const [xDomain, yDomain] = domains.map(([min, max], index) => {
+        const center = (min + max) / 2, radius = spanPerPixel * area[index + 2] / 2;
+        return [center - radius, center + radius];
+    });
+    const scale = gridScale(xDomain, yDomain, area);
+    scatter.replaceChildren();
+    drawGrid(scatter, scale, xDomain, yDomain, "t-SNE 1", "t-SNE 2");
+    for (const point of profiles) {
+        const x = scale.x(point.xy[0]), y = scale.y(point.xy[1]);
+        const description = point.id + "，" + point.alive.join(" 对 ") + "，" + labels[point.type] +
+            "，固定 " + point.fixedCount + " 条，混合 " + point.mixedCount + " 条";
+        const mark = element("g", { class: "mark " + point.type, transform: "translate(" + x + " " + y + ")",
+            tabindex: "0", role: "button", "aria-label": description, "data-index": point.index });
+        mark.append(element("title", {}, description), element("circle", { r: 10.5, fill: "transparent" }),
+            element("circle", { r: 8.1, class: "focus-ring" }));
+        if (point.type === "fixed") {
+            mark.append(element("polygon", { points: "0,-6 6,0 0,6 -6,0", class: "disc" }));
+        } else {
+            mark.append(element("circle", { r: point.type === "shared" ? 5.2 : 5.0, class: "disc" }));
+        }
+        mark.addEventListener("click", () => chooseFrame(point.windows[0]));
+        mark.addEventListener("keydown", event => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                chooseFrame(point.windows[0]);
+            }
+        });
+        scatter.append(mark);
+    }
+}
+function drawUnits(frame) {
+    const xDomain = scene.bounds.map(point => point[0]);
+    const yDomain = scene.bounds.map(point => point[1]);
+    const scale = gridScale(xDomain, yDomain, [39, 8, 350, 162], true);
+    unitMap.replaceChildren();
+    drawGrid(unitMap, scale, xDomain, yDomain, "世界 X", "世界 Y");
+    for (const [i, j] of frame.reach) {
+        const [left, right] = [frame.units[0][i], frame.units[1][j]];
+        unitMap.append(element("line", { x1: scale.x(left[0]), y1: scale.y(left[1]),
+            x2: scale.x(right[0]), y2: scale.y(right[1]), stroke: "#8896a8", "stroke-opacity": ".48",
+            "stroke-width": "1.0", "aria-hidden": "true" }));
+    }
+    frame.units.forEach((units, side) => units.forEach(([x, y, hp], index) => {
+        const mark = element("circle", { cx: scale.x(x), cy: scale.y(y), r: 4.2,
+            fill: side ? "var(--enemy)" : "var(--ally)", stroke: "white", "stroke-width": ".8" });
+        mark.append(element("title", {}, (side ? "敌" : "我") + (index + 1) +
+            "  HP " + hp + "  (" + x.toFixed(2) + ", " + y.toFixed(2) + ")"));
+        unitMap.append(mark);
+    }));
+}
+function chooseFrame(index) {
+    const frame = scene.frames[index];
+    const point = profiles.find(item => item.index === frame.point);
+    if (!point || !point.windows.includes(index)) return;
+    selectedFrame = index;
+    profileInput.value = String(point.index);
+    frameInput.replaceChildren();
+    for (const value of point.windows) {
+        const row = scene.frames[value];
+        option(frameInput, value, display[row.behavior] + " · " + row.layout + " / " + row.opponent.toUpperCase() + " · 步 " + row.step);
+    }
+    frameInput.value = String(index);
+    get("case-text").textContent = display[frame.behavior] + " ｜ " + frame.layout + " / " + frame.opponent.toUpperCase() +
+        " ｜ 第 " + frame.step + " 步";
+    get("paired").disabled = frame.paired === null;
+    drawUnits(frame);
+    const hp = units => units.reduce((total, unit) => total + unit[2], 0);
+    const rows = [
+        ["双方存活", frame.units.map(side => side.length).join(" 对 ")],
+        ["双方总 HP", frame.units.map(hp).join(" / ")],
+        ["射程内的跨队单位对", frame.reach.length + " / " + frame.units[0].length * frame.units[1].length],
+        ["上一窗口宏动作", frame.previous ?? "开局"],
+        ["本窗口分组与宏动作", frame.grouping + " / " + frame.macro],
+    ];
+    const meta = get("frame-meta");
+    meta.replaceChildren();
+    for (const [name, value] of rows) {
+        const dt = document.createElement("dt"), dd = document.createElement("dd");
+        dt.textContent = name;
+        dd.textContent = value;
+        meta.append(dt, dd);
+    }
+    for (const mark of scatter.querySelectorAll(".mark")) {
+        mark.classList.toggle("active", Number(mark.dataset.index) === frame.point);
+    }
+}
+function matchSummary(stats) {
+    const matched = stats.matched, meta = get("match-note"), table = get("match-table");
+    table.replaceChildren();
+    if (!matched) {
+        meta.textContent = "当前时段没有可配对的开局与对手组合。";
+        return;
+    }
+    meta.textContent = matched.cases + " 个可配对组合 · 各条件 " + matched.windows + " 个窗口 · " +
+        report.draws.toLocaleString("zh-CN") + " 次抽样";
+    const rows = [
+        ["固定脚本", matched.fixed], ["混合脚本", matched.mixed], ["固定及混合各约一半", matched.combined],
+        ["合并减固定", matched.combined_minus_fixed],
+    ];
+    for (const [label, result] of rows) {
+        const row = document.createElement("tr"), title = document.createElement("th");
+        title.scope = "row";
+        title.textContent = label;
+        row.append(title);
+        for (const text of [result.mean.toFixed(2), result.p05 + " 至 " + result.p95]) {
+            const cell = document.createElement("td");
+            cell.textContent = text;
+            row.append(cell);
+        }
+        table.append(row);
+    }
+}
+function render(preferred) {
+    scene = report.scenarios[sceneInput.value];
+    const stats = scene.scopes[scopeInput.value];
+    profiles = activeProfiles().filter(point => categoryInput.value === "all" || point.type === categoryInput.value);
+    get("subtitle").textContent = "固定与混合脚本的访问记录 · " + stats.fixed_windows + " 条固定窗口 / " +
+        stats.mixed_windows + " 条混合窗口";
+    get("fixed-count").textContent = stats.fixed_only;
+    get("mixed-count").textContent = stats.mixed_only;
+    get("shared-count").textContent = stats.shared;
+    get("union-count").textContent = stats.union;
+    drawScatter();
+    profileInput.replaceChildren();
+    for (const point of profiles) option(profileInput, point.index, point.id + " · " + labels[point.type]);
+    get("scatter-note").textContent = "每点一种关系类型 · 当前显示 " + profiles.length + " / " + stats.union + " 种";
+    profileInput.disabled = frameInput.disabled = get("download").disabled = !profiles.length;
+    const chosen = preferred ?? scene.example;
+    const contains = profiles.some(point => point.windows.includes(chosen));
+    if (profiles.length) {
+        chooseFrame(contains ? chosen : profiles[0].windows[0]);
+    } else {
+        selectedFrame = undefined;
+        frameInput.replaceChildren();
+        unitMap.replaceChildren();
+        get("frame-meta").replaceChildren();
+        get("case-text").textContent = "当前筛选没有观测。";
+        get("paired").disabled = true;
+    }
+    matchSummary(stats);
+}
+function download() {
+    const columns = ["scenario", "scope", "profile", "type", "t_sne_1", "t_sne_2", "friendly_alive",
+        "enemy_alive", "fixed_windows", "mixed_windows", "relation_histogram"];
+    function csvCell(value) {
+        return '"' + String(value).replaceAll('"', '""') + '"';
+    }
+    const rows = profiles.map(point => [sceneInput.value, scopeInput.value, point.id, point.type, ...point.xy,
+        ...point.alive, point.fixedCount, point.mixedCount, JSON.stringify(Object.fromEntries(point.histogram))]);
+    const content = [columns, ...rows].map(row => row.map(csvCell).join(",")).join("\r\n");
+    const url = URL.createObjectURL(new Blob(["\uFEFF", content], { type: "text/csv;charset=utf-8" }));
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "probe-profiles-" + sceneInput.value + "-" + scopeInput.value + ".csv";
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+for (const name of names) option(sceneInput, name, name);
+sceneInput.addEventListener("change", () => render());
+scopeInput.addEventListener("change", () => render(selectedFrame));
+categoryInput.addEventListener("change", () => render(selectedFrame));
+profileInput.addEventListener("change", () => chooseFrame(profiles.find(point => point.index === Number(profileInput.value)).windows[0]));
+frameInput.addEventListener("change", () => chooseFrame(Number(frameInput.value)));
+get("paired").addEventListener("click", () => {
+    const target = scene.frames[selectedFrame].paired;
+    if (!profiles.some(point => point.windows.includes(target))) {
+        categoryInput.value = "all";
+        render(target);
+    } else {
+        chooseFrame(target);
+    }
+});
+get("download").addEventListener("click", download);
+render();
+</script>
+</body>
+</html>

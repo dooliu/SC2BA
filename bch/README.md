@@ -50,3 +50,11 @@ python -m bch evaluate --scenario 3m --policy bch/runs/train-grid/policy.json --
 `--repeats` 表示每个适用组合的对局数。`fit` 默认用 160 轮、32 维和 32 个码字，并支持调整 `--epochs`、`--latent-dim` 和 `--codes`。做编码对照时复用探针档案，给两种策略传相同的训练与评测种子。跨地图时把拟合和 Q 表训练限制在源地图上，再用同一计划中目标地图的测试布局评测。正式多种子对照用不同的种子和输出目录重复运行。
 
 冻结评测从 `policy.json` 读取 Q 表，运行后核对表内容，按地图与对手写出胜负、步数和访问未见 Q 键的数据。输出目录 `bch/runs/` 用于本地数据、权重与报告。
+
+### 查看探针覆盖
+
+```powershell
+python -m bch.probe_coverage --probes bch/runs/probes-3m --output bch/runs/coverage-3m
+```
+
+打开 `probe-coverage.html` 可按地图和时段查看定性关系类型的 t-SNE。点击散点可以查看对应原始兵位，并切换到同一开局、对手和决策步的另一种采集策略。报告同时提供档案覆盖数和按开局、对手及重复编号配对的等量抽样，点表和汇总可从输出目录读取。
