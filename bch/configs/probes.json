@@ -1,0 +1,29 @@
+{
+  "behaviors": {
+    "mixed": null,
+    "legacy-nearest": ["action_ATK_clu_nearest"]
+  },
+  "scenarios": [
+    {
+      "name": "3m",
+      "opponents": ["bot", "qmix", "vdn"],
+      "layouts": [
+        {"id": "standard", "split": "train", "red": [9, 16]},
+        {"id": "spread", "split": "train", "red_units": [[8, 13], [10, 16], [8, 19]],
+         "blue_units": [[23, 13], [22, 16], [23, 19]]},
+        {"id": "diagonal", "split": "validation", "red": [9, 12]},
+        {"id": "near", "split": "test", "red": [12, 18]}
+      ]
+    },
+    {
+      "name": "8m",
+      "opponents": ["bot", "qmix", "vdn"],
+      "layouts": [
+        {"id": "standard", "split": "train", "red": [9, 16]},
+        {"id": "offset", "split": "train", "red": [10, 19], "blue": [24, 16]},
+        {"id": "diagonal", "split": "validation", "red": [9, 12]},
+        {"id": "near", "split": "test", "red": [11, 14]}
+      ]
+    }
+  ]
+}
