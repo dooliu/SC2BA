@@ -33,6 +33,17 @@ class UpperEncoder:
                 self.model.eval()
                 self.mean, self.scale = data["mean"], data["scale"]
 
+    def _embed(self, observations):
+        values = self.model(*model_inputs(self.kind, observations))
+        return ((values - self.mean) / self.scale).numpy()
+
+    @torch.inference_mode()
+    def embed_many(self, observations, batch_size=64):
+        if self.kind not in NEURAL_KINDS or not len(observations) or batch_size < 1:
+            raise ValueError("Embedding batches require a neural encoder and observations.")
+        return np.concatenate([self._embed(observations[start:start + batch_size])
+                               for start in range(0, len(observations), batch_size)])
+
     @torch.inference_mode()
     def key(self, observation):
         if self.hash is not None:
@@ -41,6 +52,6 @@ class UpperEncoder:
                 return value
             distances = (self.medoids != hash_features(value)).sum(axis=1)
         else:
-            value = ((self.model(*model_inputs(self.kind, [observation]))[0] - self.mean) / self.scale).numpy()
+            value = self._embed([observation])[0]
             distances = np.square(self.medoids - value).sum(axis=1)
         return str(int(distances.argmin()))

@@ -21,6 +21,7 @@
     font-family: Inter, "Microsoft YaHei UI", system-ui, sans-serif;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body { margin: 0; background: var(--page); color: var(--text); line-height: 1.55; }
 main { width: min(1320px, 100%); margin: auto; padding: 28px clamp(14px, 3vw, 38px) 36px; }
 h1 { margin: 0; font-size: clamp(25px, 3.1vw, 35px); letter-spacing: -.035em; }
@@ -31,11 +32,12 @@ p { margin: 0; }
 .note { font-size: 13px; }
 .controls { display: flex; gap: 10px; align-items: end; flex-wrap: wrap; }
 .controls label, .frame-choice { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
-button, select { font: inherit; color: var(--text); background: var(--paper); }
-button, select {
+button, select, .jump { font: inherit; color: var(--text); background: var(--paper); }
+button, select, .jump {
     padding: 6px 10px; min-height: 36px; border: 1px solid #bbc6d4; border-radius: 7px;
 }
 button { cursor: pointer; }
+.jump { align-self: end; display: inline-flex; align-items: center; text-decoration: none; font-size: 13px; }
 button:disabled { cursor: default; opacity: .56; }
 :focus-visible { outline: 2px solid #336dbe; outline-offset: 3px; }
 .numbers {
@@ -86,6 +88,20 @@ svg { display: block; width: 100%; height: auto; overflow: visible; color: var(-
 .frame-meta dd { margin: 0; overflow-wrap: anywhere; }
 #match { margin-top: 12px; }
 #match-note { margin: 5px 0 8px; }
+.layer-options { margin-top: 9px; display: grid; gap: 6px; }
+.layer-options details { margin-top: 0; }
+.layer-options label { display: inline-flex; gap: 5px; align-items: center; font-size: 13px; }
+.roster-options { display: flex; flex-wrap: wrap; gap: 6px 15px; padding-top: 5px; }
+.roster-key { display: inline-block; width: 16px; height: 10px; border: 1.5px solid; border-radius: 3px; }
+.hull-shape { fill-opacity: .105; stroke-opacity: .78; stroke-width: 1.5; pointer-events: none; }
+#representations { margin-top: 12px; scroll-margin-top: 10px; }
+.comparison-grid { display: grid; grid-template-columns: repeat(2,minmax(0, 1fr)); gap: 12px; margin: 10px 0; }
+.comparison-grid .pane { padding: 10px; }
+.comparison-grid h3 { font-size: 16px; margin: 0; }
+.comparison-grid label { display: inline-flex; gap: 7px; align-items: center; font-size: 13px; }
+.comparison-grid .note { margin-top: 3px; }
+.comparison-notes { display: grid; gap: 6px; }
+#roster-metrics { margin-top: 10px; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
 th, td { padding: 5px 9px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
 th:first-child { text-align: left; }
@@ -97,6 +113,9 @@ details p { margin-top: 7px; }
 @media (max-width: 900px) {
     .views { grid-template-columns: 1fr; }
     .field { max-width: 580px; margin-inline: auto; }
+}
+@media (max-width: 700px) {
+    .comparison-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
     .numbers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -114,8 +133,9 @@ details p { margin-top: 7px; }
         </div>
         <div class="controls">
             <label>场景 <select id="scene"></select></label>
-            <label>时段 <select id="scope"><option value="all">全部窗口</option><option value="later">首窗之后</option></select></label>
+            <label>样本范围 <select id="scope"><option value="all">全部窗口</option><option value="later">首窗之后</option><option value="test">留出布局</option><option value="test-later">留出布局 · 首窗之后</option></select></label>
             <label>显示类型 <select id="category"><option value="all">全部类型</option><option value="fixed">仅固定访问</option><option value="mixed">仅混合访问</option><option value="shared">两者共有</option></select></label>
+            <a class="jump" id="comparison-link" href="#representations" hidden>比较 CNN 与 BK-tree</a>
         </div>
     </header>
     <section class="numbers" aria-label="档案关系类型数">
@@ -137,6 +157,15 @@ details p { margin-top: 7px; }
             </div>
             <svg id="map-scatter" viewBox="0 0 760 430" role="group" aria-label="关系类型的 t-SNE 散点，支持点击每点查看观测"></svg>
             <p id="scatter-note" class="note"></p>
+            <div class="layer-options">
+                <label><input type="checkbox" id="show-hulls" checked>显示存活阵容包络</label>
+                <div class="legend" id="hull-legend" aria-label="阵容包络图例"></div>
+                <details>
+                    <summary>选择阵容</summary>
+                    <div class="roster-options" id="roster-options"></div>
+                    <p class="note">包络使用当前可见点。两个点用线段，一个点用空心轮廓。</p>
+                </details>
+            </div>
         </section>
         <section class="pane" aria-labelledby="frame-title">
             <h2 id="frame-title">对应的实际观测</h2>
@@ -155,6 +184,55 @@ details p { margin-top: 7px; }
             <dl id="frame-meta" class="frame-meta"></dl>
         </section>
     </div>
+    <section class="pane" id="representations" aria-labelledby="comparison-title" hidden>
+        <h2 id="comparison-title">同一观测在 CNN 与 BK-tree 距离中的位置</h2>
+        <p id="cnn-training" class="note"></p>
+        <div class="comparison-grid">
+            <div class="pane">
+                <h3>IM-grid CNN · 连续嵌入</h3>
+                <p id="cnn-distance-description" class="note"></p>
+                <svg class="comparison-plot" id="cnn-plot" viewBox="0 0 760 430" role="group" aria-label="CNN 同帧投影"></svg>
+            </div>
+            <div class="pane">
+                <div class="panel-heading">
+                    <h3>BK-tree · 预计算距离</h3>
+                    <label>距离 <select id="bk-distance"><option value="bk-position">一级位置</option><option value="bk-health">二级血量</option></select></label>
+                </div>
+                <p id="bk-description" class="note"></p>
+                <svg class="comparison-plot" id="bk-plot" viewBox="0 0 760 430" role="group" aria-label="BK-tree 距离同帧投影"></svg>
+            </div>
+        </div>
+        <div class="comparison-notes">
+            <p id="comparison-frame" class="note" aria-live="polite"></p>
+            <p class="note">每点一个探针窗口。菱形是固定脚本，实心圆是混合脚本。点击任一图，两图同步高亮同一窗口。</p>
+            <p id="agreement-note" class="note"></p>
+        </div>
+        <div class="table-scroll">
+            <table aria-label="CNN 与 BK-tree 近邻和距离排序一致性">
+                <thead><tr>
+                    <th scope="col">与 CNN 对比</th><th scope="col">原空间 Spearman ρ</th>
+                    <th scope="col">原空间近邻重合</th><th scope="col">投影后近邻重合</th>
+                    <th scope="col">同阵容 ρ</th><th scope="col">同阵容近邻重合</th>
+                </tr></thead>
+                <tbody id="agreement-body"></tbody>
+            </table>
+        </div>
+        <div class="table-scroll" id="roster-metrics">
+            <table aria-label="各距离下近邻中相同存活阵容占比">
+                <thead><tr>
+                    <th scope="col">原空间</th><th scope="col">定性关系</th><th scope="col">CNN</th>
+                    <th scope="col">BK-tree 位置</th><th scope="col">BK-tree 血量</th><th scope="col">随机近邻</th>
+                </tr></thead>
+                <tbody id="roster-body"></tbody>
+            </table>
+        </div>
+        <details>
+            <summary>距离、近邻和阵容的口径</summary>
+            <p class="note">原 HRL-IM/CBS 的 BK-tree 先按双方单位的位置匹配代价用阈值 1.0 查询，再在一级簇内按这些配对单位的 HP 差用阈值 0.5 细分。两图分别用连续距离矩阵做 t-SNE。一级位置距离对每个未配对单位加 1，二级使用归一化 HP 差。跨簇的二级距离用于查看其整体结构。</p>
+            <p class="note">一致性按相同窗口的距离排序和 5 个最近邻计算。距离并列时等概率分配名额。同阵容结果只在双方存活数都相同的窗口之间比较。近邻不足 5 个的窗口无法参与同阵容 5-NN 统计。</p>
+            <p class="note">投影以每张地图的所有窗口拟合，切换时段只过滤显示。颜色筛选作用于散点。定量指标始终用选定地图与时段的全部窗口重算。</p>
+        </details>
+    </section>
     <section id="match" class="pane" aria-labelledby="match-title">
         <h2 id="match-title">等量配对抽样</h2>
         <p id="match-note" class="note"></p>
@@ -167,7 +245,7 @@ details p { margin-top: 7px; }
         <details>
             <summary>统计口径</summary>
             <p class="note">一个类型由双方存活数和 64 格关系直方图组成。对每个跨队单位对，分别标记两个方向的射程内、最近和最远，共六个二元标记，再统计各种组合出现的次数。</p>
-            <p class="note">各场景分别拟合 t-SNE，输入为双方存活比例及按频率归一化的关系直方图。直方图频率开平方后缩放。时段切换沿用同一投影，颜色根据该时段的访问情况更新。</p>
+            <p class="note">定性关系图沿用上一版的输入，使用双方存活比例与关系频率平方根。各场景分别投影，每点一种去重后的关系类型。时段切换沿用同一投影，颜色根据该时段的访问情况更新。</p>
             <p class="note">按开局、对手和重复编号配对。每个组合的样本预算为两种脚本可用窗口数的较小值。各条件按同配额无放回抽样，合并条件在每组尽量各取一半。区间反映当前轨迹上的抽样波动。</p>
         </details>
     </section>
@@ -185,7 +263,12 @@ const display = { [fixed]: "固定脚本", mixed: "混合脚本" };
 const sceneInput = get("scene"), scopeInput = get("scope"), categoryInput = get("category");
 const profileInput = get("profile"), frameInput = get("frame");
 const scatter = get("map-scatter"), unitMap = get("unit-map");
+const cnnPlot = get("cnn-plot"), bkPlot = get("bk-plot"), bkDistance = get("bk-distance");
+const hullToggle = get("show-hulls");
+const rosterSelections = new Map();
+const rosterPalette = ["#3876b4", "#af4485", "#917000", "#27874e", "#98523f", "#6858a8", "#297f89"];
 let scene, profiles = [], selectedFrame;
+let rosterColors;
 
 function element(name, attr = {}, content) {
     const item = document.createElementNS(svgURI, name);
@@ -247,8 +330,12 @@ function drawGrid(svg, scale, xDomain, yDomain, xLabel, yLabel) {
     svg.append(coords);
 }
 function activeProfiles() {
+    const scope = scopeInput.value;
     return scene.points.flatMap((point, index) => {
-        const windows = point.frames.filter(frame => scopeInput.value === "all" || scene.frames[frame].step > 0);
+        const windows = point.frames.filter(frame => {
+            const row = scene.frames[frame];
+            return (!scope.startsWith("test") || row.split === "test") && (!scope.endsWith("later") || row.step > 0);
+        });
         if (!windows.length) return [];
         const fixedCount = windows.filter(frame => scene.frames[frame].behavior === fixed).length;
         const mixedCount = windows.length - fixedCount;
@@ -256,39 +343,174 @@ function activeProfiles() {
         return [{ ...point, index, windows, fixedCount, mixedCount, type }];
     });
 }
-function drawScatter() {
+function rosterLabel(point) { return point.alive.join("v"); }
+
+function hullVertices(points) {
+    const unique = Array.from(new Map(points.map(point => [point.join(","), point])).values());
+    unique.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+    if (unique.length <= 2) return unique;
+    const turn = (a, b, c) => (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0]);
+    function half(sorted) {
+        const vertices = [];
+        for (const point of sorted) {
+            while (vertices.length >= 2 && turn(vertices[vertices.length - 2], vertices[vertices.length - 1], point) <= 1e-8) {
+                vertices.pop();
+            }
+            vertices.push(point);
+        }
+        return vertices.slice(0, -1);
+    }
+    return [...half(unique), ...half(unique.slice().reverse())];
+}
+
+function drawHulls(svg, points, scale) {
+    if (!hullToggle.checked) return;
+    const selected = rosterSelections.get(sceneInput.value);
+    const grouped = new Map();
+    for (const point of points) {
+        if (!selected.has(point.roster)) continue;
+        if (!grouped.has(point.roster)) grouped.set(point.roster, []);
+        grouped.get(point.roster).push([scale.x(point.xy[0]), scale.y(point.xy[1])]);
+    }
+    for (const [name, members] of grouped) {
+        const hull = hullVertices(members), color = rosterColors.get(name);
+        const sharedAttr = { class: "hull-shape", stroke: color, "data-roster": name, "aria-hidden": "true" };
+        if (hull.length > 2) {
+            svg.append(element("polygon", { ...sharedAttr, points: hull.map(point => point.join(",")).join(" "), fill: color }));
+        } else if (hull.length === 2) {
+            svg.append(element("line", { ...sharedAttr, x1: hull[0][0], y1: hull[0][1], x2: hull[1][0],
+                y2: hull[1][1], "stroke-dasharray": "4 3" }));
+        } else {
+            svg.append(element("circle", { ...sharedAttr, cx: hull[0][0], cy: hull[0][1], r: 9, fill: "none" }));
+        }
+    }
+}
+
+function renderRosterOptions() {
+    const full = new Map();
+    for (const point of scene.points) {
+        const name = rosterLabel(point);
+        full.set(name, (full.get(name) ?? 0) + point.frames.length);
+    }
+    const sorted = Array.from(full.keys()).sort((a, b) => full.get(b) - full.get(a) || a.localeCompare(b));
+    const map = sceneInput.value;
+    const defaults = (map === "3m" ? ["3v3", "3v2", "2v3", "3v1"] : sorted.slice(0, 5)).filter(name => full.has(name));
+    const colorOrder = [...new Set([...defaults, ...sorted])];
+    rosterColors = new Map(colorOrder.map((name, i) => [name,
+        rosterPalette[i] ?? "hsl(" + ((i * 137.5) % 360) + " 52% 44%)"]));
+    if (!rosterSelections.has(map)) {
+        rosterSelections.set(map, new Set(defaults));
+    }
+    const selected = rosterSelections.get(map);
+    const counts = new Map();
+    for (const point of profiles) {
+        const name = rosterLabel(point);
+        counts.set(name, (counts.get(name) ?? 0) + 1);
+    }
+    const options = get("roster-options");
+    options.replaceChildren();
+    for (const name of sorted) {
+        const label = document.createElement("label");
+        const field = document.createElement("input");
+        field.type = "checkbox";
+        field.checked = selected.has(name);
+        field.addEventListener("change", () => {
+            if (field.checked) selected.add(name);
+            else selected.delete(name);
+            renderHullLegend();
+            redrawPlots();
+        });
+        label.append(field, name + " · " + (counts.get(name) ?? 0) + " 种");
+        options.append(label);
+    }
+    renderHullLegend();
+}
+
+function renderHullLegend() {
+    const legend = get("hull-legend");
+    legend.replaceChildren();
+    if (!hullToggle.checked) return;
+    const active = new Set(profiles.map(rosterLabel));
+    for (const name of rosterSelections.get(sceneInput.value)) {
+        if (!active.has(name)) continue;
+        const item = document.createElement("span"), key = document.createElement("b");
+        key.className = "roster-key";
+        key.style.color = rosterColors.get(name);
+        key.style.background = "color-mix(in srgb, " + rosterColors.get(name) + " 12%, transparent)";
+        key.setAttribute("aria-hidden", "true");
+        item.append(key, name);
+        legend.append(item);
+    }
+}
+
+function drawProjection(svg, points, population, rawFrames = false) {
     const area = [58, 12, 689, 376];
-    const domains = [0, 1].map(index => extent(scene.points.map(point => point.xy[index])));
+    const domains = [0, 1].map(index => extent(population.map(xy => xy[index])));
     const spanPerPixel = Math.max(...domains.map(([min, max], index) => (max - min) / area[index + 2]));
     const [xDomain, yDomain] = domains.map(([min, max], index) => {
         const center = (min + max) / 2, radius = spanPerPixel * area[index + 2] / 2;
         return [center - radius, center + radius];
     });
     const scale = gridScale(xDomain, yDomain, area);
-    scatter.replaceChildren();
-    drawGrid(scatter, scale, xDomain, yDomain, "t-SNE 1", "t-SNE 2");
-    for (const point of profiles) {
+    svg.replaceChildren();
+    drawGrid(svg, scale, xDomain, yDomain, "t-SNE 1", "t-SNE 2");
+    drawHulls(svg, points, scale);
+    const size = rawFrames ? .75 : 1;
+    for (const point of points) {
         const x = scale.x(point.xy[0]), y = scale.y(point.xy[1]);
-        const description = point.id + "，" + point.alive.join(" 对 ") + "，" + labels[point.type] +
-            "，固定 " + point.fixedCount + " 条，混合 " + point.mixedCount + " 条";
         const mark = element("g", { class: "mark " + point.type, transform: "translate(" + x + " " + y + ")",
-            tabindex: "0", role: "button", "aria-label": description, "data-index": point.index });
-        mark.append(element("title", {}, description), element("circle", { r: 10.5, fill: "transparent" }),
+            tabindex: "0", role: "button", "aria-label": point.description, "data-index": point.index });
+        mark.append(element("title", {}, point.description), element("circle", { r: 10.5 * size, fill: "transparent" }),
             element("circle", { r: 8.1, class: "focus-ring" }));
         if (point.type === "fixed") {
-            mark.append(element("polygon", { points: "0,-6 6,0 0,6 -6,0", class: "disc" }));
+            const r = 6 * size;
+            mark.append(element("polygon", { points: "0,-" + r + " " + r + ",0 0," + r + " -" + r + ",0", class: "disc" }));
         } else {
-            mark.append(element("circle", { r: point.type === "shared" ? 5.2 : 5.0, class: "disc" }));
+            mark.append(element("circle", { r: point.type === "shared" ? 5.2 : 5.0 * size, class: "disc" }));
         }
-        mark.addEventListener("click", () => chooseFrame(point.windows[0]));
+        mark.addEventListener("click", () => chooseFrame(point.frame));
         mark.addEventListener("keydown", event => {
             if (event.key === "Enter" || event.key === " ") {
                 event.preventDefault();
-                chooseFrame(point.windows[0]);
+                chooseFrame(point.frame);
             }
         });
-        scatter.append(mark);
+        svg.append(mark);
     }
+}
+
+function activeMarks() {
+    if (selectedFrame === undefined) return;
+    const selection = scene.frames[selectedFrame];
+    for (const [svg, index] of [[scatter, selection.point], [cnnPlot, selectedFrame], [bkPlot, selectedFrame]]) {
+        for (const mark of svg.querySelectorAll(".mark")) mark.classList.toggle("active", Number(mark.dataset.index) === index);
+    }
+}
+
+function redrawPlots() {
+    const points = profiles.map(point => ({
+        ...point, roster: rosterLabel(point), frame: point.windows[0],
+        description: point.id + "，" + rosterLabel(point) + "，" + labels[point.type] +
+            "，固定 " + point.fixedCount + " 条，混合 " + point.mixedCount + " 条",
+    }));
+    drawProjection(scatter, points, scene.points.map(point => point.xy));
+    if (scene.comparison) {
+        for (const [svg, method] of [[cnnPlot, "cnn"], [bkPlot, bkDistance.value]]) {
+            const xy = scene.comparison.coordinates[method];
+            const frames = points.flatMap(point => point.windows.map(index => {
+                const frame = scene.frames[index];
+                return { index, frame: index, xy: xy[index], roster: point.roster,
+                    type: frame.behavior === fixed ? "fixed" : "mixed",
+                    description: point.roster + "，" + display[frame.behavior] + "，" + frame.layout + " / " +
+                        frame.opponent.toUpperCase() + "，第 " + frame.step + " 步" };
+            }));
+            drawProjection(svg, frames, xy, true);
+        }
+        get("bk-description").textContent = bkDistance.value === "bk-position"
+            ? "一级位置匹配代价，包含未配对单位的补位成本"
+            : "二级 HP 差，比较按位置匹配的单位";
+    }
+    activeMarks();
 }
 function drawUnits(frame) {
     const xDomain = scene.bounds.map(point => point[0]);
@@ -324,6 +546,7 @@ function chooseFrame(index) {
     frameInput.value = String(index);
     get("case-text").textContent = display[frame.behavior] + " ｜ " + frame.layout + " / " + frame.opponent.toUpperCase() +
         " ｜ 第 " + frame.step + " 步";
+    get("comparison-frame").textContent = "当前观测  " + get("case-text").textContent + " ｜ " + rosterLabel(point);
     get("paired").disabled = frame.paired === null;
     drawUnits(frame);
     const hp = units => units.reduce((total, unit) => total + unit[2], 0);
@@ -342,10 +565,56 @@ function chooseFrame(index) {
         dd.textContent = value;
         meta.append(dt, dd);
     }
-    for (const mark of scatter.querySelectorAll(".mark")) {
-        mark.classList.toggle("active", Number(mark.dataset.index) === frame.point);
-    }
+    activeMarks();
 }
+
+function tableRow(table, label, values) {
+    const row = document.createElement("tr"), title = document.createElement("th");
+    title.scope = "row";
+    title.textContent = label;
+    row.append(title);
+    for (const text of values) {
+        const cell = document.createElement("td");
+        cell.textContent = text;
+        row.append(cell);
+    }
+    table.append(row);
+}
+
+function agreementSummary() {
+    const comparison = scene.comparison;
+    get("representations").hidden = get("comparison-link").hidden = !comparison;
+    if (!comparison) return;
+    const cnn = comparison.cnn;
+    const counts = cnn.sample_counts;
+    get("cnn-training").textContent = "按地图训练 · " + cnn.epochs + " 轮预算 · 验证最优第 " + cnn.best_epoch +
+        " 轮 · 训练 / 验证 / 留出窗口 " + [counts.train, counts.validation, counts.test].join(" / ");
+    get("cnn-distance-description").textContent = "标准化的 " + cnn.latent_dim + " 维嵌入使用欧氏距离";
+    const stats = comparison.agreement[scopeInput.value];
+    const table = get("agreement-body"), roster = get("roster-body");
+    table.replaceChildren();
+    roster.replaceChildren();
+    if (!stats) {
+        get("agreement-note").textContent = "当前范围的窗口不足以计算距离一致性。";
+        return;
+    }
+    const percent = value => value === null ? "—" : (100 * value).toFixed(1) + "%";
+    const coefficient = value => value === null ? "—" : value.toFixed(3);
+    const within = stats.same_roster_anchors
+        ? " · 同阵容近邻统计 " + stats.same_roster_anchors + " 个窗口，随机基线 " + percent(stats.within_roster_random_overlap)
+        : " · 当前范围的同阵容样本不足以计算组内近邻重合";
+    get("agreement-note").textContent = stats.frames + " 个窗口 · " + stats.pairs.toLocaleString("zh-CN") +
+        " 个距离对 · " + stats.neighbors + "-NN 随机重合基线 " + percent(stats.random_overlap) + within;
+    for (const [method, label] of [["bk-position", "BK-tree 一级位置"], ["bk-health", "BK-tree 二级血量"]]) {
+        const row = stats.comparisons[method];
+        tableRow(table, label, [coefficient(row.spearman), percent(row.neighbor_overlap), percent(row.projected_overlap),
+            coefficient(row.same_roster_spearman), percent(row.same_roster_neighbor_overlap)]);
+    }
+    const rate = stats.roster_purity;
+    tableRow(roster, stats.neighbors + "-NN 同阵容率",
+        [rate.relation, rate.cnn, rate["bk-position"], rate["bk-health"], stats.roster_chance].map(percent));
+}
+
 function matchSummary(stats) {
     const matched = stats.matched, meta = get("match-note"), table = get("match-table");
     table.replaceChildren();
@@ -360,20 +629,12 @@ function matchSummary(stats) {
         ["合并减固定", matched.combined_minus_fixed],
     ];
     for (const [label, result] of rows) {
-        const row = document.createElement("tr"), title = document.createElement("th");
-        title.scope = "row";
-        title.textContent = label;
-        row.append(title);
-        for (const text of [result.mean.toFixed(2), result.p05 + " 至 " + result.p95]) {
-            const cell = document.createElement("td");
-            cell.textContent = text;
-            row.append(cell);
-        }
-        table.append(row);
+        tableRow(table, label, [result.mean.toFixed(2), result.p05 + " 至 " + result.p95]);
     }
 }
 function render(preferred) {
     scene = report.scenarios[sceneInput.value];
+    selectedFrame = undefined;
     const stats = scene.scopes[scopeInput.value];
     profiles = activeProfiles().filter(point => categoryInput.value === "all" || point.type === categoryInput.value);
     get("subtitle").textContent = "固定与混合脚本的访问记录 · " + stats.fixed_windows + " 条固定窗口 / " +
@@ -382,7 +643,9 @@ function render(preferred) {
     get("mixed-count").textContent = stats.mixed_only;
     get("shared-count").textContent = stats.shared;
     get("union-count").textContent = stats.union;
-    drawScatter();
+    agreementSummary();
+    renderRosterOptions();
+    redrawPlots();
     profileInput.replaceChildren();
     for (const point of profiles) option(profileInput, point.index, point.id + " · " + labels[point.type]);
     get("scatter-note").textContent = "每点一种关系类型 · 当前显示 " + profiles.length + " / " + stats.union + " 种";
@@ -397,6 +660,7 @@ function render(preferred) {
         unitMap.replaceChildren();
         get("frame-meta").replaceChildren();
         get("case-text").textContent = "当前筛选没有观测。";
+        get("comparison-frame").textContent = "";
         get("paired").disabled = true;
     }
     matchSummary(stats);
@@ -434,6 +698,8 @@ get("paired").addEventListener("click", () => {
     }
 });
 get("download").addEventListener("click", download);
+hullToggle.addEventListener("change", () => { renderHullLegend(); redrawPlots(); });
+bkDistance.addEventListener("change", redrawPlots);
 render();
 </script>
 </body>

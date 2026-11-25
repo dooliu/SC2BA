@@ -58,3 +58,13 @@ python -m bch.probe_coverage --probes bch/runs/probes-3m --output bch/runs/cover
 ```
 
 打开 `probe-coverage.html` 可按地图和时段查看定性关系类型的 t-SNE。点击散点可以查看对应原始兵位，并切换到同一开局、对手和决策步的另一种采集策略。报告同时提供档案覆盖数和按开局、对手及重复编号配对的等量抽样，点表和汇总可从输出目录读取。
+
+可对每张地图独立拟合 IM-grid CNN，再通过 `--cnn-checkpoint` 加入同帧对照。
+
+```powershell
+python -m bch.probe_coverage --probes bch/runs/probes-3m --output bch/runs/coverage-3m --cnn-checkpoint 3m=bch/runs/fit-grid/encoder.pt
+```
+
+定性关系图每点一种关系类型，CNN 与 BK-tree 对照图每点一个原始窗口。CNN 用标准化嵌入的欧氏距离。BK-tree 沿用 HRL-IMCBS-test `6b8a5a9` 的位置匹配与 HP 差规则，坐标按 128 格归一化，图中分别投影两级距离。第二级 HP 距离取两个查询方向的平均，使位置配对并列时的距离矩阵对称。透明包络按双方存活数分组。留出指标在预先分出的测试开局上计算，投影坐标沿用全图拟合结果。
+
+`representation-agreement.csv` 汇总投影前距离排序、原空间和投影空间的 5-NN 重合，以及同阵容近邻率。`representation-frames.csv` 给出各窗口的投影坐标及矩阵行号，`representation-distances.npz` 保存原距离矩阵。

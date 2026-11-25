@@ -17,7 +17,7 @@ from .records import digest_file, write_json
 from .upper_state.geometry import relation_labels
 
 FIXED, MIXED = "legacy-nearest", "mixed"
-SCOPES = ("all", "later")
+SCOPES = ("all", "later", "test", "test-later")
 TEMPLATE = Path(__file__).with_name("visualization") / "probe_coverage.html"
 
 
@@ -42,10 +42,11 @@ def _case(frame):
 
 
 def _frames(rows):
-    frames, signatures = [], []
+    frames, signatures, observations = [], [], []
     previous = {}
     for row in sorted(rows, key=lambda r: (r["episode"], r["state"]["step"])):
         observation = Observation.from_record(row["state"])
+        observations.append(observation)
         labels = relation_labels(observation.friendly, observation.enemy)
         histogram = np.bincount(labels.ravel(), minlength=64).tolist()
         signatures.append((*labels.shape, *histogram))
@@ -65,17 +66,21 @@ def _frames(rows):
     for frame in frames:
         opposite = MIXED if frame["behavior"] == FIXED else FIXED
         frame["paired"] = by_case_frame.get((*_case(frame), frame["step"], opposite))
-    return frames, signatures
+    return frames, signatures, observations
 
 
-def _project(signatures, seed):
+def _relation_features(signatures):
     values = np.asarray(signatures, dtype=float)
-    if len(values) < 3:
-        raise ValueError("At least three distinct relation profiles are required per scenario.")
     alive, histogram = values[:, :2], values[:, 2:]
     rates = alive / np.maximum(alive.max(axis=0), 1)
     frequencies = histogram / np.maximum(histogram.sum(axis=1, keepdims=True), 1)
-    features = np.column_stack((rates, np.sqrt(frequencies / 2)))
+    return np.column_stack((rates, np.sqrt(frequencies / 2)))
+
+
+def _project(signatures, seed):
+    features = _relation_features(signatures)
+    if len(features) < 3:
+        raise ValueError("At least three distinct relation profiles are required per scenario.")
     perplexity = min(20.0, len(features) / 4)
     coordinates = TSNE(
         n_components=2, perplexity=perplexity, random_state=seed,
@@ -122,16 +127,21 @@ def _matched_coverage(frames, trials, seed):
     }
 
 
-def _scope_report(frames, scope, trials, seed):
-    scoped = [frame for frame in frames if scope == "all" or frame["step"] > 0]
-    fixed = {frame["point"] for frame in scoped if frame["behavior"] == FIXED}
-    mixed = {frame["point"] for frame in scoped if frame["behavior"] == MIXED}
-    sizes = Counter(frame["behavior"] for frame in scoped)
+def _scope_indices(frames, scope):
+    return np.array([index for index, frame in enumerate(frames)
+                     if (not scope.startswith("test") or frame["split"] == "test")
+                     and (not scope.endswith("later") or frame["step"] > 0)], dtype=int)
+
+
+def _scope_report(frames, trials, seed):
+    fixed = {frame["point"] for frame in frames if frame["behavior"] == FIXED}
+    mixed = {frame["point"] for frame in frames if frame["behavior"] == MIXED}
+    sizes = Counter(frame["behavior"] for frame in frames)
     return {
         "fixed_windows": sizes[FIXED], "mixed_windows": sizes[MIXED],
         "fixed_profiles": len(fixed), "mixed_profiles": len(mixed), "shared": len(fixed & mixed),
         "fixed_only": len(fixed - mixed), "mixed_only": len(mixed - fixed), "union": len(fixed | mixed),
-        "matched": _matched_coverage(scoped, trials, seed),
+        "matched": _matched_coverage(frames, trials, seed),
     }
 
 
@@ -150,8 +160,8 @@ def _example(frames, points):
     return max(candidates)[-1] if candidates else 0
 
 
-def _scene_report(name, rows, trials, seed):
-    frames, signatures = _frames(rows)
+def _scene_report(name, rows, trials, seed, encoder=None):
+    frames, signatures, observations = _frames(rows)
     types = sorted(set(signatures))
     type_to_id = {signature: index for index, signature in enumerate(types)}
     members = defaultdict(list)
@@ -165,13 +175,23 @@ def _scene_report(name, rows, trials, seed):
         "frames": members[index], "sources": sorted({frames[i]["behavior"] for i in members[index]}),
     } for index, signature in enumerate(types)]
     units = np.array([unit[:2] for frame in frames for side in frame["units"] for unit in side])
-    return {
+    scopes = {scope: _scope_indices(frames, scope) for scope in SCOPES}
+    scene = {
         "points": points, "frames": frames, "perplexity": perplexity,
         "bounds": [[floor(value) - 1 for value in units.min(axis=0)],
                    [ceil(value) + 1 for value in units.max(axis=0)]],
-        "scopes": {scope: _scope_report(frames, scope, trials, seed) for scope in SCOPES},
+        "scopes": {scope: _scope_report([frames[index] for index in ids], trials, seed)
+                   for scope, ids in scopes.items()},
         "example": _example(frames, points),
     }
+    distances = {}
+    if encoder:
+        from .probe_projections import compare_projections
+
+        scene["comparison"], distances = compare_projections(
+            encoder, observations, _relation_features(signatures), [item[:2] for item in signatures], scopes, seed,
+        )
+    return scene, distances
 
 
 def _write_tables(output, report):
@@ -203,18 +223,86 @@ def _write_tables(output, report):
                                  *(matched.get(c, {}).get(s) for c in conditions for s in intervals)))
 
 
+def _write_projections(output, report, matrices):
+    from .probe_projections import VIEW_NAMES
+
+    summary = {name: {key: scene["comparison"][key] for key in ("perplexity", "cnn", "agreement")}
+               for name, scene in report["scenarios"].items()}
+    write_json(output / "representation-summary.json", {
+        "probe_sha256": report["probe_sha256"], "projection_seed": report["seed"], "scenarios": summary,
+    })
+    np.savez_compressed(output / "representation-distances.npz", **matrices)
+    with (output / "representation-frames.csv").open("w", newline="", encoding="utf-8-sig") as stream:
+        writer = csv.writer(stream)
+        writer.writerow(("scenario", "frame_index", "episode", "step", "split", "behavior", "profile", "roster",
+                         "relation_x", "relation_y", *(f"{method}_{axis}" for method in VIEW_NAMES for axis in ("x", "y"))))
+        for name, scene in report["scenarios"].items():
+            coordinates = scene["comparison"]["coordinates"]
+            for index, frame in enumerate(scene["frames"]):
+                profile = scene["points"][frame["point"]]
+                writer.writerow((name, index, frame["episode"], frame["step"], frame["split"], frame["behavior"],
+                                 profile["id"], "v".join(map(str, profile["alive"])), *profile["xy"],
+                                 *(value for method in VIEW_NAMES for value in coordinates[method][index])))
+    with (output / "representation-agreement.csv").open("w", newline="", encoding="utf-8-sig") as stream:
+        writer = csv.writer(stream)
+        base = ("frames", "pairs", "neighbors", "random_overlap", "same_roster_pairs", "same_roster_anchors",
+                "within_roster_random_overlap", "roster_chance")
+        agreement = ("spearman", "neighbor_overlap", "projected_overlap", "same_roster_spearman",
+                     "same_roster_neighbor_overlap")
+        purity = ("relation", *VIEW_NAMES)
+        writer.writerow(("scenario", "scope", "comparison", *base, *agreement,
+                         *(f"roster_purity_{method}" for method in purity)))
+        for name, scene in summary.items():
+            for scope, metrics in scene["agreement"].items():
+                if metrics is None:
+                    continue
+                for method, stats in metrics["comparisons"].items():
+                    writer.writerow((name, scope, method, *(metrics[key] for key in base),
+                                     *(stats[key] for key in agreement),
+                                     *(metrics["roster_purity"][key] for key in purity)))
+
+
+def _load_encoders(specifications, scenes, manifest, parser):
+    if not specifications:
+        return {}
+    from .upper_state.encoder import UpperEncoder
+
+    encoders = {}
+    for specification in specifications:
+        name, separator, path = specification.partition("=")
+        if not separator or not path or name not in scenes or name in encoders:
+            parser.error("Provide one --cnn-checkpoint SCENARIO=PATH per scenario.")
+        encoder = UpperEncoder("im-grid", Path(path))
+        fit = encoder.fit_manifest
+        if fit["scenario"] != name or fit["probes_sha256"] != manifest["probes_sha256"]:
+            parser.error(f"The {name} CNN must be fitted on this archive with --scenario {name}.")
+        encoders[name] = encoder
+    if encoders.keys() != scenes.keys():
+        parser.error("Provide a CNN checkpoint for every scenario in the archive.")
+    return encoders
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--probes", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--draws", type=int, default=4000)
     parser.add_argument("--seed", type=int, default=1201)
+    parser.add_argument("--cnn-checkpoint", action="append", metavar="SCENARIO=PATH")
     args = parser.parse_args()
     if args.draws < 1 or not 0 <= args.seed < 2**32:
         parser.error("Use at least one draw and a nonnegative 32-bit seed.")
     manifest, scenes = _archive(args.probes)
+    encoders = _load_encoders(args.cnn_checkpoint, scenes, manifest, parser)
+    if encoders:
+        import torch
+
+        torch.set_num_threads(1)
+    scene_reports, distances = {}, {}
     with threadpool_limits(limits=1):
-        scene_reports = {name: _scene_report(name, rows, args.draws, args.seed) for name, rows in sorted(scenes.items())}
+        for name, rows in sorted(scenes.items()):
+            scene_reports[name], matrices = _scene_report(name, rows, args.draws, args.seed, encoders.get(name))
+            distances.update({f"{name}__{method}": matrix for method, matrix in matrices.items()})
     report = {
         "draws": args.draws, "seed": args.seed, "root_seed": manifest["root_seed"],
         "window_steps": manifest["horizon"], "probe_sha256": manifest["probes_sha256"],
@@ -223,6 +311,8 @@ def main():
     output = args.output
     output.mkdir(parents=True, exist_ok=True)
     _write_tables(output, report)
+    if encoders:
+        _write_projections(output, report, distances)
     write_json(output / "coverage-summary.json", {
         **{key: value for key, value in report.items() if key != "scenarios"},
         "scenarios": {name: {**scene["scopes"], "perplexity": scene["perplexity"]}
